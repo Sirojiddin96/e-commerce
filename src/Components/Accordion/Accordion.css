@@ -1,0 +1,59 @@
+.Accordion{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.AccordionTitle{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+.AccordionTitle>p{
+    margin-right: 5px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #262626;
+}
+.DropDown{
+    width: 10px;
+    transition: all 0.3s ease-out;
+}
+.DropDown>img, .DropDown.Active>img{
+    width: 100%;
+    object-fit: cover;
+}
+.DropDown.Active{
+    transform: rotate(-180deg);
+}
+.Content{
+    display: none;
+    width: 100%;
+    transition: all 0.3s ease-in;
+}
+.Content.Active{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.AccordionOption{
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.AccordionOption>:hover{
+    background-color: rgba(71, 154, 248, 0.416);
+}
+.AccordionOption>p{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #262626;
+    }

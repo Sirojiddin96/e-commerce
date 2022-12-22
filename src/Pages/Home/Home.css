@@ -1,0 +1,192 @@
+.HomePage{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.HomePageSection1{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    padding: 18% 90px 5% 90px;
+}
+.HomePageSection1>figure{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+}
+.HomePageSection1>figure>img{
+    width: 100%;
+    object-fit: cover;
+}
+.HomePageTitle{
+    width: 50%;
+}
+.HomePageTitle>p{
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 150%;
+    letter-spacing: 0.5px;
+    color: #FFFFFF;
+    margin-bottom: 110px;
+}
+.HomePageCards{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.HomePageCards>div{
+    margin: 0 -0.1%;
+    width: 33.3%;
+    transition: all 3s ease-in;
+}
+.HomePageCards>div>:hover{
+    transform: scale(1.1);
+}
+.HomePageSection2{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.HomePageSection2Title{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.HomePageSection2Title>p{
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 52px;
+    color: #22262A;
+}
+.HomePageSection2Modules{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 400px 30px 400px;
+}
+.module>p{
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 33px;
+    color: #22262A;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
+.module>:hover{
+    transform: scale(1.1);
+}
+.module.active{
+    border-bottom: #33A0FF 4px solid;
+}
+.module.active>p{
+    color: #33A0FF;
+}
+.HomePageSection2ProductCards{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    transition: all 1s ease-in;
+    overflow: hidden;
+}
+.ProductsCardHolder{
+    width: 23%;
+    margin: 1%;
+}
+.LoadMoreDiv{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2% 0;
+}
+.LoadMoreDiv>div{
+    border-bottom: 3px solid  #33A0FF;
+    cursor: pointer;
+}
+.LoadMoreDiv>div>p{
+    font-size: 20px;
+    line-height: 30px;
+    color: #33A0FF;
+}
+.LoadMoreDiv>div>:active{
+    color: #151515;
+}
+.HomePagesSection3{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; 
+}
+.HomePagesSection4{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 7% 10%;
+}
+.ServicesCardHolder{
+    width: 30%;
+}
+.HomePagesSection5, .HomePagesSection6{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.HomePagesSection5Title, .HomePagesSection6Title{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.HomePagesSection5Title>p, .HomePagesSection6Title>p{
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 51px;
+    color: #22262A;
+}
+.HomePagesSection5Cards, .FeaturedProductsCards{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5%;
+}
+.NewsCardHolder, .FeaturedProductsCardHolder{
+    width: 33%;
+}
+.HomePageSection2ProductCardsLoading{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 270px;
+}
+.HomePageSection2ProductCardsLoading>p{
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 51px;
+    color: #22262A;
+}

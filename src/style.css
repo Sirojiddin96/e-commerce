@@ -1,0 +1,31 @@
+@font-face {
+    font-family: Raleway;
+    src: url(./\/utils/fonts/Raleway-Regular.ttf);
+}
+@font-face {
+    font-family: Poppins;
+    src: url(./utils/fonts/Poppins-Regular.ttf);
+}
+@font-face {
+    font-family: Proxima;
+    src: url(./utils/fonts/Proxima\ Nova\ Font.otf);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    font-family: Poppins;
+}
+.wrapper{
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+::-webkit-scrollbar {
+    width: 0px;
+  }

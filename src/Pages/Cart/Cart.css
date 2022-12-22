@@ -1,0 +1,241 @@
+.CartPage{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.CartProducts{
+    width: 100%;
+    height: 480px;
+    overflow: auto;
+    position: relative;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+thead{
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    border-collapse: collapse;
+}
+thead, tbody{
+    width: 100%;
+    height: 150px;
+}
+tbody>tr{
+    border-bottom: #F6F7F8 2px solid;
+}
+thead>tr>:nth-child(1){
+    text-align: start;
+    padding-left: 12%; 
+}
+thead>tr>:nth-child(1), thead>tr>:nth-child(1){
+    width: 50%;
+}
+thead>tr>:nth-child(2), thead>tr>:nth-child(2){
+    text-align: start;
+    width: 10%;
+}
+thead>tr>:nth-child(3), thead>tr>:nth-child(3){
+    text-align: start;
+    width: 15%;
+}
+thead>tr>:nth-child(4), thead>tr>:nth-child(4){
+    text-align: start;
+    width: 15%;
+}
+thead>tr>th{
+    font-size: 20px;
+    line-height: 30px;
+    color: #22262A;
+}
+.CartProductFistPart{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 5% 10%;
+}
+.CartProductFistPart>button{
+    width: 27px;
+    height: 25px;
+    border-radius: 50%;
+    background: #ff687525;
+    text-align: center;
+    color: #FF4252;
+    border: none;
+    cursor: pointer;
+}
+.CartProductFistPart>figure{
+    width: 137.85px;
+    height: 94px;
+    margin: 0 10%;
+}
+.CartProductFistPart>figure>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.CartProductTotal{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    color: #262626;
+}
+.CartProductQuantity{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.CartProductQuantityDiv{
+    width: 125px;
+    height: 46px;
+    display: flex;
+    flex-direction: row;
+    background: #F6F7F8;
+}
+.CartProductQuantityDiv>button{
+    width: 33.3%;
+    height: 100%;
+    color: #33A0FF;
+    text-align: center;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: transparent;
+}
+.CartProductQuantityDiv>div{
+    width: 33.3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.CartProductQuantityDiv>div>p{
+    font-family: Proxima;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #262626;
+}
+.CartProducts::-webkit-scrollbar {
+    width: 20px;
+}
+.CartProducts::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+.CartProducts::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box; 
+  }
+.CartProducts::-webkit-scrollbar-thumb:hover {
+    background-color: #a8bbbf;
+    width: 25px;
+}
+.NoItemRow{
+    width: 100%;
+}
+.NoItemRow>td{
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    line-height: 27px;
+    color: #262626;
+    font-weight: 700;
+}
+.TotalSection{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 10% 5%;
+}
+.VoucherSide{
+    width: 367px;
+    height: 58px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.VoucherSide>input{
+    width: 70%;
+    height: 100%;
+    border: 2px solid #F1F3F4;
+    color: #26262693;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 2% 5%;
+}
+.VoucherSide>input:focus{
+    outline: 2px solid #727373;
+}
+.VoucherSide>input::placeholder{
+    font-size: 16px;
+    line-height: 24px;
+    color: #262626;
+    opacity: 0.5;
+}
+.VoucherSide>button{
+    width: 30%;
+    height: 100%;
+    background: #33A0FF;
+    border: none;
+    font-size: 18px;
+    line-height: 27px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.CalculateTotalCart{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.CalculateTotalCart>:nth-child(1), .CalculateTotalCart>:nth-child(2), .CalculateTotalCart>:nth-child(3){
+    width: 100%;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.CalculateTotalCart>:nth-child(1)>p, .CalculateTotalCart>:nth-child(2)>p, .CalculateTotalCart>:nth-child(3)>p{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    color: #262626;
+}
+.FinalTotal{
+    border-top: solid 2px#F6F7F8;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.FinalTotal>p{
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 45px;
+}
+.CheckoutBtn{
+    width: 100%;
+    height: 60px;
+    border: none;
+    cursor: pointer;
+    background: #33A0FF;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    color: #FFFFFF;
+}

@@ -1,0 +1,346 @@
+.promotionCardOne, .promotionCardThree, .promotionCardTwo{
+    width: 100%;
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
+    padding: 6%  5%  6% 12%;
+    cursor: pointer;
+}
+.promotionCardOne>figure, .promotionCardThree>figure, .promotionCardTwo>figure{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.promotionCardOne>figure>img, .promotionCardThree>figure>img, .promotionCardTwo>figure>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.PromotionCardONeTitle{
+    width: 60%;
+}
+.PromotionCardONeTitle>p, .promotionCardThreeTitle>p{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    letter-spacing: 0.5px;
+    color: #223263;
+}
+.promotionCardOne>:nth-child(3){
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.5px;
+    color: #9098B1;
+    margin-top: 185px;
+}
+.promotionCardOne>:nth-child(3)>span, .promotionCardTwoPrice>p>span, .promotionCardThree>p>span{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.5px;
+    color: #FB7181;
+    margin-left: 10px;
+}
+.promotionCardOneCurrentPrice{
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-top: -5%;
+}
+.promotionCardOneCurrentPrice>p{
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 180%;
+    letter-spacing: 0.5px;
+    color: #40BFFF;
+    font-family: Raleway;  
+}
+.promotionCardTwoTitle{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 220px;
+}
+.promotionCardTwoTitle>:nth-child(1){
+    width: 50%;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    letter-spacing: 0.5px;
+    color: #223263;
+}
+.promotionCardTwoTitle>:nth-child(2){
+    font-family: Raleway;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 180%;
+    letter-spacing: 0.5px;
+    color: #40BFFF;
+}
+.promotionCardTwoPrice{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.promotionCardTwoPrice>p{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.5px;
+    color: #9098B1;
+    text-align: center;
+}
+.promotionCardThreeTitle{
+    width: 60%;
+}
+.promotionCardThree>p{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.5px;
+    color: #9098B1;
+}
+.promotionCardThreeCurrentPrice{
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+.promotionCardThreeCurrentPrice>p{
+    font-family: Raleway;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 180%;
+    letter-spacing: 0.5px;
+    color: #40BFFF;
+    margin-top: 180px;
+}
+.ProductCards{
+    width: 100%;
+    height: 385px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border: 3px solid #F6F7F8;
+    position: relative;
+}
+
+.ProductCardsFigure{
+    width: 100%;
+    height: 70%;
+    position: relative;
+    cursor: pointer;
+}
+.ProductCardsFigure>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.ProductCardsTitle{
+    width: 100%;
+    text-align: center;
+    margin-top: 7%;
+}
+.ProductCardsTitle>p{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.5px;
+    color: #223263;
+}
+.ProductCardsCurrentPrice{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 14%;
+}
+.ProductCardsCurrentPrice>:nth-child(1){
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 180%;
+    letter-spacing: 0.5px;
+    color: #40BFFF;
+}
+.ProductCardsCurrentPrice>:nth-child(2){
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0.5px;
+    color: #9098B1;
+}
+.ProductCardsCurrentPrice>:nth-child(2)>span{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0.5px;
+    color: #FB7181;
+    margin-left: 8px;
+}
+.ProductCardsHover{
+    display: none;
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    opacity: 0.95;
+    
+}
+.ProductCardsHover.Hover{
+    display: flex;
+}
+.CartIconHolder, .LikeIconHolder{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    margin: 0 4%;
+    border-radius: 50%;
+    background-color: #33a0ff8c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.CartIconHolder.Red{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    margin: 0 4%;
+    border-radius: 50%;
+    background-color: #e74f25b4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.CartIconHolder>figure, .LikeIconHolder>figure{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    opacity: 0.95;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.CartIconHolder>figure>img, .LikeIconHolder>figure>img{
+    width: 17.8px;
+    height: 15.6px;
+}
+
+.IconCard{
+    width: 198px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.IconCard>figure{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.IconCard>:nth-child(2){
+    font-size: 27px;
+    line-height: 40px;
+    color: #22262A;
+    margin: 8% 0 10% 0;
+}
+.IconCard>:nth-child(3){
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #22262A;
+}
+
+.HorizontalNewsCard, .HorizontalProductCard{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 5%;
+    transition: all ease 0.3s;
+}
+.HorizontalNewsCard:hover{
+    background-color: #40bfff27;
+}
+.HorizontalNewsCard>figure, .HorizontalProductCard>figure{
+    width: 152px;
+    height: 152px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.HorizontalProductCard>figure>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.HorizontalNewsCardWriting, .HorizontalProductCardWriting{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.HorizontalNewsCardWriting>:nth-child(1){
+    font-size: 18px;
+    line-height: 27px;
+    color: #C1C8CE;
+}
+.HorizontalNewsCardWriting>:nth-child(2){
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 33px;
+    color: #22262A;
+}
+.HorizontalNewsCardWriting>:nth-child(3){
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #22262A;
+}
+.HorizontalProductCardWriting>:nth-child(1){
+    font-family: Proxima;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    color: #262626;
+}
+.HorizontalProductCardWriting>:nth-child(3){
+    font-family: Proxima;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #C1C8CE;
+}
+.HorizontalProductCardWriting>:nth-child(3)>span{
+    font-size: 20px;
+    line-height: 30px;
+    color: #FF4858;
+    margin-right: 10px;
+}
+.HorizontalProductCard:hover{
+    transform: scale(1.1);
+}
