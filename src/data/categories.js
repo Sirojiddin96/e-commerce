@@ -14,5 +14,9 @@ export const productTypes = [
   {
     id: "05",
     name: "Zara"
+  },
+  {
+    id: "06",
+    name: "File"
   }
 ]
