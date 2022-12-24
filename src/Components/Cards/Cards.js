@@ -2,8 +2,6 @@ import "./Cards.css";
 import CartIcon from "../../utils/icons/CartIcon.svg";
 import LikeIcon from "../../utils/icons/HeartIcon.svg";
 import CartIconRed from "../../utils/icons/CartIconRed.svg";
-
-import { useState } from "react";
 import { useContext } from "react";
 import { ContextData } from "../../Context/Context";
 
@@ -52,16 +50,15 @@ export function PromotionCardThree(props){
 } 
 export function ProductCards(props){
     const {addCart} = useContext(ContextData);
-    const [hov, setHov] = useState(false);
-    const {product, pic, title, originalPrice, discount, currentPrice} = props;
+    const {inCart, product, pic, title, originalPrice, discount, currentPrice} = props;
     return(
         <div className="ProductCards">
-            <figure onMouseEnter={()=>setHov(true)} onMouseLeave={()=>setHov(false)} className="ProductCardsFigure">
+            <figure className="ProductCardsFigure">
                 <img src={pic} alt="product" />
-                <div className={hov ? "ProductCardsHover Hover" : "ProductCardsHover"}>
-                    <div className={product.InCart ? "CartIconHolder Red" : "CartIconHolder"}>
-                        <figure onClick={()=>product.InCart ? alert("You have already added this item to the cart") : addCart(product)}>
-                            <img src={product.InCart ? CartIconRed : CartIcon} alt="CartIcon" />
+                <div className="ProductCardsHover">
+                    <div className={inCart ? "CartIconHolder Red" : "CartIconHolder"}>
+                        <figure onClick={()=>addCart(product)}>
+                            <img src={inCart ? CartIconRed : CartIcon} alt="CartIcon" />
                         </figure>
                     </div>
                     <div className="LikeIconHolder">
