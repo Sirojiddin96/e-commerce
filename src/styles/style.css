@@ -1,14 +1,14 @@
 @font-face {
     font-family: Raleway;
-    src: url(./\/utils/fonts/Raleway-Regular.ttf);
+    src: url(../\/fonts/Raleway-Regular.ttf);
 }
 @font-face {
     font-family: Poppins;
-    src: url(./utils/fonts/Poppins-Regular.ttf);
+    src: url(../fonts/Poppins-Regular.ttf);
 }
 @font-face {
     font-family: Proxima;
-    src: url(./utils/fonts/Proxima\ Nova\ Font.otf);
+    src: url(../fonts/Proxima\ Nova\ Font.otf);
 }
 *{
     margin: 0;

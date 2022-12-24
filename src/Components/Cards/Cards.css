@@ -127,6 +127,7 @@
     margin-top: 180px;
 }
 .ProductCards{
+    overflow: hidden;
     width: 100%;
     height: 385px;
     display: flex;
@@ -191,22 +192,22 @@
     margin-left: 8px;
 }
 .ProductCardsHover{
-    display: none;
-    width: 90%;
-    height: 90%;
+    display: flex;
+    width: 96%;
+    height: 96%;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 1%;
+    left: 2%;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     background: #FFFFFF;
     opacity: 0.95;
-    
+    transition: all .5s ease-in-out;
+    transform: translateY(-100%);
 }
-.ProductCardsHover.Hover{
-    display: flex;
+.ProductCardsFigure:hover>.ProductCardsHover{
+    transform: translateY(0);
 }
 .CartIconHolder, .LikeIconHolder{
     width: 50px;

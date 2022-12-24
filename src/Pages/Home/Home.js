@@ -1,21 +1,21 @@
-import Promotion from "../../utils/images/PromotionImage.svg";
-import { PromotionCardONe, PromotionCardTwo, PromotionCardThree, ProductCards, IconCard, HorizontalNewsCard, HorizontalProductCard } from "../../Components/Cards/Cards";
-import CrossBag from "../../utils/images/CrossBag.svg";
-import Max270 from "../../utils/images/Max270.svg";
-import NikeAir from "../../utils/images/NikeAir.svg";
+import Promotion from "../../assets/images/PromotionImage.svg";
+import { PromotionCardONe, PromotionCardTwo, PromotionCardThree, ProductCards, IconCard, HorizontalNewsCard, HorizontalProductCard } from "../../components/Cards/Cards";
+import CrossBag from "../../assets/images/CrossBag.svg";
+import Max270 from "../../assets/images/Max270.svg";
+import NikeAir from "../../assets/images/NikeAir.svg";
 import { useContext, useState } from "react";
 import "./Home.css";
 
 
-import AdvertisementSection from "../../AdvertisementSection/AdvertisementSection";
-import FreeShipping from "../../utils/icons/FreeShipping.svg";
-import Refund from "../../utils/icons/Refund.svg";
-import Support from "../../utils/icons/Support.svg";
-import NikeLogo from "../../utils/icons/NikeLogo.svg";
-import FigmaLogo from "../../utils/icons/FigmaLogo.svg";
-import KronosLogo from "../../utils/icons/KronosLogo.svg";
-import FeaturedShoe from "../../utils/images/FeaturedShoe.svg";
-import { ContextData } from "../../Context/Context";
+import AdvertisementSection from "../../containers/AdvertisementSection";
+import FreeShipping from "../../assets/icons/FreeShipping.svg";
+import Refund from "../../assets/icons/Refund.svg";
+import Support from "../../assets/icons/Support.svg";
+import NikeLogo from "../../assets/icons/NikeLogo.svg";
+import FigmaLogo from "../../assets/icons/FigmaLogo.svg";
+import KronosLogo from "../../assets/icons/KronosLogo.svg";
+import FeaturedShoe from "../../assets/images/FeaturedShoe.svg";
+import { ContextData } from "../../context/Context";
 function Home(){
     const {cart, priceAfterDiscount, products} = useContext(ContextData);
     const [module,setModule] = useState("All");

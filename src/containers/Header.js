@@ -1,20 +1,14 @@
 import "./Header.css";
-import { NavLink, Routes, Route } from "react-router-dom";
-import Accordion from "../Components/Accordion/Accordion";
+import { NavLink } from "react-router-dom";
+import Accordion from "../components/Accordion/Accordion";
 import { useContext, useState } from "react";
-import { ContextData } from "../Context/Context";
-import Profile from "../Pages/Profile/Profile";
-import Cart from "../Pages/Cart/Cart";
-import Products from "../Pages/Products/Products";
-import Home from "../Pages/Home/Home";
-import Favorites from "../Pages/Favorites/Favorites";
-import Contact from "../Pages/Contact/Contact";
-import Search from "../Pages/Search/Search";
-import ProfilePicture from "../utils/icons/ProfilePicture.svg";
-import CartIcon from "../utils/icons/Cart.svg";
-import Ellipse from "../utils/icons/Ellipse.svg";
-import SearchIcon from "../utils/icons/SearchIcon.svg";
-import Logo from "../utils/images/Logo.svg";
+import { ContextData } from "../context/Context";
+
+import ProfilePicture from "../assets/icons/ProfilePicture.svg";
+import CartIcon from "../assets/icons/Cart.svg";
+import Ellipse from "../assets/icons/Ellipse.svg";
+import SearchIcon from "../assets/icons/SearchIcon.svg";
+import Logo from "../assets/images/Logo.svg";
 
 function Header(){
     const {checkout, Clength, open, toggle} = useContext(ContextData);
@@ -97,15 +91,6 @@ function Header(){
                     
                 
             </div>
-            <Routes>
-                <Route path="/" element={<Home/>}/>
-                <Route path="/profile" element={<Profile/>}/>
-                <Route path="/cart" element={<Cart/>}/>
-                <Route path="/products" element={<Products/>}/>
-                <Route path="/search" element={<Search/>}/>
-                <Route path="/favorites" element={<Favorites/>}/>
-                <Route path="/contact" element={<Contact/>}/>
-            </Routes>
         </header>
     )
 }

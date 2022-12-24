@@ -1,5 +1,5 @@
 import "./AdvertisementSection.css";
-import SoleShoe from "../utils/images/SoleShoe.svg";
+import SoleShoe from "../assets/images/SoleShoe.svg";
 function AdvertisementSection(){
     return(
         <div className="AdvertisementSection">
