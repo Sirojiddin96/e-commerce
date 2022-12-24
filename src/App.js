@@ -1,6 +1,7 @@
 import React from "react";
-import Footer from "./Footer/Footer";
-import Header from "./Header/Header";
+import Routers from "./routers/Routers";
+import Footer from "./containers/Footer";
+import Header from "./containers/Header";
 
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
   return (
     <div className="wrapper">
       <Header/>
+      <Routers/>
       <Footer/>
     </div>
   );
