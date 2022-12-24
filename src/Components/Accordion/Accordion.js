@@ -1,5 +1,5 @@
 import "./Accordion.css";
-import ArrowDown from "../../utils/icons/ArrowDown.svg";
+import ArrowDown from "../../assets/icons/ArrowDown.svg";
 
 function Accordion(props){
     const {title, open, currentIndex, contents} = props;

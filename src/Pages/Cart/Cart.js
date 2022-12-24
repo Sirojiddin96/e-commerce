@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ContextData } from "../../Context/Context";
+import { ContextData } from "../../context/Context";
 import "./Cart.css";
 function Cart(){
     const {checkout, calcShipping, calcTotal, delteCartItem, descreaseQuantity, increseQuantity, cart, priceAfterDiscount} = useContext(ContextData);

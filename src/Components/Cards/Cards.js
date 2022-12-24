@@ -3,7 +3,7 @@ import CartIcon from "../../utils/icons/CartIcon.svg";
 import LikeIcon from "../../utils/icons/HeartIcon.svg";
 import CartIconRed from "../../utils/icons/CartIconRed.svg";
 import { useContext } from "react";
-import { ContextData } from "../../Context/Context";
+import { ContextData } from "../../context/Context";
 
 export function PromotionCardONe(props){
     const {pic, title, originalPrice, discount, currentPrice} = props;
