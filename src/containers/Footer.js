@@ -1,11 +1,11 @@
 import "./Footer.css";
-import Logo from "../utils/images/Logo.svg";
-import FacebookIcon from "../utils/icons/facebook.svg";
-import TwitterIcon from "../utils/icons/twitter.svg";
-import WesternUnion from "../utils/icons/WesternUnion.svg";
-import MasterCard from "../utils/icons/MasterCard.svg";
-import Paypal from "../utils/icons/Paypal.svg";
-import Visa from "../utils/icons/Visa.svg";
+import Logo from "../assets/images/Logo.svg";
+import FacebookIcon from "../assets/icons/facebook.svg";
+import TwitterIcon from "../assets/icons/twitter.svg";
+import WesternUnion from "../assets/icons/WesternUnion.svg";
+import MasterCard from "../assets/icons/MasterCard.svg";
+import Paypal from "../assets/icons/Paypal.svg";
+import Visa from "../assets/icons/Visa.svg";
 
 function Footer(){
     return(

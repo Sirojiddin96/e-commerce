@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from "react";
-import ColorfulSneakers from "../utils/images/ColorfulSneakers.svg";
-import RedBag from "../utils/images/RedBag.svg";
-import BlackBelt from "../utils/images/BlackBelt.jpg";
-import BlueGlasses from "../utils/images/BlueGlasses.jpeg";
-import BlueSneakers from "../utils/images/BlueSneakers.svg";
-import BlueSoleSneakers from "../utils/images/BlueSoleSneakers.svg";
-import BrownBelt from "../utils/images/BrownBelt.jpg";
-import GreenBelt from "../utils/images/GreenBelt.jpg";
-import GreenGlasses from "../utils/images/GreenGlasses.jpeg";
-import JapaneseBelt from "../utils/images/JapaneseBelt.jpg";
-import MilkyBag from "../utils/images/MilkyBag.svg";
-import OrageGlasses from "../utils/images/OrageGlasses.jpg";
-import PairSneakers from "../utils/images/PairSneakers.svg";
-import RoundGlasses from "../utils/images/RoundGlasses.jpg";
-import YellowSneakers from "../utils/images/YellowSneakers.svg";
-import CrossBag from "../utils/images/CrossBag.svg";
+import ColorfulSneakers from "../assets/images/ColorfulSneakers.svg";
+import RedBag from "../assets/images/RedBag.svg";
+import BlackBelt from "../assets/images/BlackBelt.jpg";
+import BlueGlasses from "../assets/images/BlueGlasses.jpeg";
+import BlueSneakers from "../assets/images/BlueSneakers.svg";
+import BlueSoleSneakers from "../assets/images/BlueSoleSneakers.svg";
+import BrownBelt from "../assets/images/BrownBelt.jpg";
+import GreenBelt from "../assets/images/GreenBelt.jpg";
+import GreenGlasses from "../assets/images/GreenGlasses.jpeg";
+import JapaneseBelt from "../assets/images/JapaneseBelt.jpg";
+import MilkyBag from "../assets/images/MilkyBag.svg";
+import OrageGlasses from "../assets/images/OrageGlasses.jpg";
+import PairSneakers from "../assets/images/PairSneakers.svg";
+import RoundGlasses from "../assets/images/RoundGlasses.jpg";
+import YellowSneakers from "../assets/images/YellowSneakers.svg";
+import CrossBag from "../assets/images/CrossBag.svg";
 
 
 export const ContextData = React.createContext();
