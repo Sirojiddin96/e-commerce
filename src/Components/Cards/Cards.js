@@ -2,6 +2,7 @@ import "./Cards.css";
 import CartIcon from "../../assets/icons/CartIcon.svg";
 import LikeIcon from "../../assets/icons/HeartIcon.svg";
 import CartIconRed from "../../assets/icons/CartIconRed.svg";
+
 import { useContext } from "react";
 import { ContextData } from "../../context/Context";
 
