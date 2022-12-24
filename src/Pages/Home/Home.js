@@ -17,7 +17,7 @@ import KronosLogo from "../../utils/icons/KronosLogo.svg";
 import FeaturedShoe from "../../utils/images/FeaturedShoe.svg";
 import { ContextData } from "../../Context/Context";
 function Home(){
-    const {priceAfterDiscount, products} = useContext(ContextData);
+    const {cart, priceAfterDiscount, products} = useContext(ContextData);
     const [module,setModule] = useState("All");
     const [allowed, setAllowed] = useState(8);
     const [promotioProducts] = useState([
@@ -159,7 +159,7 @@ function Home(){
                         })
                         .map((item, index)=> index<allowed ? (
                             <div key={index} className="ProductsCardHolder">
-                                <ProductCards product={item} pic={item.picture} title={item.title} originalPrice={item.originalPrice} discount={item.discount} currentPrice={priceAfterDiscount(item.discount, item.originalPrice).toFixed(2)}/>
+                                <ProductCards inCart={cart.length !== 0 ? cart.filter((elem)=>(elem.id === item.id)).length === 0 ? false : true : false ? true : false} product={item} pic={item.picture} title={item.title} originalPrice={item.originalPrice} discount={item.discount} currentPrice={priceAfterDiscount(item.discount, item.originalPrice).toFixed(2)}/>
                             </div>
                             ) : <></>
                             
