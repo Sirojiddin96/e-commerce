@@ -345,3 +345,150 @@
 .HorizontalProductCard:hover{
     transform: scale(1.1);
 }
+
+.ProductCardsHorizontal{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: #F6F7F8 solid 3px;
+}
+.ProductCardsFigureHorizontal{
+    width: 299.5px;
+    height: 272.5px;
+}
+.ProductCardsWritingHorizontal{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 2% 5%;
+}
+.ProductCardsTitleHorizontal{
+    width: 100%;
+}
+.ProductCardsTitleHorizontal>p{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    color: #22262A;
+}
+.ProductCardsRatingHorizontal{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 5% 0;
+}
+.ProductCardsRatingHorizontal>:nth-child(2){
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #C1C8CE;
+    margin: 0 5%;
+}
+.ProductCardsRatingHorizontal>:nth-child(3){
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #33A0FF;
+    cursor: pointer;
+}
+.ProductCardsDescriptionHorizontal{
+    width: 100%;
+}
+.ProductCardsCurrentPriceHorizontal{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.ProductCardsCurrentPriceHorizontal>:nth-child(1){
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 180%;
+    letter-spacing: 0.5px;
+    color: #40BFFF;
+    margin-right: 3%;
+}
+.ProductCardsCurrentPriceHorizontal>:nth-child(2){
+    width: 500px;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    color: #9098B1;
+}
+.ProductCardsCurrentPriceHorizontal>:nth-child(2)>span{
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    color: #FB7181;
+    margin-left: 2%;
+}
+.ProductCardsDescriptionHorizontal{
+    width: 100%;
+    margin: 4% 0;
+}
+.ProductCardsDescriptionHorizontal>p{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #262626;
+}
+.ProductCardsActionHorizontal{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.ProductCardsCartHorizontal{
+    width: 150px;
+    height: 46px;
+    display: flex;
+    flex-direction: row;
+    background: #33a0ff1d;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+}
+.ProductCardsCartHorizontal>p{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #33A0FF;
+}
+.ProductCardsCartHorizontal:hover{
+    transform: scale(1.1);
+}
+.ProductCardsCartHorizontal>figure{
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 7%;
+    
+}
+.ProductCardsLikeHorizontal{
+    width: 46px;
+    height: 46px;
+    background: #33a0ff1d;
+    margin-left: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+}
+.ProductCardsLikeHorizontal:hover{
+    transform: scale(1.1);
+}
+.ProductCardsLikeHorizontal>figure{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

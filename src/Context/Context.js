@@ -63,7 +63,7 @@ function ContextProvider({children}) {
     const [brands, setBrands] = useState({})
     const [cart, setCart] = useState(JSON.parse(localStorage.getItem("data")) ? JSON.parse(localStorage.getItem("data")) : []);
     const [Clength, setClength] = useState(cart.length);
-
+    const [mode, setMode] = useState("Rectangular");
       useEffect(() => {
         localStorage.setItem("data", JSON.stringify(cart));
       }, [cart]);
@@ -138,7 +138,11 @@ function ContextProvider({children}) {
       }
 
     return(
+<<<<<<< Updated upstream
         <ContextData.Provider value={{ brands, checkout, calcShipping, calcTotal, delteCartItem, descreaseQuantity, increseQuantity, Clength, priceAfterDiscount, addCart, cart, products, toggle, open}}>
+=======
+        <ContextData.Provider value={{mode, setMode, checkout, calcShipping, calcTotal, delteCartItem, descreaseQuantity, increseQuantity, Clength, priceAfterDiscount, addCart, cart, toggle, open}}>
+>>>>>>> Stashed changes
             {children}
         </ContextData.Provider>
     )
