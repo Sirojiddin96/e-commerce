@@ -1,22 +1,23 @@
-export const productTypes = [
+
+export const brands = [
   {
-    id: "01",
-    name: "Adidas"
+    id: 1001,
+    name: "Airmax",
   },
   {
-    id: "02",
+    id: 1002,
     name: "Nike"
   },
   {
-    id: "03",
-    name: "Puma"
+    id: 1003,
+    name: "Vans"
   },
   {
-    id: "05",
-    name: "Zara"
+    id: 1004,
+    name: "Peter"
   },
   {
-    id: "06",
-    name: "File"
+    id: 1005,
+    name: "Ray-Ban"
   }
 ]
