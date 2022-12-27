@@ -2,7 +2,8 @@ import "./Cards.css";
 import CartIcon from "../../assets/icons/CartIcon.svg";
 import LikeIcon from "../../assets/icons/HeartIcon.svg";
 import CartIconRed from "../../assets/icons/CartIconRed.svg";
-
+import CartIconBlue from "../../assets/icons/CartIconBlue.svg";
+import HeartIconBlue from "../../assets/icons/HeartIconBlue.svg";
 import { useContext } from "react";
 import { ContextData } from "../../context/Context";
 
@@ -78,6 +79,48 @@ export function ProductCards(props){
             <div className="ProductCardsCurrentPrice">
                 <p>${currentPrice}</p>
                 <p><del>${originalPrice}</del><span>{discount}% Off</span></p>
+            </div>
+        </div>
+    )
+} 
+
+export function ProductCardsHorizontal(props){
+    const {addCart} = useContext(ContextData);
+    const {description, inCart, product, pic, title, originalPrice, discount, currentPrice} = props;
+    return(
+        <div className="ProductCardsHorizontal">
+            <figure className="ProductCardsFigureHorizontal">
+                <img src={pic} alt="product" />
+            </figure>
+            <div className="ProductCardsWritingHorizontal">
+                <div className="ProductCardsTitleHorizontal">
+                    <p>{title}</p>
+                </div>
+                <div className="ProductCardsRatingHorizontal">
+                    <p>Rating</p>
+                    <p>0 reviews</p>
+                    <p>Submit a review</p>
+                </div>
+                <div className="ProductCardsCurrentPriceHorizontal">
+                    <p>${currentPrice}</p>
+                    <p><del>${originalPrice}</del><span>{discount}% Off</span></p>
+                </div>
+                <div className="ProductCardsDescriptionHorizontal">
+                    <p>{description}</p>
+                </div>
+                <div className="ProductCardsActionHorizontal">
+                    <div onClick={()=>addCart(product)} className="ProductCardsCartHorizontal">
+                        <figure>
+                            <img src={inCart ? CartIconRed : CartIconBlue} alt="CartIconRed" />
+                        </figure>
+                        <p>Add To Cart</p>
+                    </div>
+                    <div className="ProductCardsLikeHorizontal">
+                        <figure>
+                            <img src={HeartIconBlue} alt="HeartIconBlue" />
+                        </figure>
+                    </div>
+                </div>
             </div>
         </div>
     )

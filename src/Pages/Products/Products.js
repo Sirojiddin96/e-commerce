@@ -1,7 +1,7 @@
 import "./Products.css";
 import { useContext } from "react";
 import { useState } from "react";
-import { ProductCards } from "../../components/Cards/Cards";
+import { ProductCards, ProductCardsHorizontal} from "../../components/Cards/Cards";
 import { ContextData } from "../../context/Context";
 import { brands } from "../../data/categories";
 import { products } from "../../data/products";
@@ -9,13 +9,15 @@ import {AdvertisementSectionSmall} from "../../containers/AdvertisementSection";
 import Accordion from "../../components/Accordion/Accordion";
 import RecCardIconGray from "../../assets/icons/RecCardIconGray.svg";
 import LineCardIconGray from "../../assets/icons/LineCardIconGray.svg";
+import RecCardIconBlue from "../../assets/icons/RecCardIconBlue.svg";
+import LineCardIconBlue from "../../assets/icons/LineCardIconBlue.svg";
 
 
 function Products(){
     const [brandID, setBrandID] = useState("All");
-    const {cart, priceAfterDiscount} = useContext(ContextData);
+    const {mode, setMode, cart, priceAfterDiscount} = useContext(ContextData);
     const [value, onChange] = useState(1000);
-
+ 
     return(
         <div className="ProductsPage">
             <div className="ProductsPagesSidebar">
@@ -59,34 +61,43 @@ function Products(){
                     <AdvertisementSectionSmall/>
                     </div>
                     <div className="ProductsFilter">
-                        <p>13 items</p>
-                        <p>Sort By</p>
-                        <span>
-                            <Accordion title="Name" open={0} currentIndex={1} contents={["brands", "name"]}/>
-                        </span>
-                        <p>Show</p>
-                        <span>
-                            <Accordion title="12" open={0} currentIndex={1} contents={["8", "7"]}/>
-                        </span>
-                        <div>
-                            <figure>
-                                <img src={RecCardIconGray} alt="RecCardIconGray" />
+                        <div className="ProductsFilterLeft">
+                            <p>13 items</p>
+                            <p>Sort By</p>
+                            <span>
+                                <Accordion title="Name" open={0} currentIndex={1} contents={["brands", "name"]}/>
+                            </span>
+                            <p>Show</p>
+                            <span>
+                                <Accordion title="12" open={0} currentIndex={1} contents={["8", "7"]}/>
+                            </span>
+                        </div>
+                        <div className="ProductsFilterRight">
+                            <figure onClick={()=>setMode("Rectangular")}>
+                                <img src={mode === "Rectangular" ? RecCardIconBlue : RecCardIconGray} alt="RecCardIconGray" />
                             </figure>
-                            <figure>
-                                <img src={LineCardIconGray} alt="RecCardIconGray" />
+                            <figure onClick={()=>setMode("Line")}>
+                                <img src={mode === "Line" ? LineCardIconBlue : LineCardIconGray} alt="RecCardIconGray" />
                             </figure>
                         </div>
                     </div>
                     <div className="ProductsList">
                     {
-                        products.map((item, index)=>(brandID === "All" && priceAfterDiscount(item.discount, item.originalPrice) < value? 
-                        <div key={index} className="ProductCard">
-                        <ProductCards inCart={cart.length ? cart.filter((elem)=>(elem.id === item.id)).length : false} product={item} pic={item.picture} title={item.title} originalPrice={item.originalPrice} discount={item.discount} currentPrice={priceAfterDiscount(item.discount, item.originalPrice).toFixed(2)}/>
-                        </div> :
-                        brandID === item.categoryId && priceAfterDiscount(item.discount, item.originalPrice) < value ?
+                        products.map((item, index)=>(brandID === "All" && priceAfterDiscount(item.discount, item.originalPrice) < value ? mode === "Rectangular" ?
                         <div key={index} className="ProductCard">
                             <ProductCards inCart={cart.length ? cart.filter((elem)=>(elem.id === item.id)).length : false} product={item} pic={item.picture} title={item.title} originalPrice={item.originalPrice} discount={item.discount} currentPrice={priceAfterDiscount(item.discount, item.originalPrice).toFixed(2)}/>
-                        </div> : <></>
+                        </div> :
+                        <div key={index} className="ProductCardHorizontal">
+                            <ProductCardsHorizontal description={item.decription} inCart={cart.length ? cart.filter((elem)=>(elem.id === item.id)).length : false} product={item} pic={item.picture} title={item.title} originalPrice={item.originalPrice} discount={item.discount} currentPrice={priceAfterDiscount(item.discount, item.originalPrice).toFixed(2)}/>
+                        </div>  :
+                        brandID === item.categoryId && priceAfterDiscount(item.discount, item.originalPrice) < value ? mode === "Rectangular" ?
+                        <div key={index} className="ProductCard">
+                            <ProductCards inCart={cart.length ? cart.filter((elem)=>(elem.id === item.id)).length : false} product={item} pic={item.picture} title={item.title} originalPrice={item.originalPrice} discount={item.discount} currentPrice={priceAfterDiscount(item.discount, item.originalPrice).toFixed(2)}/>
+                        </div> :
+                        <div key={index} className="ProductCardHorizontal">
+                            <ProductCardsHorizontal description={item.decription} inCart={cart.length ? cart.filter((elem)=>(elem.id === item.id)).length : false} product={item} pic={item.picture} title={item.title} originalPrice={item.originalPrice} discount={item.discount} currentPrice={priceAfterDiscount(item.discount, item.originalPrice).toFixed(2)}/>
+                        </div>
+                         : <></>
                         )) 
                     }
                </div>
