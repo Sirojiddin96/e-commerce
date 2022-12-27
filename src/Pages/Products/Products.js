@@ -6,7 +6,6 @@ import { ContextData } from "../../context/Context";
 import { brands } from "../../data/categories";
 import { products } from "../../data/products";
 import {AdvertisementSectionSmall} from "../../containers/AdvertisementSection";
-import Accordion from "../../components/Accordion/Accordion";
 import RecCardIconGray from "../../assets/icons/RecCardIconGray.svg";
 import LineCardIconGray from "../../assets/icons/LineCardIconGray.svg";
 import RecCardIconBlue from "../../assets/icons/RecCardIconBlue.svg";
@@ -17,7 +16,23 @@ function Products(){
     const [brandID, setBrandID] = useState("All");
     const {mode, setMode, cart, priceAfterDiscount} = useContext(ContextData);
     const [value, onChange] = useState(1000);
- 
+    const [sort, setSort] = useState(products);
+    function hangleSorting(e){
+        let option = e.target.value;
+        if(option === "None"){
+        setSort([...products].sort((a, b)=> {
+            return a.id - b.id;
+        }))
+        }else if(option === "Name"){
+        setSort([...products].sort((a, b)=> {
+            return a.title > b.title ? 1 : -1;
+        }))
+        }else{
+        setSort([...products].sort((a, b) => {
+            return a.originalPrice - b.originalPrice;
+        } ) )
+        }
+    }
     return(
         <div className="ProductsPage">
             <div className="ProductsPagesSidebar">
@@ -62,15 +77,13 @@ function Products(){
                     </div>
                     <div className="ProductsFilter">
                         <div className="ProductsFilterLeft">
-                            <p>13 items</p>
+                            <p>{products.filter(item=>(brandID === "All" && priceAfterDiscount(item.discount, item.originalPrice) < value ? item : brandID === item.categoryId && priceAfterDiscount(item.discount, item.originalPrice) < value)).length} Items </p>
                             <p>Sort By</p>
-                            <span>
-                                <Accordion title="Name" open={0} currentIndex={1} contents={["brands", "name"]}/>
-                            </span>
-                            <p>Show</p>
-                            <span>
-                                <Accordion title="12" open={0} currentIndex={1} contents={["8", "7"]}/>
-                            </span>
+                            <select onInput={(e)=>hangleSorting(e)} name="sort" id="Sorting">
+                                <option value="None">None</option>
+                                <option value="Name">Name</option>
+                                <option value="Price">Price</option>
+                            </select>
                         </div>
                         <div className="ProductsFilterRight">
                             <figure onClick={()=>setMode("Rectangular")}>
@@ -83,7 +96,7 @@ function Products(){
                     </div>
                     <div className="ProductsList">
                     {
-                        products.map((item, index)=>(brandID === "All" && priceAfterDiscount(item.discount, item.originalPrice) < value ? mode === "Rectangular" ?
+                        sort.map((item, index)=>(brandID === "All" && priceAfterDiscount(item.discount, item.originalPrice) < value ? mode === "Rectangular" ?
                         <div key={index} className="ProductCard">
                             <ProductCards inCart={cart.length ? cart.filter((elem)=>(elem.id === item.id)).length : false} product={item} pic={item.picture} title={item.title} originalPrice={item.originalPrice} discount={item.discount} currentPrice={priceAfterDiscount(item.discount, item.originalPrice).toFixed(2)}/>
                         </div> :
