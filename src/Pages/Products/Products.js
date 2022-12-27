@@ -1,10 +1,3 @@
-<<<<<<< Updated upstream
-function Products(){
-    return(
-        <>
-        <h1>Products</h1>
-        </>
-=======
 import "./Products.css";
 import { useContext } from "react";
 import { useState } from "react";
@@ -110,7 +103,6 @@ function Products(){
                </div>
             </div>
         </div>
->>>>>>> Stashed changes
     )
 }
 export default Products;

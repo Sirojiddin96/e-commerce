@@ -1,30 +1,16 @@
 import Promotion from "../../assets/images/PromotionImage.svg";
 import { PromotionCardONe, PromotionCardTwo, PromotionCardThree, ProductCards, IconCard, HorizontalNewsCard, HorizontalProductCard } from "../../components/Cards/Cards";
-import CrossBag from "../../assets/images/CrossBag.svg";
-import Max270 from "../../assets/images/Max270.svg";
-import NikeAir from "../../assets/images/NikeAir.svg";
+import { news } from "../../data/news";
 import { useContext, useState } from "react";
 import "./Home.css";
-
-
-import AdvertisementSection from "../../containers/AdvertisementSection";
-import FreeShipping from "../../assets/icons/FreeShipping.svg";
-import Refund from "../../assets/icons/Refund.svg";
-import Support from "../../assets/icons/Support.svg";
-import NikeLogo from "../../assets/icons/NikeLogo.svg";
-import FigmaLogo from "../../assets/icons/FigmaLogo.svg";
-import KronosLogo from "../../assets/icons/KronosLogo.svg";
-import FeaturedShoe from "../../assets/images/FeaturedShoe.svg";
+import { products, featured } from "../../data/products";
+import { services } from "../../data/services";
+import {AdvertisementSection} from "../../containers/AdvertisementSection";
 import { ContextData } from "../../context/Context";
 function Home(){
-    const {cart, priceAfterDiscount, products} = useContext(ContextData);
+    const {cart, priceAfterDiscount} = useContext(ContextData);
     const [module,setModule] = useState("All");
     const [allowed, setAllowed] = useState(8);
-    const [promotioProducts] = useState([
-        {id: 1, picture: CrossBag, title: "FS - QUILTED MAXI CROSS BAG", originalPrice: 534.33, discount: 24},
-        {id: 2, picture: Max270, title: "FS - Nike Air Max 270 React...", originalPrice: 534.33, discount: 24},
-        {id: 3, picture: NikeAir, title: "FS - Nike Air Max 270 React...", originalPrice: 534.33, discount: 24},
-    ])
     const [loading, setLoading] = useState(false);
     const [count, setCount] = useState(products.length);
     const [productLength] = useState(
@@ -68,23 +54,7 @@ function Home(){
             }
         }
     );
-    const [services] = useState([
-        {logo: FreeShipping, title: "FREE SHIPPING", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."},
-        {logo: Refund, title: "100% REFUND", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."},
-        {logo: Support, title: "SUPPORT 24/7", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."}
-    ])
-    const [news] = useState([
-        {picture: NikeLogo, date: "01 Jan, 2015", title: "Fashion Industry", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."},
-        {picture: FigmaLogo, date: "01 Jan, 2015", title: "Best Design Tools", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."},
-        {picture: KronosLogo, date: "01 Jan, 2015", title: "HR Community", description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."},
-    ]);
-    const [featured] = useState([
-        {picture: FeaturedShoe, title: "Blue Swade Nike Sneakers", originalPrice: 599, newPrice: 499},
-        {picture: FeaturedShoe, title: "Blue Swade Nike Sneakers", originalPrice: 599, newPrice: 499},
-        {picture: FeaturedShoe, title: "Blue Swade Nike Sneakers", originalPrice: 599, newPrice: 499},
-    ])
-
-        
+ 
     function changeModule(name){
         setLoading(true);
         
@@ -122,13 +92,13 @@ function Home(){
                 </div>
                 <div className="HomePageCards"> 
                     <div>
-                        <PromotionCardONe pic={promotioProducts[0].picture} title={promotioProducts[0].title} originalPrice={promotioProducts[0].originalPrice} discount={promotioProducts[0].discount} currentPrice={priceAfterDiscount(promotioProducts[0].discount, promotioProducts[0].originalPrice).toFixed(2)}/>
+                        <PromotionCardONe pic={products[17].picture} title={products[17].title} originalPrice={products[17].originalPrice} discount={products[17].discount} currentPrice={priceAfterDiscount(products[17].discount, products[17].originalPrice).toFixed(2)}/>
                     </div>
                     <div>
-                        <PromotionCardTwo pic={promotioProducts[1].picture} title={promotioProducts[1].title} originalPrice={promotioProducts[1].originalPrice} discount={promotioProducts[1].discount} currentPrice={priceAfterDiscount(promotioProducts[1].discount, promotioProducts[1].originalPrice).toFixed(2)}/>
+                        <PromotionCardTwo pic={products[5].picture} title={products[5].title} originalPrice={products[5].originalPrice} discount={products[5].discount} currentPrice={priceAfterDiscount(products[5].discount, products[5].originalPrice).toFixed(2)}/>
                     </div>
                     <div>
-                        <PromotionCardThree pic={promotioProducts[2].picture} title={promotioProducts[2].title} originalPrice={promotioProducts[2].originalPrice} discount={promotioProducts[0].discount} currentPrice={priceAfterDiscount(promotioProducts[2].discount, promotioProducts[2].originalPrice).toFixed(2)}/>
+                        <PromotionCardThree pic={products[37].picture} title={products[37].title} originalPrice={products[37].originalPrice} discount={products[37].discount} currentPrice={priceAfterDiscount(products[37].discount, products[37].originalPrice).toFixed(2)}/>
                     </div>
                 </div>
             </div>
@@ -159,7 +129,7 @@ function Home(){
                         })
                         .map((item, index)=> index<allowed ? (
                             <div key={index} className="ProductsCardHolder">
-                                <ProductCards inCart={cart.length !== 0 ? cart.filter((elem)=>(elem.id === item.id)).length === 0 ? false : true : false ? true : false} product={item} pic={item.picture} title={item.title} originalPrice={item.originalPrice} discount={item.discount} currentPrice={priceAfterDiscount(item.discount, item.originalPrice).toFixed(2)}/>
+                                <ProductCards inCart={cart.length ? cart.filter((elem)=>(elem.id === item.id)).length : false} product={item} pic={item.picture} title={item.title} originalPrice={item.originalPrice} discount={item.discount} currentPrice={priceAfterDiscount(item.discount, item.originalPrice).toFixed(2)}/>
                             </div>
                             ) : <></>
                             
