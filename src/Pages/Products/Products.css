@@ -1,0 +1,140 @@
+<<<<<<< Updated upstream
+=======
+.ProductsPage{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
+}
+.ProductsPagesSidebar{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    padding: 5% 0;
+}
+.SidebarBrands{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    background: #F6F7F8;
+    padding: 5%;
+}
+.SidebarBrands>p{
+    font-size: 20px;
+    line-height: 27px;
+    color: #22262A;
+    margin-bottom: 5%;
+    font-weight: 600;
+}
+.SidebarBrandsName{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 3% 0;
+    cursor: pointer;
+}
+.SidebarBrandsName>p{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #262626;
+}
+.SidebarBrandsName.Active>p{
+    color: #33A0FF;
+}
+.ProductsSide{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.AdvertisementSectionLeft{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; 
+}
+.ProductsFilter{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: #F6F7F8;
+    margin: 2% 0;
+    padding: 2% 3%; 
+}
+.ProductsList{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+.ProductCard{
+    width: 32%;
+    margin: 2% 0.5%;
+}
+.ProductCardHorizontal{
+    width: 100%;
+    margin: 2% 0.5%;
+}
+.PriceFilter{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    background: #F6F7F8;
+    margin: 5% 0;
+    padding: 5%;
+}
+.PriceFilter>div{
+    width: 100%;
+}
+.PriceFilter>:nth-child(2){
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5% 0;
+}
+.PriceFilter>p{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    color: #22262A;
+}
+.PriceFilter>div>input{
+    width: 100%;
+}
+.ProductsFilterLeft{
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+}
+.ProductsFilterRight{
+    width: 7%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.ProductsFilterRight>figure{
+    width: 40%;
+    cursor: pointer;
+}
+.ProductsFilterRight>figure>img{
+    width: 100%;
+}
+>>>>>>> Stashed changes
