@@ -79,12 +79,23 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.ProductsList.Rectangular{
+    height: 1300px;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.ProductsList.Line{
+    height: 1600px;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: flex-start;
 }
 .ProductCard{
     width: 32%;
-    margin: 2% 0.5%;
+    margin: 5px 2px;
 }
 .ProductCardHorizontal{
     width: 100%;
@@ -137,7 +148,7 @@
     margin-right: 2%;
 }
 .ProductsFilterLeft>select{
-    width: 126px;
+    width: 200px;
     height: 36px;
     margin-right: 10%;
     border: 2px solid #F1F3F4;
@@ -164,4 +175,36 @@
 }
 .ProductsFilterRight>figure>img{
     width: 100%;
+}
+.ProductsPageNumbers{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: #FAFAFB;
+    margin-bottom: 5%;
+}
+.PaginationPage{
+    width: 62.92px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.PaginationPage.Active{
+    background-color: #40BFFF;
+}
+.ProductsListEmpty{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.ProductsListEmpty>p{
+    font-size: 30px;
+    line-height: 82px;
+    color: #22262A;
+    margin-top: 2%;
 }
