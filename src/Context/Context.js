@@ -5,13 +5,16 @@ export const ContextData = React.createContext();
 function ContextProvider({children}) {
     const [open, setOpen] = useState(null);
     const [cart, setCart] = useState(JSON.parse(localStorage.getItem("data")) ? JSON.parse(localStorage.getItem("data")) : []);
+    const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favorites")) ? JSON.parse(localStorage.getItem("data")) : []);
     const [Clength, setClength] = useState(cart.length);
     const [mode, setMode] = useState("Rectangular");
     const [allowed, setAllowed] = useState(mode === "Rectangular" ? 9 : 4)
       useEffect(() => {
         localStorage.setItem("data", JSON.stringify(cart));
       }, [cart]);
-
+      useEffect(() => {
+        localStorage.setItem("favorites", JSON.stringify(favorites));
+      }, [favorites]);
     function addCart(i) {
       if(cart.length !== 0){
         cart.forEach((item)=>{
@@ -26,6 +29,18 @@ function ContextProvider({children}) {
       }
       
       setClength(cart.length+1);
+    }
+    function addFavorite(i) {
+      if(favorites.length !== 0){
+        favorites.forEach((item)=>{
+          if(i.id !== item.id){
+            setFavorites([...favorites, {...i, quantityInFavorites: 1}]);
+          }else{
+            setFavorites(favorites.filter((elem)=>(elem.id !== i.id)));
+          }
+      })}else{
+        setCart([...favorites, {...i, quantityInFavorites: 1}]);
+      }
     }
     
 
@@ -79,7 +94,7 @@ function ContextProvider({children}) {
       }
 
     return(
-        <ContextData.Provider value={{allowed, mode, changeMode, checkout, calcShipping, calcTotal, delteCartItem, descreaseQuantity, increseQuantity, Clength, priceAfterDiscount, addCart, cart, toggle, open}}>
+        <ContextData.Provider value={{addFavorite, favorites, allowed, mode, changeMode, checkout, calcShipping, calcTotal, delteCartItem, descreaseQuantity, increseQuantity, Clength, priceAfterDiscount, addCart, cart, toggle, open}}>
             {children}
         </ContextData.Provider>
     )

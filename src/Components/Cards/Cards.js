@@ -1,6 +1,7 @@
 import "./Cards.css";
 import CartIcon from "../../assets/icons/CartIcon.svg";
 import LikeIcon from "../../assets/icons/HeartIcon.svg";
+import HeartIconRed from "../../assets/icons/HeartIconRed.svg";
 import CartIconRed from "../../assets/icons/CartIconRed.svg";
 import CartIconBlue from "../../assets/icons/CartIconBlue.svg";
 import HeartIconBlue from "../../assets/icons/HeartIconBlue.svg";
@@ -57,7 +58,7 @@ export function PromotionCardThree(props){
 export function ProductCards(props){
     const navig = useNavigate();
     const {addCart} = useContext(ContextData);
-    const {inCart, product, pic, title, originalPrice, discount, currentPrice} = props;
+    const {addFavorite, inFavorites, inCart, product, pic, title, originalPrice, discount, currentPrice} = props;
     return(
         <div onClick={()=>navig("/products/" + product.id)} className="ProductCards">
             <figure className="ProductCardsFigure">
@@ -68,9 +69,10 @@ export function ProductCards(props){
                             <img src={inCart ? CartIconRed : CartIcon} alt="CartIcon" />
                         </figure>
                     </div>
-                    <div onClick={(event)=>event.stopPropagation()} className="LikeIconHolder">
-                        <figure>
-                            <img src={LikeIcon} alt="LikeIcon" />
+                    <div className="LikeIconHolder">
+                        <figure onClick={()=>addFavorite(product)}>
+                            <img src={inFavorites ? HeartIconRed : LikeIcon} alt="LikeIcon" />
+
                         </figure>
                     </div>
                 </div>
