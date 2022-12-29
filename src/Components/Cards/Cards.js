@@ -57,8 +57,8 @@ export function PromotionCardThree(props){
 } 
 export function ProductCards(props){
     const navig = useNavigate();
-    const {addCart} = useContext(ContextData);
-    const {addFavorite, inFavorites, inCart, product, pic, title, originalPrice, discount, currentPrice} = props;
+    const {addFavorite, addCart} = useContext(ContextData);
+    const {inFavorites, inCart, product, pic, title, originalPrice, discount, currentPrice} = props;
     return(
         <div onClick={()=>navig("/products/" + product.id)} className="ProductCards">
             <figure className="ProductCardsFigure">
@@ -69,7 +69,7 @@ export function ProductCards(props){
                             <img src={inCart ? CartIconRed : CartIcon} alt="CartIcon" />
                         </figure>
                     </div>
-                    <div className="LikeIconHolder">
+                    <div className={inFavorites ? "CartIconHolder Red" : "CartIconHolder"}>
                         <figure onClick={()=>addFavorite(product)}>
                             <img src={inFavorites ? HeartIconRed : LikeIcon} alt="LikeIcon" />
 
@@ -93,8 +93,8 @@ export function ProductCards(props){
 
 export function ProductCardsHorizontal(props){
     const navig = useNavigate();
-    const {addCart} = useContext(ContextData);
-    const {description, inCart, product, pic, title, originalPrice, discount, currentPrice} = props;
+    const {addFavorite, addCart} = useContext(ContextData);
+    const {inFavorites, description, inCart, product, pic, title, originalPrice, discount, currentPrice} = props;
     return(
         <div onClick={()=>navig("/products/" + product.id)} className="ProductCardsHorizontal">
             <figure className="ProductCardsFigureHorizontal">
@@ -123,9 +123,9 @@ export function ProductCardsHorizontal(props){
                         </figure>
                         <p>Add To Cart</p>
                     </div>
-                    <div className="ProductCardsLikeHorizontal">
+                    <div onClick={()=>addFavorite(product)} className="ProductCardsLikeHorizontal">
                         <figure>
-                            <img src={HeartIconBlue} alt="HeartIconBlue" />
+                            <img src={inFavorites ? HeartIconRed : HeartIconBlue} alt="HeartIconBlue" />
                         </figure>
                     </div>
                 </div>

@@ -5,7 +5,7 @@ export const ContextData = React.createContext();
 function ContextProvider({children}) {
     const [open, setOpen] = useState(null);
     const [cart, setCart] = useState(JSON.parse(localStorage.getItem("data")) ? JSON.parse(localStorage.getItem("data")) : []);
-    const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favorites")) ? JSON.parse(localStorage.getItem("data")) : []);
+    const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favorites")) ? JSON.parse(localStorage.getItem("favorites")) : []);
     const [Clength, setClength] = useState(cart.length);
     const [mode, setMode] = useState("Rectangular");
     const [allowed, setAllowed] = useState(mode === "Rectangular" ? 9 : 4)
@@ -39,7 +39,7 @@ function ContextProvider({children}) {
             setFavorites(favorites.filter((elem)=>(elem.id !== i.id)));
           }
       })}else{
-        setCart([...favorites, {...i, quantityInFavorites: 1}]);
+        setFavorites([...favorites, {...i, quantityInFavorites: 1}]);
       }
     }
     
