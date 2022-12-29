@@ -35,8 +35,6 @@ function ContextProvider({children}) {
     function deleteFavorite(i){
       setFavorites(favorites.filter((elem)=>(elem.id !== i.id )));
     }
-    
-
     function toggle(i){
         if(open === i){
           return setOpen(null);

@@ -8,7 +8,6 @@ import HeartIconBlue from "../../assets/icons/HeartIconBlue.svg";
 import { useContext } from "react";
 import { ContextData } from "../../context/Context";
 import { useNavigate } from "react-router-dom";
-
 export function PromotionCardONe(props){
     const navig = useNavigate();
     const {product, pic, title, originalPrice, discount, currentPrice} = props;
@@ -132,8 +131,7 @@ export function ProductCardsHorizontal(props){
             </div>
         </div>
     )
-} 
-
+}
 export function IconCard(props){
     const {picture, title, description} = props;
     return(
