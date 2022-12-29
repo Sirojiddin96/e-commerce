@@ -6,6 +6,7 @@ import CartIconBlue from "../../assets/icons/CartIconBlue.svg";
 import HeartIconBlue from "../../assets/icons/HeartIconBlue.svg";
 import { useContext } from "react";
 import { ContextData } from "../../context/Context";
+import { useNavigate } from "react-router-dom";
 
 export function PromotionCardONe(props){
     const {pic, title, originalPrice, discount, currentPrice} = props;
@@ -51,10 +52,11 @@ export function PromotionCardThree(props){
     )
 } 
 export function ProductCards(props){
+    const navig = useNavigate();
     const {addCart} = useContext(ContextData);
     const {inCart, product, pic, title, originalPrice, discount, currentPrice} = props;
     return(
-        <div className="ProductCards">
+        <div onClick={()=>navig("/products/" + product.id)} className="ProductCards">
             <figure className="ProductCardsFigure">
                 <img src={pic} alt="product" />
                 <div className="ProductCardsHover">

@@ -10,8 +10,6 @@ import RecCardIconGray from "../../assets/icons/RecCardIconGray.svg";
 import LineCardIconGray from "../../assets/icons/LineCardIconGray.svg";
 import RecCardIconBlue from "../../assets/icons/RecCardIconBlue.svg";
 import LineCardIconBlue from "../../assets/icons/LineCardIconBlue.svg";
-
-
 function Products(){
     const [brandID, setBrandID] = useState("All");
     const {allowed, mode, changeMode, cart, priceAfterDiscount} = useContext(ContextData);
