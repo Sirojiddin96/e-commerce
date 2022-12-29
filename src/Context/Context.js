@@ -7,6 +7,7 @@ function ContextProvider({children}) {
     const [cart, setCart] = useState(JSON.parse(localStorage.getItem("data")) ? JSON.parse(localStorage.getItem("data")) : []);
     const [Clength, setClength] = useState(cart.length);
     const [mode, setMode] = useState("Rectangular");
+    const [allowed, setAllowed] = useState(mode === "Rectangular" ? 9 : 4)
       useEffect(() => {
         localStorage.setItem("data", JSON.stringify(cart));
       }, [cart]);
@@ -72,9 +73,13 @@ function ContextProvider({children}) {
         })
         return totalNumber.toFixed(2);
       }
+      function changeMode(modeName){
+        setMode(modeName);
+        setAllowed(modeName === "Rectangular" ? 9 : 4);
+      }
 
     return(
-        <ContextData.Provider value={{mode, setMode, checkout, calcShipping, calcTotal, delteCartItem, descreaseQuantity, increseQuantity, Clength, priceAfterDiscount, addCart, cart, toggle, open}}>
+        <ContextData.Provider value={{allowed, mode, changeMode, checkout, calcShipping, calcTotal, delteCartItem, descreaseQuantity, increseQuantity, Clength, priceAfterDiscount, addCart, cart, toggle, open}}>
             {children}
         </ContextData.Provider>
     )

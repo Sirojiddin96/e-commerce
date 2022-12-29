@@ -17,7 +17,7 @@ import GreenGlasses from "../assets/images/GreenGlasses.jpeg";
 import NikeAir from "../assets/images/NikeAir.svg";
 import FeaturedShoe from "../assets/images/FeaturedShoe.svg";
 
-export const products=[
+export const products = [
   {"id": 0, "categoryId": 1002, "category": "Sneakers", "picture": ColorfulSneakers, "title": "Colorful Sneakers", "originalPrice": 451.33, "discount": 24, "shippingFee": 5, "brand": "Nike", "decription": "Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lectus lorem nunc leifend laorevtr istique et congue. Vivamus adipiscin vulputate g nisl ut dolor ..."},
   {"id": 1, "categoryId": 1001, "category": "Sneakers", "picture": ColorfulSneakers, "title": "Colorful Sneakers", "originalPrice": 651.33, "discount": 24, "shippingFee": 5, "brand": "Airmax","decription": "Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lectus lorem nunc leifend laorevtr istique et congue. Vivamus adipiscin vulputate g nisl ut dolor ..."},
   {"id": 2, "categoryId": 1003, "category": "Bags", "picture": RedBag, "title": "Red Bag", "originalPrice": 123.33, "discount": 24, "shippingFee": 5, "brand": "Vans", "decription": "Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lectus lorem nunc leifend laorevtr istique et congue. Vivamus adipiscin vulputate g nisl ut dolor ..."},

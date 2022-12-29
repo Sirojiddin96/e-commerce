@@ -136,6 +136,7 @@
     justify-content: flex-start;
     border: 3px solid #F6F7F8;
     position: relative;
+    cursor: pointer;
 }
 
 .ProductCardsFigure{

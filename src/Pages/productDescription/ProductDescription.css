@@ -1,0 +1,8 @@
+.ProductDescriptionPage{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.ProductCardHolder{
+    width: 20%;
+}
