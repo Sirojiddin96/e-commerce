@@ -23,7 +23,7 @@ function Cart(){
                             </tr> :
                             cart.map((item, index)=>(
                                 <tr key={index}>
-                                    <td className="CartProductFistPart"><button onClick={()=>delteCartItem(item)}>X</button> <figure><img src={item.picture} alt="product" /></figure> <p>{item.title}</p></td>
+                                    <td className="CartProductFistPart"><button onClick={()=>delteCartItem(item)}>X</button> <figure><img src={item.picture[0]} alt="product" /></figure> <p>{item.title}</p></td>
                                     <td className="CartProductTotal">${(item.quantityInCart*priceAfterDiscount(item.discount, item.originalPrice)).toFixed(2)}</td>
                                     <td className="CartProductQuantity">
                                         <div className="CartProductQuantityDiv">

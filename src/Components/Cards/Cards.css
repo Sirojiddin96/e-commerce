@@ -24,6 +24,7 @@
 }
 .PromotionCardONeTitle{
     width: 60%;
+    margin-top: 2%;
 }
 .PromotionCardONeTitle>p, .promotionCardThreeTitle>p{
     font-weight: 700;
@@ -38,7 +39,7 @@
     line-height: 150%;
     letter-spacing: 0.5px;
     color: #9098B1;
-    margin-top: 185px;
+    margin-top: 210px;
 }
 .promotionCardOne>:nth-child(3)>span, .promotionCardTwoPrice>p>span, .promotionCardThree>p>span{
     font-weight: 700;
@@ -124,7 +125,7 @@
     line-height: 180%;
     letter-spacing: 0.5px;
     color: #40BFFF;
-    margin-top: 180px;
+    margin-top: 210px;
 }
 .ProductCards{
     overflow: hidden;
