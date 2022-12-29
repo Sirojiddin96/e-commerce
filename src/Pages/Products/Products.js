@@ -58,7 +58,6 @@ function Products(){
         }else if(brandID === sort[i].categoryId && priceAfterDiscount(sort[i].discount, sort[i].originalPrice) < value){
             listFilter.push(sort[i]);
         }
-        
     }
     return(
         <div className="ProductsPage">
