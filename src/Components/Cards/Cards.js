@@ -63,15 +63,16 @@ export function ProductCards(props){
         <div onClick={()=>navig("/products/" + product.id)} className="ProductCards">
             <figure className="ProductCardsFigure">
                 <img src={pic} alt="product" />
-                <div className="ProductCardsHover">
-                    <div className={inCart ? "CartIconHolder Red" : "CartIconHolder"}>
-                        <figure onClick={()=>addCart(product)}>
+                <div onClick={(event)=>event.stopPropagation()} className="ProductCardsHover">
+                    <div onClick={(event)=>event.stopPropagation()} className={inCart ? "CartIconHolder Red" : "CartIconHolder"}>
+                        <figure  onClick={()=>addCart(product)}>
                             <img src={inCart ? CartIconRed : CartIcon} alt="CartIcon" />
                         </figure>
                     </div>
                     <div className="LikeIconHolder">
                         <figure onClick={()=>addFavorite(product)}>
                             <img src={inFavorites ? HeartIconRed : LikeIcon} alt="LikeIcon" />
+
                         </figure>
                     </div>
                 </div>
