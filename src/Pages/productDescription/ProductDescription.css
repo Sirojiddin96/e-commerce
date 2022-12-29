@@ -1,8 +1,135 @@
 .ProductDescriptionPage{
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 2% 5%;
+}
+.ProductDescriptionPageLeft{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-.ProductCardHolder{
-    width: 20%;
+.ProductDescriptionPageLeft>figure{
+    width: 375px;
+    height: 271.68px;
+}
+.ProductDescriptionPageLeft>figure>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.ProductDescriptionPictures{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 10% 2% 10% 2%;
+}
+.ProductDescriptionPicturesFigure.Active{
+    border: 3px solid rgb(136, 237, 255);
+}
+.ProductDescriptionPicturesFigure{
+    width: 85.62px;
+    height: 85.15px;
+    margin: 0 1%;
+    cursor: pointer;
+}
+.ProductDescriptionPicturesFigure>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.ProductDescriptionPageRight{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2%;
+}
+.ProductDescriptionTitle, .ProductDescriptionReview{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+.ProductDescriptionBottom{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.ProductDescriptionPageRight>:nth-child(1)>p{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    color: #22262A;
+}
+.ProductDescriptionReview{
+    padding: 4% 0 2%;
+    border-bottom: #F6F7F8 2px solid;
+}
+.ProductDescriptionReview>:nth-child(2){
+    font-weight: 400;
+    font-size: 16px;
+    color: #C1C8CE;
+    margin: 0 3%;
+}
+.ProductDescriptionReview>:nth-child(3){
+    font-weight: 400;
+    font-size: 16px;
+    color: #33A0FF;
+    cursor: pointer;
+}
+.ProductDescriptionPrice{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 2% 0;
+}
+.ProductDescriptionPrice>:nth-child(1){
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    color: #40BFFF;
+}
+.ProductDescriptionPrice>:nth-child(2){
+    padding-top: 0.5%;
+    width: 50%;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    color: #9098B1;
+    margin: 0 2%;
+}
+.ProductDescriptionPrice>:nth-child(2)>span{
+    font-weight: 700;
+    font-size: 14px;
+    color: #FB7181;
+    margin: 0 2%;
+}
+.Availability, .Category, .Shipping{
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 0.5% 0;
+}
+.Availability>p, .Category>p, .Shipping>p{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #262626;
+}
+.ProductCardsActionHorizontal{
+    margin-top: 10%;
 }

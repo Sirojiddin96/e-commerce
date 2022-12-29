@@ -9,7 +9,10 @@ import Contact from "../pages/Contact/Contact";
 import Search from "../pages/Search/Search";
 import {products} from "../data/products";
 import ProductDescription from "../pages/productDescription/ProductDescription";
+import { useContext } from "react";
+import { ContextData } from "../context/Context";
 function Routers(){
+    const {cart} = useContext(ContextData);
     return(
         <Routes>
             <Route path="/" element={<Home/>}/>
@@ -21,7 +24,7 @@ function Routers(){
             <Route path="/contact" element={<Contact/>}/>
             {
                 products.map((item)=>(
-                    <Route path={"/products/"+item.id} element={<ProductDescription item={item}/>}/>
+                    <Route path={"/products/"+item.id} element={<ProductDescription item={item} inCart={cart.length ? cart.filter((elem)=>(elem.id === item.id)).length : false}/>}/>
                 ))
             }
         </Routes>

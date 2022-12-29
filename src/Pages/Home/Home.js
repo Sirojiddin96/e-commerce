@@ -92,13 +92,13 @@ function Home(){
                 </div>
                 <div className="HomePageCards"> 
                     <div>
-                        <PromotionCardONe pic={products[17].picture} title={products[17].title} originalPrice={products[17].originalPrice} discount={products[17].discount} currentPrice={priceAfterDiscount(products[17].discount, products[17].originalPrice).toFixed(2)}/>
+                        <PromotionCardONe product={products[17]} pic={products[17].picture[0]} title={products[17].title} originalPrice={products[17].originalPrice} discount={products[17].discount} currentPrice={priceAfterDiscount(products[17].discount, products[17].originalPrice).toFixed(2)}/>
                     </div>
                     <div>
-                        <PromotionCardTwo pic={products[5].picture} title={products[5].title} originalPrice={products[5].originalPrice} discount={products[5].discount} currentPrice={priceAfterDiscount(products[5].discount, products[5].originalPrice).toFixed(2)}/>
+                        <PromotionCardTwo product={products[5]} pic={products[5].picture[0]} title={products[5].title} originalPrice={products[5].originalPrice} discount={products[5].discount} currentPrice={priceAfterDiscount(products[5].discount, products[5].originalPrice).toFixed(2)}/>
                     </div>
                     <div>
-                        <PromotionCardThree pic={products[37].picture} title={products[37].title} originalPrice={products[37].originalPrice} discount={products[37].discount} currentPrice={priceAfterDiscount(products[37].discount, products[37].originalPrice).toFixed(2)}/>
+                        <PromotionCardThree product={products[37]} pic={products[37].picture[0]} title={products[37].title} originalPrice={products[37].originalPrice} discount={products[37].discount} currentPrice={priceAfterDiscount(products[37].discount, products[37].originalPrice).toFixed(2)}/>
                     </div>
                 </div>
             </div>
@@ -129,7 +129,7 @@ function Home(){
                         })
                         .map((item, index)=> index<allowed ? (
                             <div key={index} className="ProductsCardHolder">
-                                <ProductCards inCart={cart.length ? cart.filter((elem)=>(elem.id === item.id)).length : false} product={item} pic={item.picture} title={item.title} originalPrice={item.originalPrice} discount={item.discount} currentPrice={priceAfterDiscount(item.discount, item.originalPrice).toFixed(2)}/>
+                                <ProductCards inCart={cart.length ? cart.filter((elem)=>(elem.id === item.id)).length : false} product={item} pic={item.picture[0]} title={item.title} originalPrice={item.originalPrice} discount={item.discount} currentPrice={priceAfterDiscount(item.discount, item.originalPrice).toFixed(2)}/>
                             </div>
                             ) : <></>
                             

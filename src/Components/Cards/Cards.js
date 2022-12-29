@@ -9,9 +9,10 @@ import { ContextData } from "../../context/Context";
 import { useNavigate } from "react-router-dom";
 
 export function PromotionCardONe(props){
-    const {pic, title, originalPrice, discount, currentPrice} = props;
+    const navig = useNavigate();
+    const {product, pic, title, originalPrice, discount, currentPrice} = props;
     return(
-        <div className="promotionCardOne">
+        <div onClick={()=>navig("/products/" + product.id)} className="promotionCardOne">
             <figure>
                 <img src={pic} alt="product" />
             </figure>
@@ -22,9 +23,10 @@ export function PromotionCardONe(props){
     )
 } 
 export function PromotionCardTwo(props){
-    const {pic, title, originalPrice, discount, currentPrice} = props;
+    const navig = useNavigate();
+    const {product, pic, title, originalPrice, discount, currentPrice} = props;
     return(
-        <div className="promotionCardTwo">
+        <div onClick={()=>navig("/products/" + product.id)} className="promotionCardTwo">
             <figure>
                 <img src={pic} alt="product" />
             </figure>
@@ -37,9 +39,10 @@ export function PromotionCardTwo(props){
     )
 } 
 export function PromotionCardThree(props){
-    const {pic, title, originalPrice, discount, currentPrice} = props;
+    const navig = useNavigate();
+    const {product, pic, title, originalPrice, discount, currentPrice} = props;
     return(
-        <div className="promotionCardThree">
+        <div onClick={()=>navig("/products/" + product.id)} className="promotionCardThree">
             <figure>
                 <img src={pic} alt="product" />
             </figure>
@@ -87,10 +90,11 @@ export function ProductCards(props){
 } 
 
 export function ProductCardsHorizontal(props){
+    const navig = useNavigate();
     const {addCart} = useContext(ContextData);
     const {description, inCart, product, pic, title, originalPrice, discount, currentPrice} = props;
     return(
-        <div className="ProductCardsHorizontal">
+        <div onClick={()=>navig("/products/" + product.id)} className="ProductCardsHorizontal">
             <figure className="ProductCardsFigureHorizontal">
                 <img src={pic} alt="product" />
             </figure>

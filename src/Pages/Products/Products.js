@@ -124,15 +124,14 @@ function Products(){
                     {   listFilter.length !== 0 ? 
                         listFilter.slice((page-1)*allowed,allowed*page).map((item, index)=>(mode === "Rectangular" ?
                         <div key={index} className="ProductCard">
-                            <ProductCards inCart={cart.length ? cart.filter((elem)=>(elem.id === item.id)).length : false} product={item} pic={item.picture} title={item.title} originalPrice={item.originalPrice} discount={item.discount} currentPrice={priceAfterDiscount(item.discount, item.originalPrice).toFixed(2)}/>
+                            <ProductCards inCart={cart.length ? cart.filter((elem)=>(elem.id === item.id)).length : false} product={item} pic={item.picture[0]} title={item.title} originalPrice={item.originalPrice} discount={item.discount} currentPrice={priceAfterDiscount(item.discount, item.originalPrice).toFixed(2)}/>
                         </div> :
                         <div key={index} className="ProductCardHorizontal">
-                            <ProductCardsHorizontal description={item.decription} inCart={cart.length ? cart.filter((elem)=>(elem.id === item.id)).length : false} product={item} pic={item.picture} title={item.title} originalPrice={item.originalPrice} discount={item.discount} currentPrice={priceAfterDiscount(item.discount, item.originalPrice).toFixed(2)}/>
+                            <ProductCardsHorizontal description={item.decription} inCart={cart.length ? cart.filter((elem)=>(elem.id === item.id)).length : false} product={item} pic={item.picture[0]} title={item.title} originalPrice={item.originalPrice} discount={item.discount} currentPrice={priceAfterDiscount(item.discount, item.originalPrice).toFixed(2)}/>
                         </div> )) : 
                         <div className="ProductsListEmpty">
                             <p>There is no product</p>
-                        </div>
-                         
+                        </div>    
                     }
                </div>
                <div className="ProductsPageNumbers">

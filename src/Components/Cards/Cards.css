@@ -354,6 +354,7 @@
     align-items: center;
     justify-content: space-between;
     border-bottom: #F6F7F8 solid 3px;
+    cursor: pointer;
 }
 .ProductCardsFigureHorizontal{
     width: 299.5px;
