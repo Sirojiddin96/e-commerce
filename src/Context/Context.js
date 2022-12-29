@@ -20,7 +20,6 @@ function ContextProvider({children}) {
         cart.forEach((item)=>{
           if(i.id !== item.id){
             setCart([...cart, {...i, quantityInCart: 1}]);
-            console.log("Added to cart")
           }else{
             alert("You have already added this item");
           }
@@ -31,16 +30,10 @@ function ContextProvider({children}) {
       setClength(cart.length+1);
     }
     function addFavorite(i) {
-      if(favorites.length !== 0){
-        favorites.forEach((item)=>{
-          if(i.id !== item.id){
             setFavorites([...favorites, {...i, quantityInFavorites: 1}]);
-          }else{
-            setFavorites(favorites.filter((elem)=>(elem.id !== i.id)));
-          }
-      })}else{
-        setFavorites([...favorites, {...i, quantityInFavorites: 1}]);
-      }
+        }
+    function deleteFavorite(i){
+      setFavorites(favorites.filter((elem)=>(elem.id !== i.id )));
     }
     
 
@@ -94,7 +87,7 @@ function ContextProvider({children}) {
       }
 
     return(
-        <ContextData.Provider value={{addFavorite, favorites, allowed, mode, changeMode, checkout, calcShipping, calcTotal, delteCartItem, descreaseQuantity, increseQuantity, Clength, priceAfterDiscount, addCart, cart, toggle, open}}>
+        <ContextData.Provider value={{deleteFavorite, addFavorite, favorites, allowed, mode, changeMode, checkout, calcShipping, calcTotal, delteCartItem, descreaseQuantity, increseQuantity, Clength, priceAfterDiscount, addCart, cart, toggle, open}}>
             {children}
         </ContextData.Provider>
     )
