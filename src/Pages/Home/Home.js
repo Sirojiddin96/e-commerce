@@ -8,7 +8,7 @@ import { services } from "../../data/services";
 import {AdvertisementSection} from "../../containers/AdvertisementSection";
 import { ContextData } from "../../context/Context";
 function Home(){
-    const {cart, priceAfterDiscount} = useContext(ContextData);
+    const {favorites, cart, priceAfterDiscount} = useContext(ContextData);
     const [module,setModule] = useState("All");
     const [allowed, setAllowed] = useState(8);
     const [loading, setLoading] = useState(false);
@@ -129,7 +129,7 @@ function Home(){
                         })
                         .map((item, index)=> index<allowed ? (
                             <div key={index} className="ProductsCardHolder">
-                                <ProductCards inCart={cart.length ? cart.filter((elem)=>(elem.id === item.id)).length : false} product={item} pic={item.picture[0]} title={item.title} originalPrice={item.originalPrice} discount={item.discount} currentPrice={priceAfterDiscount(item.discount, item.originalPrice).toFixed(2)}/>
+                                <ProductCards inFavorites={favorites.length ? favorites.filter((elem)=>(elem.id === item.id)).length : false} inCart={cart.length ? cart.filter((elem)=>(elem.id === item.id)).length : false} product={item} pic={item.picture[0]} title={item.title} originalPrice={item.originalPrice} discount={item.discount} currentPrice={priceAfterDiscount(item.discount, item.originalPrice).toFixed(2)}/>
                             </div>
                             ) : <></>
                             
