@@ -8,7 +8,6 @@ import HeartIconBlue from "../../assets/icons/HeartIconBlue.svg";
 import { useContext } from "react";
 import { ContextData } from "../../context/Context";
 import { useNavigate } from "react-router-dom";
-
 export function PromotionCardONe(props){
     const navig = useNavigate();
     const {product, pic, title, originalPrice, discount, currentPrice} = props;
@@ -57,8 +56,8 @@ export function PromotionCardThree(props){
 } 
 export function ProductCards(props){
     const navig = useNavigate();
-    const {addFavorite, addCart} = useContext(ContextData);
-    const {inFavorites, inCart, product, pic, title, originalPrice, discount, currentPrice} = props;
+    const {deleteFavorite, addFavorite, addCart} = useContext(ContextData);
+    const { inFavorites, inCart, product, pic, title, originalPrice, discount, currentPrice} = props;
     return(
         <div onClick={()=>navig("/products/" + product.id)} className="ProductCards">
             <figure className="ProductCardsFigure">
@@ -70,7 +69,7 @@ export function ProductCards(props){
                         </figure>
                     </div>
                     <div className={inFavorites ? "CartIconHolder Red" : "CartIconHolder"}>
-                        <figure onClick={()=>addFavorite(product)}>
+                        <figure onClick={()=>inFavorites ? deleteFavorite(product) : addFavorite(product)}>
                             <img src={inFavorites ? HeartIconRed : LikeIcon} alt="LikeIcon" />
 
                         </figure>
@@ -93,7 +92,7 @@ export function ProductCards(props){
 
 export function ProductCardsHorizontal(props){
     const navig = useNavigate();
-    const {addFavorite, addCart} = useContext(ContextData);
+    const {deleteFavorite, addFavorite, addCart} = useContext(ContextData);
     const {inFavorites, description, inCart, product, pic, title, originalPrice, discount, currentPrice} = props;
     return(
         <div onClick={()=>navig("/products/" + product.id)} className="ProductCardsHorizontal">
@@ -123,7 +122,7 @@ export function ProductCardsHorizontal(props){
                         </figure>
                         <p>Add To Cart</p>
                     </div>
-                    <div onClick={()=>addFavorite(product)} className="ProductCardsLikeHorizontal">
+                    <div onClick={()=>inFavorites ? deleteFavorite(product) : addFavorite(product)} className="ProductCardsLikeHorizontal">
                         <figure>
                             <img src={inFavorites ? HeartIconRed : HeartIconBlue} alt="HeartIconBlue" />
                         </figure>
@@ -132,8 +131,7 @@ export function ProductCardsHorizontal(props){
             </div>
         </div>
     )
-} 
-
+}
 export function IconCard(props){
     const {picture, title, description} = props;
     return(
