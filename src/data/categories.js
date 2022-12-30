@@ -21,3 +21,26 @@ export const brands = [
     name: "Ray-Ban"
   }
 ]
+
+export const lists=[
+  {
+    id: 1,
+    name: "All",
+  },
+  {
+    id: 2,
+    name: "Bags",
+  },
+  {
+    id: 3,
+    name: "Sneakers",
+  },
+  {
+    id: 4,
+    name: "Belt",
+  },
+  {
+    id: 5,
+    name: "Sunglasses",
+  }
+]
