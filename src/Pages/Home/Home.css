@@ -1,11 +1,11 @@
-.HomePage{
+.home-page{
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
 }
-.HomePageSection1{
+.home-section{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -14,7 +14,7 @@
     position: relative;
     padding: 18% 90px 5% 90px;
 }
-.HomePageSection1>figure{
+.home-section>figure{
     width: 100%;
     position: absolute;
     top: 0;
@@ -22,14 +22,14 @@
     z-index: -1;
 
 }
-.HomePageSection1>figure>img{
+.home-section>figure>img{
     width: 100%;
     object-fit: cover;
 }
-.HomePageTitle{
+.banner-title{
     width: 50%;
 }
-.HomePageTitle>p{
+.banner-title>p{
     font-weight: 700;
     font-size: 64px;
     line-height: 150%;
@@ -37,41 +37,26 @@
     color: #FFFFFF;
     margin-bottom: 110px;
 }
-.HomePageCards{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-.HomePageCards>div{
-    margin: 0 -0.1%;
-    width: 33.3%;
-    transition: all 3s ease-in;
-}
-.HomePageCards>div>:hover{
-    transform: scale(1.1);
-}
-.HomePageSection2{
+.best-seller-area{
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
 }
-.HomePageSection2Title{
+.best-seller-title{
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.HomePageSection2Title>p{
+.best-seller-title>p{
     font-weight: 600;
     font-size: 35px;
     line-height: 52px;
     color: #22262A;
 }
-.HomePageSection2Modules{
+.best-seller-section{
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -96,7 +81,7 @@
 .module.active>p{
     color: #33A0FF;
 }
-.HomePageSection2ProductCards{
+.product-lists{
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -106,37 +91,37 @@
     transition: all 1s ease-in;
     overflow: hidden;
 }
-.ProductsCardHolder{
+.products{
     width: 23%;
     margin: 1%;
 }
-.LoadMoreDiv{
+.load-more-products{
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 2% 0;
 }
-.LoadMoreDiv>div{
+.load-more-products>div{
     border-bottom: 3px solid  #33A0FF;
     cursor: pointer;
 }
-.LoadMoreDiv>div>p{
+.load-more-products>div>p{
     font-size: 20px;
     line-height: 30px;
     color: #33A0FF;
 }
-.LoadMoreDiv>div>:active{
+.load-more-products>div>:active{
     color: #151515;
 }
-.HomePagesSection3{
+.advertising-section{
     width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between; 
 }
-.HomePagesSection4{
+.service-section{
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -147,26 +132,26 @@
 .ServicesCardHolder{
     width: 30%;
 }
-.HomePagesSection5, .HomePagesSection6{
+.news-section, .featured-products{
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
 }
-.HomePagesSection5Title, .HomePagesSection6Title{
+.news-title, .featured-title{
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.HomePagesSection5Title>p, .HomePagesSection6Title>p{
+.news-title>p, .featured-title>p{
     font-weight: 600;
     font-size: 34px;
     line-height: 51px;
     color: #22262A;
 }
-.HomePagesSection5Cards, .FeaturedProductsCards{
+.common-card{
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -174,17 +159,17 @@
     justify-content: space-between;
     padding: 5%;
 }
-.NewsCardHolder, .FeaturedProductsCardHolder{
+.new-card, .feature-card{
     width: 33%;
 }
-.HomePageSection2ProductCardsLoading{
+.is-loading{
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 270px;
 }
-.HomePageSection2ProductCardsLoading>p{
+.is-loading>p{
     font-weight: 600;
     font-size: 34px;
     line-height: 51px;
