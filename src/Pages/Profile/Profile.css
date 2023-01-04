@@ -1,0 +1,171 @@
+.ProfilePage{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.LoginHolder{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    margin: 2% 0;
+    padding: 10%;
+    border-radius: 20px;
+}
+.LoginHolder>:nth-child(1){
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: 0.5px;
+    color: #223263;
+}
+.LoginHolder>:nth-child(2){
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 180%;
+    text-align: center;
+    letter-spacing: 0.5px;
+    color: #9098B1;
+}
+.SigninForm{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5% 0;
+}
+.SigninForm>input{
+    width: 100%;
+    height: 60px;
+    margin: 1% 0;
+    padding: 2%;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 180%;
+    letter-spacing: 0.5px;
+    color: #5d616c;
+    border-radius: 5px;
+    border: #b0b5c3 solid 1px;
+}
+.SigninForm>input::placeholder{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 180%;
+    letter-spacing: 0.5px;
+    color: #9098B1;
+}
+.SigninForm>button{
+    width: 100%;
+    height: 60px;
+    background: #40BFFF;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 180%;
+    text-align: center;
+    letter-spacing: 0.5px;
+    color: #FFFFFF;
+    margin-top: 3%;
+    cursor: pointer;
+}
+.OrDevision{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5%;
+}
+.OrDevision>hr{
+    width: 43%; 
+}
+.OrDevision>p{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0.005em;
+    color: #9098B1;
+}
+.LoginWithGoogle, .LoginWithFacebook{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    margin: 0 2%;
+    align-items: center;
+    justify-content: flex-start;
+    border: 1px solid #E5E5E5;
+    padding: 0 10%;
+    cursor: pointer;
+    margin: 2% 0;
+}
+.LoginWithGoogle>figure{
+    width: 5%;
+    margin-right: 5%;
+}
+.LoginWithFacebook>figure{
+    width: 3%;
+    margin-right: 5%;
+}
+.LoginWithGoogle>figure>img, .LoginWithFacebook>figure>img{
+    width: 100%;
+}
+.LoginWithGoogle>p {
+    width: 95%;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 180%;
+    text-align: center;
+    letter-spacing: 0.5px;
+    color: #9098B1;
+}
+.LoginWithFacebook>p{
+    width: 97%;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 180%;
+    text-align: center;
+    letter-spacing: 0.5px;
+    color: #9098B1;
+}
+.CannotLog{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+}
+.CannotLog>:nth-child(1){
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: 0.5px;
+    color: #40BFFF;
+    cursor: pointer;
+}
+.CannotLog>:nth-child(2){
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: 0.5px;
+    color: #9098B1;
+    margin-top: 3%;
+}
+.CannotLog>:nth-child(2)>span{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: 0.5px;
+    color: #40BFFF;
+    cursor: pointer;
+}
