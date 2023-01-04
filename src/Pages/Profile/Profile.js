@@ -2,10 +2,8 @@ import "./Profile.css";
 import GoogleIcon from "../../assets/icons/GoogleIcon.svg";
 import FacebookIcon from "../../assets/icons/FacebookIcon.svg";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 function Profile(){
-    const navig = useNavigate();
     const [user, setUser] = useState({
         email: "",
         password: ""
