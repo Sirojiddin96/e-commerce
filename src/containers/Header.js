@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import Accordion from "../components/Accordion/Accordion";
 import { useContext, useState } from "react";
 import { ContextData } from "../context/Context";
-
 import ProfilePicture from "../assets/icons/ProfilePicture.svg";
 import CartIcon from "../assets/icons/Cart.svg";
 import Ellipse from "../assets/icons/Ellipse.svg";
@@ -70,7 +69,6 @@ function Header(){
                         </figure>
                     </div>
                     </NavLink>
-
                 </div>
             </div>
             <div className="links">
@@ -83,9 +81,6 @@ function Header(){
                         </li>
                         <li>
                             <NavLink className="NavLink list" to="/products">PRODUCTS</NavLink>
-                        </li>
-                        <li>
-                            <NavLink className="NavLink list" to="/contact">CONTACT</NavLink>
                         </li>
                     </ul>
                     

@@ -8,6 +8,8 @@ import HeartIconBlue from "../../assets/icons/HeartIconBlue.svg";
 import { useContext } from "react";
 import { ContextData } from "../../context/Context";
 import { useNavigate } from "react-router-dom";
+import XButton from "../../assets/icons/XButton.png";
+import EditingButton from "../../assets/icons/EditingButton.png";
 export function PromotionCardONe(props){
     const navig = useNavigate();
     const {product, pic, title, originalPrice, discount, currentPrice} = props;
@@ -115,8 +117,8 @@ export function ProductCardsHorizontal(props){
                 <div className="ProductCardsDescriptionHorizontal">
                     <p>{description}</p>
                 </div>
-                <div className="ProductCardsActionHorizontal">
-                    <div onClick={()=>addCart(product)} className="ProductCardsCartHorizontal">
+                <div onClick={(event)=>event.stopPropagation()} className="ProductCardsActionHorizontal">
+                    <div  onClick={()=>addCart(product)} className="ProductCardsCartHorizontal">
                         <figure>
                             <img src={inCart ? CartIconRed : CartIconBlue} alt="CartIconRed" />
                         </figure>
@@ -174,3 +176,37 @@ export function HorizontalProductCard(props){
         </div>
     )
 }
+export function AdminProductCards(props){
+    const navig = useNavigate();
+    const {editItem, AdminDeleteProduct} = useContext(ContextData);
+    const {product, pic, title, originalPrice, discount, currentPrice} = props;
+    return(
+        <div className="AdminProductCards">
+            <figure className="AdminProductCardsFigure">
+                <img src={pic} alt="product" />
+                <div className="AdminProductCardsHover">
+                    <div className="AdminCartIconHolder">
+                        <figure  onClick={()=>AdminDeleteProduct(product)}>
+                            <img src={XButton} alt="XButton" />
+                        </figure>
+                    </div>
+                    <div  className="AdminCartIconHolder">
+                        <figure onClick={()=>editItem(product)}>
+                            <img src={EditingButton} alt="LikeIcon" />
+                        </figure>
+                    </div>
+                </div>
+            </figure>
+            <div className="ProductCardsTitle">
+                <p>{title}</p>
+            </div>
+            <div className="ProductCardsRating">
+                <p>Rating</p>
+            </div>
+            <div className="ProductCardsCurrentPrice">
+                <p>${currentPrice}</p>
+                <p><del>${originalPrice}</del><span>{discount}% Off</span></p>
+            </div>
+        </div>
+    )
+} 

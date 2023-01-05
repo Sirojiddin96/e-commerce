@@ -2,8 +2,13 @@ import "./Profile.css";
 import GoogleIcon from "../../assets/icons/GoogleIcon.svg";
 import FacebookIcon from "../../assets/icons/FacebookIcon.svg";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { ContextData } from "../../context/Context";
 
 function Profile(){
+    const {setAdminlog} = useContext(ContextData);
+    const nav = useNavigate();
     const [user, setUser] = useState({
         email: "",
         password: ""
@@ -15,7 +20,8 @@ function Profile(){
     function SubmitHandler(e){
         e.preventDefault();
         if(user.email === "admin@gmail.com" && user.password === "123456789"){
-            window.location = "https://rdfukjhfdzxcvtbynumioiiuytewerrttuyui.netlify.app/";
+            nav("/uhgjobiejfoprfrtyuiyuowiw[wpriirqrr]p[fewfdkfjdlgja");
+            setAdminlog(true);
         }else{
             alert("Incorrect");
         }

@@ -81,6 +81,21 @@
 .module.active>p{
     color: #33A0FF;
 }
+.HomePageCards{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.HomePageCards>div{
+    margin: 0 -0.1%;
+    width: 33.3%;
+    transition: all 3s ease-in;
+}
+.HomePageCards>div>:hover{
+    transform: scale(1.1);
+}
 .product-lists{
     width: 100%;
     display: flex;

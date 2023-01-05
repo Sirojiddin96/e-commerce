@@ -1,0 +1,73 @@
+.Adminpanel{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: #f3f2f2;
+    min-height: 90vh;
+}
+.AdminpanelPage{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.SidebarAdmin{
+    width: 30%;
+    max-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10% 0;
+}
+.AdminpanelTop{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2% 5%;
+    background-color: #ffffff;
+    border-radius: 0 0 30px 30px;
+}
+.AdminProfile{
+    width: 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.AdminProfile>figure{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.AdminProfile>figure>img{
+    width: 100%;
+    height: 100%;
+}
+.AdminProfile>p{
+    font-size: 20px;
+}
+.SidebarAdmin{
+    width: 30%;
+}
+.AdminpanelTop>button{
+    background-color: #2F80ED;
+    border: none;
+    padding: 1% 2%;
+    color: aliceblue;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 20px;
+}
+.AdminpanelWorkingPage{
+    width: 65%;
+    background: #ffffff;
+    min-height: 70vh;
+    margin: 3% 0;
+    border-radius: 15px;
+}
