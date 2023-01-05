@@ -5,10 +5,11 @@ import "./ProductDescription.css";
 import CartIconRed from "../../assets/icons/CartIconRed.svg";
 import CartIconBlue from "../../assets/icons/CartIconBlue.svg";
 import HeartIconBlue from "../../assets/icons/HeartIconBlue.svg";
+import HeartIconRed from "../../assets/icons/HeartIconRed.svg";
 const ProductDescription = (props) =>{
-    const {item, inCart} = props;
+    const {item, inCart, inFavorites} = props;
     const [selected, setSelected] = useState(0);
-    const {priceAfterDiscount, addCart} = useContext(ContextData);
+    const {addFavorite, deleteFavorite, priceAfterDiscount, addCart} = useContext(ContextData);
     return(
         <div className="ProductDescriptionPage">
            <div className="ProductDescriptionPageLeft">
@@ -58,9 +59,9 @@ const ProductDescription = (props) =>{
                             </figure>
                             <p>Add To Cart</p>
                         </div>
-                        <div className="ProductCardsLikeHorizontal">
+                        <div  onClick={()=>inFavorites ? deleteFavorite(item) : addFavorite(item)} className="ProductCardsLikeHorizontal">
                             <figure>
-                                <img src={HeartIconBlue} alt="HeartIconBlue" />
+                                <img src={inFavorites ? HeartIconRed : HeartIconBlue} alt="HeartIconBlue" />
                             </figure>
                         </div>
                         </div>

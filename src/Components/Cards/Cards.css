@@ -24,7 +24,7 @@
 }
 .PromotionCardONeTitle{
     width: 60%;
-    margin-top: 2%;
+    margin-top: 5%;
 }
 .PromotionCardONeTitle>p, .promotionCardThreeTitle>p{
     font-weight: 700;
@@ -32,6 +32,7 @@
     line-height: 150%;
     letter-spacing: 0.5px;
     color: #223263;
+    margin-top: 2%;
 }
 .promotionCardOne>:nth-child(3){
     font-weight: 400;
@@ -499,4 +500,106 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.AdminProductCards{
+    overflow: hidden;
+    width: 100%;
+    height: 385px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border: 3px solid #F6F7F8;
+    position: relative;
+    cursor: pointer;
+}
+.AdminProductCardsFigure{
+    width: 100%;
+    height: 70%;
+    position: relative;
+    cursor: pointer;
+}
+.AdminProductCardsFigure>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.AdminProductCardsTitle{
+    width: 100%;
+    text-align: center;
+    margin-top: 7%;
+}
+.AdminProductCardsTitle>p{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.5px;
+    color: #223263;
+}
+.AdminProductCardsCurrentPrice{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 14%;
+}
+.AdminProductCardsCurrentPrice>:nth-child(1){
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 180%;
+    letter-spacing: 0.5px;
+    color: #40BFFF;
+}
+.AdminProductCardsCurrentPrice>:nth-child(2){
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0.5px;
+    color: #9098B1;
+}
+.AdminProductCardsCurrentPrice>:nth-child(2)>span{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0.5px;
+    color: #FB7181;
+    margin-left: 8px;
+}
+.AdminProductCardsHover{
+    display: flex;
+    width: 96%;
+    height: 96%;
+    position: absolute;
+    top: 1%;
+    left: 2%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    opacity: 0.95;
+    transition: all .5s ease-in-out;
+    transform: translateY(-100%);
+}
+.AdminProductCardsFigure:hover>.AdminProductCardsHover{
+    transform: translateY(0);
+}
+.AdminCartIconHolder{
+    background-color: #636465;
+    border-radius: 50%;
+    margin: 0 2%;
+}
+.AdminCartIconHolder>figure{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    opacity: 0.95;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.AdminCartIconHolder>figure>img{
+    width: 17.8px;
+    height: 15.6px;
 }
