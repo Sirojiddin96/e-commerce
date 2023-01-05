@@ -3,22 +3,24 @@ import {
     ProductCards,
     IconCard,
     HorizontalNewsCard,
-    HorizontalProductCard
+    HorizontalProductCard,
+    PromotionCardONe,
+    PromotionCardTwo,
+    PromotionCardThree
 } from "../../components/Cards/Cards";
 import { news } from "../../data/news";
-import { products, featured } from "../../data/products";
+import {featured } from "../../data/products";
 import { services } from "../../data/services";
 import { lists } from '../../data/categories';
 import { AdvertisementSection } from "../../containers/AdvertisementSection";
 import { ContextData } from "../../context/Context";
-import PromotionCard from '../../components/Promotion';
 import "./Home.css";
 import "../../styles/home/home.css";
 
 import PromotionImage from "../../assets/images/PromotionImage.svg";
 
 function Home() {
-    const { favorites, cart, priceAfterDiscount } = useContext(ContextData);
+    const {productlist, favorites, cart, priceAfterDiscount } = useContext(ContextData);
     const [module, setModule] = useState("All");
     const [allowed, setAllowed] = useState(8);
     const [loading, setLoading] = useState(false);
@@ -31,12 +33,9 @@ function Home() {
         setTimeout(() => {
             setLoading(false); /// loading
         }, 1000);
-        if (name === 'All') return setFilteredProds(products)
-        const filteredProd = products.filter(prod => prod.category === name)
+        if (name === 'All') return setFilteredProds(productlist)
+        const filteredProd = productlist.filter(prod => prod.category === name)
         setFilteredProds(filteredProd)
-    }
-    const promotionProds = () => {
-        return products.filter(prod => prod.category === 'Promotion')
     }
     const requestLoadMore = () => setAllowed(prevState => prevState + 8)
     useEffect(() => {
@@ -51,21 +50,16 @@ function Home() {
                 <div className="banner-title">
                     <p>Super Flash Sale 50% Off</p>
                 </div>
-                <div className="promotion-cards">
-                    {promotionProds().map((product, index) => {
-                        return (
-                            <PromotionCard
-                                index={index}
-                                key={product.id}
-                                product={product}
-                                pic={product.picture[0]}
-                                title={product.title}
-                                originalPrice={product.originalPrice}
-                                discount={product.discount}
-                                currentPrice={priceAfterDiscount(product.discount, product.originalPrice).toFixed(2)}
-                            />
-                        )
-                    })}
+                <div className="HomePageCards"> 
+                    <div>
+                        <PromotionCardONe product={productlist[0]} pic={productlist[0].picture[0]} title={productlist[0].title} originalPrice={productlist[0].originalPrice} discount={productlist[0].discount} currentPrice={priceAfterDiscount(productlist[0].discount, productlist[0].originalPrice).toFixed(2)}/>
+                    </div>
+                    <div>
+                        <PromotionCardTwo product={productlist[17]} pic={productlist[17].picture[0]} title={productlist[1].title} originalPrice={productlist[1].originalPrice} discount={productlist[1].discount} currentPrice={priceAfterDiscount(productlist[1].discount, productlist[1].originalPrice).toFixed(2)}/>
+                    </div>
+                    <div>
+                        <PromotionCardThree product={productlist[3]} pic={productlist[3].picture[0]} title={productlist[2].title} originalPrice={productlist[2].originalPrice} discount={productlist[0].discount} currentPrice={priceAfterDiscount(productlist[2].discount, productlist[2].originalPrice).toFixed(2)}/>
+                    </div>
                 </div>
             </div>
             <div className="best-seller-area">

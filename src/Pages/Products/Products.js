@@ -4,7 +4,6 @@ import { useState } from "react";
 import { ProductCards, ProductCardsHorizontal} from "../../components/Cards/Cards";
 import { ContextData } from "../../context/Context";
 import { brands } from "../../data/categories";
-import { products } from "../../data/products";
 import {AdvertisementSectionSmall} from "../../containers/AdvertisementSection";
 import RecCardIconGray from "../../assets/icons/RecCardIconGray.svg";
 import LineCardIconGray from "../../assets/icons/LineCardIconGray.svg";
@@ -12,9 +11,9 @@ import RecCardIconBlue from "../../assets/icons/RecCardIconBlue.svg";
 import LineCardIconBlue from "../../assets/icons/LineCardIconBlue.svg";
 function Products(){
     const [brandID, setBrandID] = useState("All");
-    const {favorites, allowed, mode, changeMode, cart, priceAfterDiscount} = useContext(ContextData);
+    const {productlist, favorites, allowed, mode, changeMode, cart, priceAfterDiscount} = useContext(ContextData);
     const [value, onChange] = useState(1000);
-    const [sort, setSort] = useState(products);
+    const [sort, setSort] = useState(productlist);
     const [page, setPage] = useState(1);
     const listLenght = sort.filter(item=>(brandID === "All" && priceAfterDiscount(item.discount, item.originalPrice) < value ? item : brandID === item.categoryId && priceAfterDiscount(item.discount, item.originalPrice) < value)).length;
     const lastPage = Math.ceil(listLenght/allowed);
@@ -25,30 +24,29 @@ function Products(){
     function hangleSorting(e){
         let option = e.target.value;
         if(option === "None"){
-        setSort([...products].sort((a, b)=> {
+        setSort([...sort].sort((a, b)=> {
             return a.id - b.id;
         }))
         }else if(option === "Name A-Z"){
-        setSort([...products].sort((a, b)=> {
+        setSort([...sort].sort((a, b)=> {
             return a.title > b.title ? 1 : -1;
         }))
         }else if(option === "Name Z-A"){
-            setSort([...products].sort((a, b)=> {
+            setSort([...sort].sort((a, b)=> {
                 return b.title > a.title ? 1 : -1;
             }))
             }
         else if(option === "Price min-max"){
-            setSort([...products].sort((a, b)=> {
+            setSort([...sort].sort((a, b)=> {
                 return a.originalPrice - b.originalPrice;
             }))
             }
         else{
-        setSort([...products].sort((a, b) => {
+        setSort([...sort].sort((a, b) => {
             return b.originalPrice - a.originalPrice;
         } ) )
         }
     }
-
     const listFilter = [];
     for (let i = 0; i < sort.length; i++) {
         if(brandID === "All" && priceAfterDiscount(sort[i].discount, sort[i].originalPrice) < value){
@@ -64,13 +62,13 @@ function Products(){
                     <p>Brands</p>
                     <div onClick={()=>{setBrandID("All"); setPage(1)}} className={brandID === "All" ? "SidebarBrandsName Active" : "SidebarBrandsName"}>
                             <p>All</p>
-                            <p>{products.length}</p>
+                            <p>{productlist.length}</p>
                             </div>
                     {
                         brands.map((item, index)=>(
                             <div onClick={()=>{setBrandID(item.id); setPage(1)}} className={brandID === item.id ? "SidebarBrandsName Active" : "SidebarBrandsName"} key={index}>
                             <p>{item.name}</p>
-                            <p>{products.filter(elem=>(item.id === elem.categoryId)).length }</p>
+                            <p>{productlist.filter(elem=>(item.id === elem.categoryId)).length }</p>
                             </div>
                         ))
                     }

@@ -1,0 +1,25 @@
+.AdminProductsPage{
+    width: 100%;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.AdminCardHolder{
+    width: 47%;
+    margin: 2% 0;
+}
+.AdminProductsSide{
+    width: 100%;
+}
+.ProductsPagesFilter{
+    width: 100%;
+}
+.AdminBrands{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
