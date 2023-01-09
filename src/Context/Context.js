@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { products } from "../data/products.js";
+import { brands } from "../data/categories";
 export const ContextData = React.createContext();
-
 function ContextProvider({children}) {
     const navig = useNavigate();
     const nav = useNavigate();
@@ -33,8 +33,9 @@ function ContextProvider({children}) {
             originalPrice: "",
             discount: "",
             shippingFee: "",
+            categoryId: "",
+            decription: "",
             brand: "",
-            description: "",
             picture: "",
         }
     )
@@ -43,6 +44,27 @@ function ContextProvider({children}) {
           ...product,
           [e.target.name]: e.target.value,
         });
+      };
+      let handleInputNumber = (e) => {
+        setProduct({
+          ...product,
+          [e.target.name]: +(e.target.value),
+        });
+      };
+      let handleInputBrand = (e) => {
+        let name = e.target.value;
+        setProduct({
+          ...product,
+          brand: name,
+        });
+        brands.forEach(item=>{
+          if(name.includes(item.name)){
+            setProduct({
+              ...product,
+              categoryId: +item.id,
+            });
+          }
+        })
       };
       let handleRasm = (e) => {
         setProduct({
@@ -59,7 +81,8 @@ function ContextProvider({children}) {
           discount: "",
           shippingFee: "",
           brand: "",
-          description: "",
+          decription: "",
+          categoryId: "",
           picture: "",
         })
       }
@@ -67,7 +90,6 @@ function ContextProvider({children}) {
         e.preventDefault();
         if(product.id === ""){
           setProducts([...productlist, {...product, id: new Date().getTime()}]);
-          
         }else{
           setProducts(
             productlist.map((item)=>(
@@ -80,7 +102,6 @@ function ContextProvider({children}) {
         setChanged(true);
         navig("/uhgjobiejfoprfrtyuiyuowiw[wpriirqrr]p[fewfdkfjdlgja")
     }
-
     function editItem(item){
       nav("/uhgjobiejfoprfrtyuiyuowiw[wpriirqrr]p[fewfdkfjdlgja/AddProduct")
       setAdd(!add);
@@ -152,7 +173,7 @@ function ContextProvider({children}) {
         cart.forEach((item)=>{
             totalNumber += item.shippingFee;
         })
-        return totalNumber.toFixed(2);
+        return totalNumber;
       }
       const checkout=()=>{
         let totalNumber = 0;
@@ -170,13 +191,11 @@ function ContextProvider({children}) {
         localStorage.setItem("changed", JSON.stringify(true));
         setChanged(true);
       }
-
     return(
-        <ContextData.Provider value={{editItem, setAdd, add, product, handleInput, handleRasm, handleSend, AdminDeleteProduct, productlist, adminlog, setAdminlog, deleteFavorite, addFavorite, favorites, allowed, mode, changeMode, checkout, calcShipping, calcTotal, delteCartItem, descreaseQuantity, increseQuantity, Clength, priceAfterDiscount, addCart, cart, toggle, open}}>
+        <ContextData.Provider value={{handleInputBrand, handleInputNumber, editItem, setAdd, add, product, handleInput, handleRasm, handleSend, AdminDeleteProduct, productlist, adminlog, setAdminlog, deleteFavorite, addFavorite, favorites, allowed, mode, changeMode, checkout, calcShipping, calcTotal, delteCartItem, descreaseQuantity, increseQuantity, Clength, priceAfterDiscount, addCart, cart, toggle, open}}>
             {children}
         </ContextData.Provider>
     )
-
 }
 export default ContextProvider;
 

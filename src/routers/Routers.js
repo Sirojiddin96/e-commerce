@@ -6,14 +6,13 @@ import Products from "../pages/Products/Products";
 import Home from "../pages/Home/Home";
 import Favorites from "../pages/Favorites/Favorites";
 import Search from "../pages/Search/Search";
-import { products } from "../data/products";
 import ProductDescription from "../pages/productDescription/ProductDescription";
 import { useContext } from "react";
 import { ContextData } from "../context/Context";
 import Adminpanel from "../admin-panel/Admin-panel";
 
 function Routers() {
-    const { cart, favorites} = useContext(ContextData);
+    const {productlist, cart, favorites} = useContext(ContextData);
     return (
         <Routes>
             <Route path="/" element={<Home />} />
@@ -24,7 +23,7 @@ function Routers() {
             <Route path="/favorites" element={<Favorites />} />
             <Route path="/uhgjobiejfoprfrtyuiyuowiw[wpriirqrr]p[fewfdkfjdlgja" element={<Adminpanel />} />
             {
-                products.map((item, index) => (
+                productlist.map((item, index) => (
                     <Route
                         key={index}
                         path={"/products/" + item.id}

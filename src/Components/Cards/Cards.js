@@ -117,8 +117,8 @@ export function ProductCardsHorizontal(props){
                 <div className="ProductCardsDescriptionHorizontal">
                     <p>{description}</p>
                 </div>
-                <div className="ProductCardsActionHorizontal">
-                    <div onClick={()=>addCart(product)} className="ProductCardsCartHorizontal">
+                <div onClick={(event)=>event.stopPropagation()} className="ProductCardsActionHorizontal">
+                    <div  onClick={()=>addCart(product)} className="ProductCardsCartHorizontal">
                         <figure>
                             <img src={inCart ? CartIconRed : CartIconBlue} alt="CartIconRed" />
                         </figure>

@@ -40,7 +40,7 @@ function Home() {
     const requestLoadMore = () => setAllowed(prevState => prevState + 8)
     useEffect(() => {
         sortProducts('All')
-    }, [])
+    }, []);
     return (
         <div className="home-page">
             <div className="home-section">
@@ -89,7 +89,7 @@ function Home() {
                                 <div key={index} className="products">
                                     <ProductCards
                                         inFavorites={favorites.length ?
-                                            favorites.filter((elem) => (elem.id === item.id)).length : false}
+                                            favorites.filter((elem, i) => (elem.id === item.id)).length : false}
                                         inCart={cart.length ? cart.filter((elem) => (elem.id === item.id)).length : false}
                                         product={item}
                                         pic={item.picture[0]}
