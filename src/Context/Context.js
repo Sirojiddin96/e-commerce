@@ -3,12 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { products } from "../data/products.js";
 import { brands } from "../data/categories";
 export const ContextData = React.createContext();
-
 function ContextProvider({children}) {
     const navig = useNavigate();
     const nav = useNavigate();
     const [changed, setChanged] = useState(localStorage.getItem("changed") ? true : false);
-    const [adminlog, setAdminlog] = useState(false);
+    const [adminlog, setAdminlog] = useState(localStorage.getItem("changed") ? true : false);
     const [open, setOpen] = useState(null);
     const [cart, setCart] = useState(JSON.parse(localStorage.getItem("data")) ? JSON.parse(localStorage.getItem("data")) : []);
     const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favorites")) ? JSON.parse(localStorage.getItem("favorites")) : []);
@@ -36,6 +35,7 @@ function ContextProvider({children}) {
             shippingFee: "",
             categoryId: "",
             decription: "",
+            brand: "",
             picture: "",
         }
     )
@@ -81,7 +81,8 @@ function ContextProvider({children}) {
           discount: "",
           shippingFee: "",
           brand: "",
-          description: "",
+          decription: "",
+          categoryId: "",
           picture: "",
         })
       }
@@ -89,7 +90,6 @@ function ContextProvider({children}) {
         e.preventDefault();
         if(product.id === ""){
           setProducts([...productlist, {...product, id: new Date().getTime()}]);
-          
         }else{
           setProducts(
             productlist.map((item)=>(
@@ -102,7 +102,6 @@ function ContextProvider({children}) {
         setChanged(true);
         navig("/uhgjobiejfoprfrtyuiyuowiw[wpriirqrr]p[fewfdkfjdlgja")
     }
-
     function editItem(item){
       nav("/uhgjobiejfoprfrtyuiyuowiw[wpriirqrr]p[fewfdkfjdlgja/AddProduct")
       setAdd(!add);
@@ -192,13 +191,11 @@ function ContextProvider({children}) {
         localStorage.setItem("changed", JSON.stringify(true));
         setChanged(true);
       }
-
     return(
         <ContextData.Provider value={{handleInputBrand, handleInputNumber, editItem, setAdd, add, product, handleInput, handleRasm, handleSend, AdminDeleteProduct, productlist, adminlog, setAdminlog, deleteFavorite, addFavorite, favorites, allowed, mode, changeMode, checkout, calcShipping, calcTotal, delteCartItem, descreaseQuantity, increseQuantity, Clength, priceAfterDiscount, addCart, cart, toggle, open}}>
             {children}
         </ContextData.Provider>
     )
-
 }
 export default ContextProvider;
 

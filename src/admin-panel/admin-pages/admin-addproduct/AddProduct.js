@@ -16,7 +16,7 @@ function AddProduct(){
                                 <option value="Belt">Belt</option>
                                 <option value="Sunglasses">Sunglasses</option>
                     </select>
-                    <p>Original Price</p><input type="number" name="originalPrice" value={product.originalPrice} placeholder="Enter Original Price" onInput={(e)=>handleInputNumber(e)}/>
+                     <p>Original Price</p><input type="number" name="originalPrice" value={product.originalPrice} placeholder="Enter Original Price" onInput={(e)=>handleInputNumber(e)}/>
                     <p>Discount</p><input type="number" name="discount" value={product.discount} placeholder="Enter Discount" onInput={(e)=>handleInputNumber(e)}/>
                     <p>Shipping Fee</p><input type="number" name="shippingFee" value={product.shippingFee} placeholder="Enter Shipping Fee" onInput={(e)=>handleInputNumber(e)}/>
                     <p>Brand</p><input type="text" name="brand" value={product.brand} placeholder="Enter Brand" onInput={(e)=>handleInputBrand(e)}/>
