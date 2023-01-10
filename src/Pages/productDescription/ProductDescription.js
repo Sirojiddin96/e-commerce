@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { useState } from "react";
 import { ContextData } from "../../context/Context";
+import Footer from "../../containers/Footer";
 import "./ProductDescription.css";
 import CartIconRed from "../../assets/icons/CartIconRed.svg";
 import CartIconBlue from "../../assets/icons/CartIconBlue.svg";
@@ -67,6 +68,7 @@ const ProductDescription = (props) =>{
                         </div>
                 </div>
            </div>
+           <Footer/>
         </div>
     )
 }

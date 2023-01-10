@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { ContextData } from "../../context/Context";
+import Footer from "../../containers/Footer";
 import "./Cart.css";
 function Cart(){
     const {checkout, calcShipping, calcTotal, delteCartItem, descreaseQuantity, increseQuantity, cart, priceAfterDiscount} = useContext(ContextData);
@@ -64,6 +65,7 @@ function Cart(){
                     <button className="CheckoutBtn">Check Out</button>
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }

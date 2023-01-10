@@ -57,22 +57,3 @@ export const products = [
   { "id": 36, "categoryId": 1002, "category": "Sneakers", "picture": [ColorfulSneakers, ColorfulSneakers, ColorfulSneakers, ColorfulSneakers], "title": "Colorful Sneakers", "originalPrice": 126.33, "discount": 24, "shippingFee": 5, "brand": "Nike", "decription": "Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lectus lorem nunc leifend laorevtr istique et congue. Vivamus adipiscin vulputate g nisl ut dolor ..." },
   { "id": 37, "categoryId": 1002, "category": "Sneakers", "picture": [NikeAir, NikeAir, NikeAir, NikeAir], "title": "Nike Air", "originalPrice": 542.33, "discount": 24, "shippingFee": 5, "brand": "Nike", "decription": "Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lectus lorem nunc leifend laorevtr istique et congue. Vivamus adipiscin vulputate g nisl ut dolor ..." }
 ];
-
-export const featured = [
-  { 
-    picture: FeaturedShoe, 
-    title: "Blue Swade Nike Sneakers", 
-    originalPrice: 599, 
-    newPrice: 499 
-  },
-  { picture: FeaturedShoe, 
-    title: "Blue Swade Nike Sneakers", 
-    originalPrice: 599, 
-    newPrice: 499 
-  },
-  { picture: FeaturedShoe, 
-    title: "Blue Swade Nike Sneakers", 
-    originalPrice: 599, 
-    newPrice: 499 
-  },
-]

@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { ProductCards } from "../../components/Cards/Cards";
 import { ContextData } from "../../context/Context";
+import Footer from "../../containers/Footer";
 import "./Favorites.css";
 
 function Favorites(){
@@ -18,6 +19,7 @@ function Favorites(){
                 }
                 
             </div>
+            <Footer/>
         </div>
     )
 }

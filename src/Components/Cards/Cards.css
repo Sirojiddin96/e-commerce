@@ -1,6 +1,7 @@
 .promotionCardOne, .promotionCardThree, .promotionCardTwo{
     width: 100%;
-    height: 360px;
+    height: auto;
+    max-height: 360px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -207,7 +208,7 @@
     background: #FFFFFF;
     opacity: 0.95;
     transition: all .5s ease-in-out;
-    transform: translateY(-100%);
+    transform: translateY(-102%);
 }
 .ProductCardsFigure:hover>.ProductCardsHover{
     transform: translateY(0);
@@ -250,17 +251,24 @@
 }
 
 .IconCard{
-    width: 198px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content:center;
 }
 .IconCard>figure{
     width: 100%;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.IconCard>figure>img{
+    width: 20%;
+    height: 100%;
+    aspect-ratio: 3/2;
+    object-fit: contain;
 }
 .IconCard>:nth-child(2){
     font-size: 27px;
@@ -295,11 +303,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-right: 5%;
 }
-.HorizontalProductCard>figure>img{
+.HorizontalNewsCard>figure>img, .HorizontalProductCard>figure>img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 .HorizontalNewsCardWriting, .HorizontalProductCardWriting{
     width: 50%;
@@ -579,7 +588,7 @@
     background: #FFFFFF;
     opacity: 0.95;
     transition: all .5s ease-in-out;
-    transform: translateY(-100%);
+    transform: translateY(-102%);
 }
 .AdminProductCardsFigure:hover>.AdminProductCardsHover{
     transform: translateY(0);
@@ -602,4 +611,928 @@
 .AdminCartIconHolder>figure>img{
     width: 17.8px;
     height: 15.6px;
+}
+@media (max-width: 1300px) {
+    .promotionCardOne>:nth-child(3){
+        margin-top: 60%;
+        font-size: 15px;
+    }
+}
+@media (max-width: 1024px) {
+    .promotionCardOne, .promotionCardThree, .promotionCardTwo{
+        max-height: 300px;
+    }
+    .PromotionCardONeTitle{
+        width: 100%;
+    }
+    .promotionCardOne>:nth-child(3){
+        margin-top: 70%;
+        font-size: 15px;
+    }
+    .promotionCardTwoTitle{
+        margin-bottom: 60%;
+    }
+    .promotionCardTwoPrice{
+        margin-bottom: 20%;
+    }
+    
+    .promotionCardTwoTitle>:nth-child(1){
+        font-size: 20px;
+    }
+    .promotionCardTwoTitle>:nth-child(2){
+        font-size: 20px;
+    }
+    .promotionCardOneCurrentPrice>p{
+        font-size: 20px;
+    }
+    .promotionCardThreeCurrentPrice>p{
+        margin-top: 65%;
+        font-size: 25px;
+        margin-bottom: 30%;
+    }
+    .ProductCardsCurrentPrice{
+        margin-top: 3%;
+        padding: 0 20%;
+    }
+    .ProductCardsCurrentPrice{
+        padding: 0 15%;
+    }
+    .ProductCardsCurrentPrice>:nth-child(1){
+        font-size: 13px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(2){
+        font-size: 13px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(2)>span{
+        font-size: 13px;
+    }
+}
+@media (max-width: 950px) {
+    .promotionCardOne, .promotionCardThree, .promotionCardTwo{
+        max-height: 270px;
+    }
+    .promotionCardOne>:nth-child(3){
+        margin-top: 68%;
+        font-size: 13px;
+    }
+    .promotionCardTwoTitle{
+        margin-bottom: 60%;
+    }
+    .promotionCardTwoPrice{
+        margin-bottom: 20%;
+    }
+    .promotionCardTwoTitle>:nth-child(1){
+        font-size: 18px;
+    }
+    .promotionCardTwoTitle>:nth-child(2){
+        font-size: 18px;
+    }
+    .promotionCardOneCurrentPrice>p{
+        font-size: 18px;
+    }
+    .promotionCardOneCurrentPrice>p>span{
+        font-size: 18px;
+    }
+    .promotionCardThreeCurrentPrice>p{
+        margin-top: 63%;
+        font-size: 18px;
+        margin-bottom: 30%;
+    }
+    .ProductCards{
+        max-height: 270px;
+    }
+    .ProductCardsTitle{
+        margin-top: 3%;
+    }
+    .ProductCardsTitle>p{
+        font-size: 13px;
+    }
+    .ProductCardsRating>p{
+        font-size: 13px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(1){
+        font-size: 10px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(2){
+        font-size: 10px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(2)>span{
+        font-size: 10px;
+    }
+}
+@media (max-width: 900px) {
+    .promotionCardOne, .promotionCardThree, .promotionCardTwo{
+        max-height: 250px;
+    }
+    .PromotionCardONeTitle{
+        width: 80%;
+    }
+    .PromotionCardONeTitle>p{
+        font-size: 19px;
+    }
+    .promotionCardOne>:nth-child(3){
+        margin-top: 65%;
+        font-size: 10px;
+    }
+    .promotionCardOne>:nth-child(3)>span{
+        font-size: 13px;
+    }
+    .promotionCardOneCurrentPrice>p{
+        font-size: 15px;
+        margin-bottom: 20%;
+    }
+    .promotionCardTwoTitle{
+        margin-bottom: 60%;
+    }
+    .promotionCardTwoPrice{
+        margin-bottom: 20%;
+    }
+    .promotionCardTwoTitle>:nth-child(1){
+        font-size: 18px;
+    }
+    .promotionCardTwoTitle>:nth-child(2){
+        font-size: 20px;
+    }
+    .promotionCardTwoPrice>p{
+        font-size: 15px;
+    }
+    .promotionCardTwoPrice>p>span{
+        font-size: 15px;
+    }
+    .promotionCardThreeCurrentPrice>p{
+        margin-top: 60%;
+        font-size: 20px;
+        margin-bottom: 30%;
+    }
+    .promotionCardThreeTitle>p{
+        font-size: 20px;
+    }
+    .promotionCardThree>p{
+        font-size: 15px;
+    }
+    .promotionCardThree>p>span{
+        font-size: 15px;
+    }
+    .IconCard>:nth-child(2){
+        font-size: 20px;
+    }
+    .IconCard>:nth-child(3){
+        font-size: 15px;
+    }
+}
+@media (max-width: 870px) {
+    .promotionCardOne>:nth-child(3){
+        margin-top: 58%;
+    }
+    .IconCard>:nth-child(2){
+        font-size: 18px;
+    }
+    .IconCard>:nth-child(3){
+        font-size: 13px;
+    }
+}
+@media (max-width: 800px) {
+    .promotionCardOne, .promotionCardThree, .promotionCardTwo{
+        max-height: 200px;
+    }
+    .PromotionCardONeTitle{
+        margin-top: 2%;
+        width: 90%;
+    }
+    .PromotionCardONeTitle>p{
+        font-size: 18px;
+    }
+    .promotionCardOne>:nth-child(3){
+        margin-top: 60%;
+        font-size: 10px;
+    }
+    .promotionCardOne>:nth-child(3)>span{
+        font-size: 12px;
+    }
+    .promotionCardOneCurrentPrice>p{
+        font-size: 14px;
+    }
+    .promotionCardTwoTitle{
+        margin-bottom: 60%;
+    }
+    .promotionCardTwoPrice{
+        margin-bottom: 20%;
+    }
+    .promotionCardTwoTitle>:nth-child(1){
+        width: 70%;
+        font-size: 14px;
+    }
+    .promotionCardTwoTitle>:nth-child(2){
+        font-size: 14px;
+    }
+    .promotionCardTwoPrice>p{
+        font-size: 13px;
+    }
+    .promotionCardTwoPrice>p>span{
+        font-size: 13px;
+    }
+    .promotionCardThreeCurrentPrice>p{
+        margin-top: 45%;
+        font-size: 20px;
+        margin-bottom: 40%;
+    }
+    .promotionCardThreeTitle>p{
+        font-size: 15px;
+    }
+    .promotionCardThree>p{
+        font-size: 13px;
+    }
+    .promotionCardThree>p>span{
+        font-size: 14px;
+    }
+    .promotionCardThreeCurrentPrice>p{
+        margin-top: 53%;
+        font-size: 18px;
+    }
+}
+@media (max-width: 740px) {
+    .promotionCardOne, .promotionCardThree, .promotionCardTwo{
+        max-height: 200px;
+    }
+    .PromotionCardONeTitle{
+        margin-top: 2%;
+        width: 90%;
+    }
+    .PromotionCardONeTitle>p{
+        font-size: 17px;
+    }
+    .promotionCardOne>:nth-child(3){
+        margin-top: 62%;
+        font-size: 10px;
+    }
+    .promotionCardOne>:nth-child(3)>span{
+        font-size: 12px;
+    }
+    .promotionCardOneCurrentPrice>p{
+        font-size: 15px;
+    }
+    .promotionCardTwoTitle{
+        margin-bottom: 60%;
+    }
+    .promotionCardTwoPrice{
+        margin-bottom: 20%;
+    }
+    .promotionCardTwoTitle>:nth-child(1){
+        width: 70%;
+        font-size: 14px;
+    }
+    .promotionCardTwoTitle>:nth-child(2){
+        font-size: 14px;
+    }
+    .promotionCardTwoPrice>p{
+        font-size: 13px;
+    }
+    .promotionCardTwoPrice>p>span{
+        font-size: 13px;
+    }
+    .promotionCardThreeCurrentPrice>p{
+        margin-top: 45%;
+        font-size: 20px;
+        margin-bottom: 40%;
+    }
+    .promotionCardThreeTitle>p{
+        font-size: 15px;
+    }
+    .promotionCardThree>p{
+        font-size: 13px;
+    }
+    .promotionCardThree>p>span{
+        font-size: 14px;
+    }
+    .promotionCardThreeCurrentPrice>p{
+        margin-top: 53%;
+        font-size: 17px;
+    }
+    .IconCard>:nth-child(2){
+        font-size: 15px;
+    }
+    .IconCard>:nth-child(3){
+        font-size: 13px;
+    }
+}
+@media (max-width: 700px) {
+    .promotionCardOne, .promotionCardThree, .promotionCardTwo{
+        max-height: 160px;
+    }
+    .PromotionCardONeTitle{
+        margin-top: 0;
+        width: 90%;
+    }
+    .PromotionCardONeTitle>p{
+        font-size: 13px;
+    }
+    .promotionCardOne>:nth-child(3){
+        margin-top: 58%;
+        font-size: 7px;
+    }
+    .promotionCardOne>:nth-child(3)>span{
+        font-size: 9px;
+    }
+    .promotionCardOneCurrentPrice>p{
+        font-size: 9px;
+    }
+    .promotionCardTwoTitle{
+        margin-bottom: 55%;
+    }
+    .promotionCardTwoPrice{
+        margin-bottom: 20%;
+    }
+    .promotionCardTwoTitle>:nth-child(1){
+        width: 70%;
+        font-size: 10px;
+    }
+    .promotionCardTwoTitle>:nth-child(2){
+        font-size: 13px;
+    }
+    .promotionCardTwoPrice>p{
+        font-size: 10px;
+    }
+    .promotionCardTwoPrice>p>span{
+        font-size: 10px;
+    }
+    .promotionCardThreeCurrentPrice>p{
+        margin-top: 45%;
+        font-size: 15px;
+        margin-bottom: 40%;
+    }
+    .promotionCardThreeTitle>p{
+        font-size: 12px;
+    }
+    .promotionCardThree>p{
+        font-size: 10px;
+    }
+    .promotionCardThree>p>span{
+        font-size: 10px;
+    }
+    .promotionCardThreeCurrentPrice>p{
+        margin-top: 50%;
+        font-size: 13px;
+    }
+    .ProductCards{
+        max-height: 230px;
+    }
+    .ProductCardsTitle{
+        margin-top: 3%;
+    }
+    .ProductCardsTitle>p{
+        font-size: 12px;
+    }
+    .ProductCardsRating>p{
+        font-size: 10px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(1){
+        font-size: 10px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(2){
+        font-size: 8px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(2)>span{
+        font-size: 8px;
+    }
+    .IconCard{
+        width: 100%;
+    }
+    .IconCard>:nth-child(2){
+        margin: 2% 0;
+        font-size: 20px;
+        text-align: center;
+    }
+    .IconCard>:nth-child(3){
+        font-size: 15px;
+    }
+}
+@media (max-width: 650px) {
+    .promotionCardOne, .promotionCardThree, .promotionCardTwo{
+        max-height: 400px;
+    }
+    .PromotionCardONeTitle, .promotionCardTwoTitle{
+        width: 60%;
+        margin-top: 5%;
+    }
+    .PromotionCardONeTitle>p{
+        font-size: 30px;
+    }
+    .promotionCardOne>:nth-child(3){
+        margin-top: 43%;
+        font-size: 18px;
+    }
+    .promotionCardOne>:nth-child(3)>span{
+        font-size: 18px;
+    }
+    .promotionCardOneCurrentPrice>p{
+        font-size: 25px;
+    }
+    .promotionCardTwoTitle{
+        margin-bottom: 55%;
+    }
+    .promotionCardTwoPrice{
+        margin-bottom: 20%;
+    }
+    .promotionCardTwoTitle{
+        width: 100%;
+        margin-top: 1%;
+    }
+    .promotionCardTwoTitle>:nth-child(1){
+        width: 70%;
+        font-size: 30px;
+    }
+    .promotionCardTwoTitle>:nth-child(2){
+        font-size: 30px;
+    }
+    .promotionCardTwoPrice>p{
+        font-size: 20px;
+    }
+    .promotionCardTwoPrice>p>span{
+        font-size: 25px;
+    }
+    .promotionCardThreeCurrentPrice>p{
+        margin-top: 45%;
+        font-size: 30px;
+        margin-bottom: 40%;
+    }
+    .promotionCardThreeTitle>p{
+        font-size: 30px;
+    }
+    .promotionCardThree>p{
+        font-size: 20px;
+    }
+    .promotionCardThree>p>span{
+        font-size: 25px;
+    }
+    .promotionCardThreeCurrentPrice>p{
+        margin-top: 53%;
+        font-size: 25px;
+    }
+    .ProductCards{
+        max-height: 350px;
+    }
+    .ProductCardsTitle{
+        margin-top: 3%;
+    }
+    .ProductCardsTitle>p{
+        font-size: 17px;
+    }
+    .ProductCardsRating>p{
+        font-size: 15px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(1){
+        font-size: 15px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(2){
+        font-size: 12px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(2)>span{
+        font-size: 12px;
+    }
+}
+@media (max-width: 630px) {
+    .promotionCardOne>:nth-child(3){
+        margin-top: 47%;
+        font-size: 10px;
+    }
+    .ProductCards{
+        max-height: 300px;
+    }
+    .ProductCardsTitle>p{
+        font-size: 15px;
+    }
+    .ProductCardsRating>p{
+        font-size: 13px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(1){
+        font-size: 13px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(2){
+        font-size: 11px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(2)>span{
+        font-size: 11px;
+    }
+    .HorizontalNewsCard{
+        padding: 5% 0;
+    }
+    .HorizontalNewsCardWriting>:nth-child(1){
+        font-size: 15px;
+    }
+    .HorizontalNewsCardWriting>:nth-child(2){
+        font-size: 15px;
+    }
+    .HorizontalNewsCardWriting>:nth-child(3){
+        font-size: 13px;
+    }
+}
+@media (max-width: 550px) {
+    .promotionCardOne>:nth-child(3){
+        margin-top: 55%;
+        font-size: 10px;
+    }
+    .promotionCardThreeCurrentPrice>p{
+        margin-top: 60%;
+        font-size: 25px;
+    }
+    .promotionCardTwoTitle>:nth-child(1){
+        width: 60%;
+        font-size: 23px;
+    }
+    .promotionCardTwoTitle>:nth-child(2){
+        font-size: 25px;
+    }
+    .promotionCardTwoTitle{
+        margin-bottom: 70%;
+    }
+    .ProductCards{
+        max-height: 250px;
+    }
+    .ProductCardsTitle>p{
+        font-size: 13px;
+    }
+    .ProductCardsRating>p{
+        font-size: 10px;
+    }
+    .ProductCardsCurrentPrice{
+        padding: 0 18%;
+    }
+    .ProductCardsCurrentPrice>:nth-child(1){
+        font-size: 10px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(2){
+        font-size: 9px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(2)>span{
+        font-size: 9px;
+    }
+}
+@media (max-width: 500px) {
+    .promotionCardThreeCurrentPrice>p{
+        margin-top: 70%;
+    }
+    .ProductCards{
+        max-height: 250px;
+    }
+    .ProductCardsTitle>p{
+        font-size: 13px;
+    }
+    .ProductCardsRating>p{
+        font-size: 10px;
+    }
+    .ProductCardsCurrentPrice{
+        padding: 0 10%;
+    }
+    .ProductCardsCurrentPrice>:nth-child(1){
+        font-size: 12px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(2){
+        font-size: 7px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(2)>span{
+        font-size: 7px;
+    }
+    .HorizontalNewsCardWriting>:nth-child(1){
+        font-size: 12px;
+    }
+    .HorizontalNewsCardWriting>:nth-child(2){
+        font-size: 12px;
+        margin: 0;
+    }
+    .HorizontalNewsCardWriting>:nth-child(3){
+        font-size: 11px;
+        line-height: 110%;
+    }
+}
+@media (max-width: 450px) {
+    .promotionCardOne, .promotionCardThree, .promotionCardTwo{
+        max-height: 300px;
+    }
+    .PromotionCardONeTitle{
+        margin-top: 1%;
+        width: 80%;
+    }
+    .PromotionCardONeTitle>p{
+        font-size: 19px;
+    }
+    .promotionCardOne>:nth-child(3){
+        margin-top: 69%;
+        font-size: 10px;
+    }
+    .promotionCardOne>:nth-child(3)>span{
+        font-size: 13px;
+    }
+    .promotionCardOneCurrentPrice>p{
+        font-size: 15px;
+        margin-bottom: 20%;
+    }
+    .promotionCardTwoTitle{
+        margin-bottom: 60%;
+    }
+    .promotionCardTwoPrice{
+        margin-bottom: 20%;
+    }
+    .promotionCardTwoTitle>:nth-child(1){
+        font-size: 18px;
+    }
+    .promotionCardTwoTitle>:nth-child(2){
+        font-size: 20px;
+    }
+    .promotionCardTwoPrice>p{
+        font-size: 15px;
+    }
+    .promotionCardTwoPrice>p>span{
+        font-size: 15px;
+    }
+    .promotionCardThreeCurrentPrice>p{
+        margin-top: 60%;
+        font-size: 20px;
+        margin-bottom: 30%;
+    }
+    .promotionCardThreeTitle>p{
+        font-size: 20px;
+    }
+    .promotionCardThree>p{
+        font-size: 15px;
+    }
+    .promotionCardThree>p>span{
+        font-size: 15px;
+    }
+    .ProductCards{
+        max-height: 230px;
+    }
+    .ProductCardsTitle>p{
+        font-size: 10px;
+    }
+    .ProductCardsRating>p{
+        font-size: 8px;
+    }
+    .ProductCardsCurrentPrice{
+        padding: 0 10%;
+    }
+    .ProductCardsCurrentPrice>:nth-child(1){
+        font-size: 11px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(2){
+        font-size: 7px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(2)>span{
+        font-size: 7px;
+    }
+}
+@media (max-width: 400px) {
+    .promotionCardOne, .promotionCardThree, .promotionCardTwo{
+        max-height: 250px;
+    }
+    .PromotionCardONeTitle{
+        margin-top: 1%;
+        width: 80%;
+    }
+    .PromotionCardONeTitle>p{
+        font-size: 19px;
+    }
+    .promotionCardOne>:nth-child(3){
+        margin-top: 60%;
+        font-size: 10px;
+    }
+    .promotionCardOne>:nth-child(3)>span{
+        font-size: 13px;
+    }
+    .promotionCardOneCurrentPrice>p{
+        font-size: 15px;
+        margin-bottom: 20%;
+    }
+    .promotionCardTwoTitle{
+        margin-bottom: 55%;
+    }
+    .promotionCardTwoPrice{
+        margin-bottom: 20%;
+    }
+    .promotionCardTwoTitle>:nth-child(1){
+        width: 70%;
+        font-size: 18px;
+    }
+    .promotionCardTwoTitle>:nth-child(2){
+        font-size: 20px;
+    }
+    .promotionCardTwoPrice>p{
+        font-size: 15px;
+    }
+    .promotionCardTwoPrice>p>span{
+        font-size: 15px;
+    }
+    .promotionCardThreeCurrentPrice>p{
+        margin-top: 50%;
+        font-size: 20px;
+        margin-bottom: 30%;
+    }
+    .promotionCardThreeTitle>p{
+        font-size: 20px;
+    }
+    .promotionCardThree>p{
+        font-size: 15px;
+    }
+    .promotionCardThree>p>span{
+        font-size: 15px;
+    }
+    .ProductCards{
+        max-height: 200px;
+    }
+    .ProductCardsTitle>p{
+        font-size: 10px;
+    }
+    .ProductCardsRating>p{
+        font-size: 8px;
+    }
+    .ProductCardsCurrentPrice{
+        padding: 0 10%;
+    }
+    .ProductCardsCurrentPrice>:nth-child(1){
+        font-size: 10px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(2){
+        font-size: 6px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(2)>span{
+        font-size: 6px;
+    }
+    .HorizontalNewsCard>figure{
+        width: 80px;
+        height: 80px;
+    }
+}
+@media (max-width: 360px) {
+    .promotionCardOne, .promotionCardThree, .promotionCardTwo{
+        max-height: 250px;
+    }
+    .PromotionCardONeTitle{
+        margin-top: 1%;
+        width: 80%;
+    }
+    .PromotionCardONeTitle>p{
+        font-size: 19px;
+    }
+    .promotionCardOne>:nth-child(3){
+        margin-top: 65%;
+        font-size: 10px;
+    }
+    .promotionCardOne>:nth-child(3)>span{
+        font-size: 12px;
+    }
+    .promotionCardOneCurrentPrice>p{
+        font-size: 15px;
+        margin-bottom: 20%;
+    }
+    .promotionCardTwoTitle{
+        margin-bottom: 55%;
+    }
+    .promotionCardTwoPrice{
+        margin-bottom: 20%;
+    }
+    .promotionCardTwoTitle{
+        margin-bottom: 65%;
+    }
+    .promotionCardTwoTitle>:nth-child(1){
+        width: 70%;
+        font-size: 15px;
+    }
+    .promotionCardTwoTitle>:nth-child(2){
+        font-size: 18px;
+    }
+    .promotionCardTwoPrice>p{
+        font-size: 15px;
+    }
+    .promotionCardTwoPrice>p>span{
+        font-size: 15px;
+    }
+    .promotionCardThreeCurrentPrice>p{
+        margin-top: 58%;
+        font-size: 15px;
+        margin-bottom: 30%;
+    }
+    .promotionCardThreeTitle>p{
+        font-size: 20px;
+    }
+    .promotionCardThree>p{
+        font-size: 15px;
+    }
+    .promotionCardThree>p>span{
+        font-size: 15px;
+    }
+    .ProductCards{
+        max-height: 360px;
+    }
+    .ProductCardsTitle>p{
+        font-size: 18px;
+    }
+    .ProductCardsRating>p{
+        font-size: 15px;
+    }
+    .ProductCardsCurrentPrice{
+        padding: 0 12%;
+    }
+    .ProductCardsCurrentPrice>:nth-child(1){
+        font-size: 15px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(2){
+        font-size: 12px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(2)>span{
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 300px) {
+    .promotionCardOne, .promotionCardThree, .promotionCardTwo{
+        max-height: 200px;
+    }
+    .PromotionCardONeTitle{
+        margin-top: 0;
+        width: 80%;
+    }
+    .PromotionCardONeTitle>p{
+        font-size: 15px;
+    }
+    .promotionCardOne>:nth-child(3){
+        margin-top: 68%;
+        font-size: 10px;
+    }
+    .promotionCardOne>:nth-child(3)>span{
+        font-size: 10px;
+    }
+    .promotionCardOneCurrentPrice>p{
+        font-size: 12px;
+        margin-bottom: 20%;
+    }
+    .promotionCardTwoTitle{
+        margin-bottom: 55%;
+    }
+    .promotionCardTwoPrice{
+        margin-bottom: 15%;
+    }
+    .promotionCardTwoTitle{
+        margin-bottom: 65%;
+    }
+    .promotionCardTwoTitle>:nth-child(1){
+        width: 90%;
+        font-size: 13px;
+    }
+    .promotionCardTwoTitle>:nth-child(2){
+        font-size: 15px;
+    }
+    .promotionCardTwoPrice>p{
+        font-size: 10px;
+    }
+    .promotionCardTwoPrice>p>span{
+        font-size: 10px;
+    }
+    .promotionCardThreeCurrentPrice>p{
+        margin-top: 60%;
+        font-size: 12px;
+        margin-bottom: 30%;
+    }
+    .promotionCardThreeTitle>p{
+        font-size: 15px;
+    }
+    .promotionCardThree>p{
+        font-size: 10px;
+    }
+    .promotionCardThree>p>span{
+        font-size: 10px;
+    }
+    .ProductCards{
+        max-height: 300px;
+    }
+    .ProductCardsTitle>p{
+        font-size: 18px;
+    }
+    .ProductCardsRating>p{
+        font-size: 13px;
+    }
+    .ProductCardsCurrentPrice{
+        padding: 0 12%;
+    }
+    .ProductCardsCurrentPrice>:nth-child(1){
+        font-size: 13px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(2){
+        font-size: 10px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(2)>span{
+        font-size: 10px;
+    }
+    .HorizontalNewsCard>figure{
+        width: 50px;
+        height: 50px;
+    }
+    .HorizontalNewsCardWriting>:nth-child(1){
+        font-size: 7px;
+    }
+    .HorizontalNewsCardWriting>:nth-child(2){
+        font-size: 10px;
+    }
+    .HorizontalNewsCardWriting>:nth-child(3){
+        font-size: 7px;
+        line-height: 110%;
+    }
 }

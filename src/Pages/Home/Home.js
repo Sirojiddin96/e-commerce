@@ -3,13 +3,12 @@ import {
     ProductCards,
     IconCard,
     HorizontalNewsCard,
-    HorizontalProductCard,
     PromotionCardONe,
     PromotionCardTwo,
     PromotionCardThree
 } from "../../components/Cards/Cards";
+import Footer from "../../containers/Footer";
 import { news } from "../../data/news";
-import {featured } from "../../data/products";
 import { services } from "../../data/services";
 import { lists } from '../../data/categories';
 import { AdvertisementSection } from "../../containers/AdvertisementSection";
@@ -151,25 +150,7 @@ function Home() {
                     }
                 </div>
             </div>
-            <div className="featured-products">
-                <div className="featured-title">
-                    <p>FEATURED PRODUCTS</p>
-                </div>
-                <div className="common-card">
-                    {
-                        featured.map((item, index) => (
-                            <div key={index} className="feature-card">
-                                <HorizontalProductCard
-                                    picture={item.picture}
-                                    title={item.title}
-                                    oldPrice={item.originalPrice}
-                                    newPrice={item.newPrice}
-                                />
-                            </div>
-                        ))
-                    }
-                </div>
-            </div>
+            <Footer/>
         </div>
     )
 }

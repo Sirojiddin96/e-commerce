@@ -20,6 +20,7 @@
     top: 0;
     left: 0;
     z-index: -1;
+    overflow: hidden;
 
 }
 .home-section>figure>img{
@@ -105,6 +106,7 @@
     justify-content: flex-start;
     transition: all 1s ease-in;
     overflow: hidden;
+    padding: 2% 4%;
 }
 .products{
     width: 23%;
@@ -189,4 +191,185 @@
     font-size: 34px;
     line-height: 51px;
     color: #22262A;
+}
+
+@media (max-width: 1024px) {
+    .home-section{
+        padding: 0 0 10% 0;
+    }
+    .banner-title{
+        width: 100%;
+        padding: 10% 0 5%;
+    }
+    .banner-title>p{
+        font-size: 50px;
+        text-align: center;
+    }
+    .HomePageCards{
+        width: 100%;
+    }
+    .HomePageCards>div{
+        width: 30%;
+        margin: 0;
+    }
+    .best-seller-section{
+        padding: 2% 15%;
+    }
+    .products{
+        width: 30%;
+    }
+    .common-card{
+        flex-direction: column;
+    }
+    .new-card{
+        width: 80%;
+        margin-top: 2%;
+    }
+    .feature-card{
+        width: 70%;
+        margin-top: 2%;
+    }
+}
+
+@media (max-width: 650px) {
+    .home-section{
+        padding: 0 0 10% 0;
+    }
+    .banner-title{
+        width: 100%;
+        padding: 15% 0 0;
+    }
+    .banner-title>p{
+        font-size: 35px;
+        text-align: center;
+    }
+    .home-section>figure{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .home-section>figure>img{
+        width: 120%;
+    }
+    .HomePageCards{
+        width: 100%;
+        margin-top: -15%;
+        flex-direction: column;
+    }
+    .HomePageCards>div{
+        width: 80%;
+        margin: 2%;
+    }
+    .best-seller-title>p, .news-title>p, .featured-title>p{
+        font-size: 25px;
+    }
+    .best-seller-section{
+        padding: 2% 20%;
+    }
+    .best-seller-section>div>p{
+        font-size: 15px;
+    }
+    .product-lists{
+        justify-content: center;
+        padding: 2% 5%;
+    }
+    .products{
+        width: 44%;
+    }
+    .service-section{
+        flex-direction: column;
+        align-items: center;
+    }
+    .ServicesCardHolder{
+        width: 90%;
+        margin: 4% 0;
+    }
+}
+@media (max-width: 500px) {
+    .banner-title>p{
+        font-size: 30px;
+    }
+}
+@media (max-width: 460px) {
+    .banner-title>p{
+        font-size: 30px;
+    }
+    .best-seller-section{
+        padding: 2% 15%;
+    }
+    .best-seller-section>div>p{
+        font-size: 15px;
+    }
+}
+@media (max-width: 460px) {
+    .banner-title>p{
+        font-size: 25px;
+    }
+}
+@media (max-width: 360px) {
+    .home-section{
+        padding: 0 0 10% 0;
+    }
+    .banner-title{
+        width: 100%;
+        padding: 15% 0 0;
+    }
+    .banner-title>p{
+        font-size: 23px;
+        text-align: center;
+    }
+    .home-section>figure{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .home-section>figure>img{
+        width: 140%;
+    }
+    .HomePageCards{
+        width: 100%;
+        margin-top: -25%;
+        flex-direction: column;
+    }
+    .HomePageCards>div{
+        width: 80%;
+        margin: 2%;
+    }
+    .best-seller-title>p, .news-title>p, .featured-title>p{
+        font-size: 20px;
+    }
+    .best-seller-section{
+        padding: 2% 10%;
+    }
+    .best-seller-section>div>p{
+        font-size: 13px;
+    }
+    .product-lists{
+        justify-content: center;
+        padding: 2% 5%;
+    }
+    .products{
+        width: 90%;
+    }
+    .service-section{
+        flex-direction: column;
+        align-items: center;
+    }
+    .ServicesCardHolder{
+        width: 80%;
+    }
+    .ServicesCardHolder{
+        margin: 2%;
+    }
+}
+@media (max-width: 300px) {
+    .banner-title>p{
+        font-size: 18px;
+    }
+    .best-seller-section{
+        padding: 2% 12%;
+    }
+    .best-seller-section>div>p{
+        font-size: 10px;
+    }
 }

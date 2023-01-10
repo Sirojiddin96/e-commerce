@@ -8,7 +8,7 @@ import AddProductIconBlue from "../../assets/icons/AddProductIconBlue.svg";
 function AdminSideBar(){
     return(
         <div className="AdminSidebar">
-            <NavLink to="/uhgjobiejfoprfrtyuiyuowiw[wpriirqrr]p[fewfdkfjdlgja" className="NavLink">
+            <NavLink to="/uhgjobiejfoprfrtyuiyuowiw[wpriirqrr]p[fewfdkfjdlgja" className="AdminNavLink">
                 <div>
                     <figure>
                         <img src={AllProductsIconGray} alt="AllProductsIconGray" />
@@ -16,7 +16,7 @@ function AdminSideBar(){
                     <p>Products</p>
                 </div>
             </NavLink>
-            <NavLink to="/uhgjobiejfoprfrtyuiyuowiw[wpriirqrr]p[fewfdkfjdlgja/AddProduct" className="NavLink">
+            <NavLink to="/uhgjobiejfoprfrtyuiyuowiw[wpriirqrr]p[fewfdkfjdlgja/AddProduct" className="AdminNavLink">
                 <div>
                     <figure>
                         <img src={AddProductIconGray} alt="AddProductIconGray" />
