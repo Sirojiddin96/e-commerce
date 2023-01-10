@@ -63,6 +63,11 @@ function ContextProvider({children}) {
               ...product,
               categoryId: +item.id,
             });
+          }else{
+            setProduct({
+              ...product,
+              brand: name,
+            });
           }
         })
       };

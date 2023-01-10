@@ -1,6 +1,7 @@
 import "./Products.css";
 import { useContext } from "react";
 import { useState } from "react";
+import Footer from "../../containers/Footer";
 import { ProductCards, ProductCardsHorizontal} from "../../components/Cards/Cards";
 import { ContextData } from "../../context/Context";
 import { brands } from "../../data/categories";
@@ -56,6 +57,7 @@ function Products(){
         }
     }
     return(
+        <>
         <div className="ProductsPage">
             <div className="ProductsPagesSidebar">
                 <div className="SidebarBrands">
@@ -142,6 +144,8 @@ function Products(){
                </div>
             </div>
         </div>
+        <Footer/>
+        </>
     )
 }
 

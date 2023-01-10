@@ -62,7 +62,7 @@ export function ProductCards(props){
     const { inFavorites, inCart, product, pic, title, originalPrice, discount, currentPrice} = props;
     return(
         <div onClick={()=>navig("/products/" + product.id)} className="ProductCards">
-            <figure className="ProductCardsFigure">
+            <figure onClick={(event)=>event.stopPropagation()} className="ProductCardsFigure">
                 <img src={pic} alt="product" />
                 <div onClick={(event)=>event.stopPropagation()} className="ProductCardsHover">
                     <div onClick={(event)=>event.stopPropagation()} className={inCart ? "CartIconHolder Red" : "CartIconHolder"}>
@@ -161,23 +161,7 @@ export function HorizontalNewsCard(props){
         </div>
     )
 }
-export function HorizontalProductCard(props){
-    const {picture, title, oldPrice, newPrice} = props;
-    return(
-        <div className="HorizontalProductCard">
-            <figure>
-                <img src={picture} alt="product" />
-            </figure>
-            <div className="HorizontalProductCardWriting">
-                <p>{title}</p>
-                <p>Rating</p>
-                <p><span>${newPrice}</span><del>${oldPrice}</del></p>
-            </div>
-        </div>
-    )
-}
 export function AdminProductCards(props){
-    const navig = useNavigate();
     const {editItem, AdminDeleteProduct} = useContext(ContextData);
     const {product, pic, title, originalPrice, discount, currentPrice} = props;
     return(

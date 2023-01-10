@@ -23,7 +23,7 @@
     padding: 5%;
     margin: 10% 0;
 }
-.NavLink>div:hover{
+.AdminNavLink>div:hover{
     background-color: #2f81ed34;
 }
 .NavLink>div>figure{
