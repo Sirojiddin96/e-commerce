@@ -22,9 +22,14 @@
     max-width: 1440px;
     margin: auto;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+}
+.wrapper.noscroll{
+    max-height: 100vh;
+    overflow-y: hidden;
+    position: fixed;
 }
 ::-webkit-scrollbar {
     width: 20px;

@@ -618,7 +618,7 @@
         font-size: 15px;
     }
 }
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
     .promotionCardOne, .promotionCardThree, .promotionCardTwo{
         max-height: 300px;
     }
@@ -658,7 +658,7 @@
         padding: 0 15%;
     }
     .ProductCardsCurrentPrice>:nth-child(1){
-        font-size: 13px;
+        font-size: 17px;
     }
     .ProductCardsCurrentPrice>:nth-child(2){
         font-size: 13px;
@@ -704,20 +704,24 @@
     .ProductCardsTitle{
         margin-top: 3%;
     }
+    .ProductCardsCurrentPrice{
+        margin-top: 3%;
+        padding: 0 10%;
+    }
     .ProductCardsTitle>p{
         font-size: 13px;
     }
     .ProductCardsRating>p{
-        font-size: 13px;
+        font-size: 10px;
     }
     .ProductCardsCurrentPrice>:nth-child(1){
-        font-size: 10px;
+        font-size: 14px;
     }
     .ProductCardsCurrentPrice>:nth-child(2){
-        font-size: 10px;
+        font-size: 12px;
     }
     .ProductCardsCurrentPrice>:nth-child(2)>span{
-        font-size: 10px;
+        font-size: 12px;
     }
 }
 @media (max-width: 900px) {
@@ -764,6 +768,9 @@
         font-size: 20px;
         margin-bottom: 30%;
     }
+    .ProductCards{
+        max-height: 300px;
+    }
     .promotionCardThreeTitle>p{
         font-size: 20px;
     }
@@ -778,6 +785,21 @@
     }
     .IconCard>:nth-child(3){
         font-size: 15px;
+    }
+    .ProductCardsTitle>p{
+        font-size: 15px;
+    }
+    .ProductCardsRating>p{
+        font-size: 10px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(1){
+        font-size: 16px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(2){
+        font-size: 10px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(2)>span{
+        font-size: 10px;
     }
 }
 @media (max-width: 870px) {
@@ -1146,7 +1168,7 @@
         margin-bottom: 70%;
     }
     .ProductCards{
-        max-height: 250px;
+        max-height: 270px;
     }
     .ProductCardsTitle>p{
         font-size: 13px;
@@ -1155,16 +1177,16 @@
         font-size: 10px;
     }
     .ProductCardsCurrentPrice{
-        padding: 0 18%;
+        padding: 0 10%;
     }
     .ProductCardsCurrentPrice>:nth-child(1){
-        font-size: 10px;
+        font-size: 15px;
     }
     .ProductCardsCurrentPrice>:nth-child(2){
-        font-size: 9px;
+        font-size: 10px;
     }
     .ProductCardsCurrentPrice>:nth-child(2)>span{
-        font-size: 9px;
+        font-size: 10px;
     }
 }
 @media (max-width: 500px) {
@@ -1204,7 +1226,7 @@
         line-height: 110%;
     }
 }
-@media (max-width: 450px) {
+@media (max-width: 460px) {
     .promotionCardOne, .promotionCardThree, .promotionCardTwo{
         max-height: 300px;
     }
@@ -1279,6 +1301,27 @@
     .ProductCardsCurrentPrice>:nth-child(2)>span{
         font-size: 7px;
     }
+    .ProductCards{
+        max-height: 360px;
+    }
+    .ProductCardsTitle>p{
+        font-size: 18px;
+    }
+    .ProductCardsRating>p{
+        font-size: 15px;
+    }
+    .ProductCardsCurrentPrice{
+        padding: 0 12%;
+    }
+    .ProductCardsCurrentPrice>:nth-child(1){
+        font-size: 15px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(2){
+        font-size: 13px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(2)>span{
+        font-size: 13px;
+    }
 }
 @media (max-width: 400px) {
     .promotionCardOne, .promotionCardThree, .promotionCardTwo{
@@ -1335,30 +1378,27 @@
     .promotionCardThree>p>span{
         font-size: 15px;
     }
-    .ProductCards{
-        max-height: 200px;
-    }
-    .ProductCardsTitle>p{
-        font-size: 10px;
-    }
-    .ProductCardsRating>p{
-        font-size: 8px;
-    }
-    .ProductCardsCurrentPrice{
-        padding: 0 10%;
-    }
-    .ProductCardsCurrentPrice>:nth-child(1){
-        font-size: 10px;
-    }
-    .ProductCardsCurrentPrice>:nth-child(2){
-        font-size: 6px;
-    }
-    .ProductCardsCurrentPrice>:nth-child(2)>span{
-        font-size: 6px;
-    }
     .HorizontalNewsCard>figure{
         width: 80px;
         height: 80px;
+    }
+    .ProductCardsTitle{
+        margin-top: 3%;
+    }
+    .ProductCardsTitle>p{
+        font-size: 18px;
+    }
+    .ProductCardsRating>p{
+        font-size: 10px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(1){
+        font-size: 20px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(2){
+        font-size: 15px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(2)>span{
+        font-size: 15px;
     }
 }
 @media (max-width: 360px) {
@@ -1418,27 +1458,6 @@
     }
     .promotionCardThree>p>span{
         font-size: 15px;
-    }
-    .ProductCards{
-        max-height: 360px;
-    }
-    .ProductCardsTitle>p{
-        font-size: 18px;
-    }
-    .ProductCardsRating>p{
-        font-size: 15px;
-    }
-    .ProductCardsCurrentPrice{
-        padding: 0 12%;
-    }
-    .ProductCardsCurrentPrice>:nth-child(1){
-        font-size: 15px;
-    }
-    .ProductCardsCurrentPrice>:nth-child(2){
-        font-size: 12px;
-    }
-    .ProductCardsCurrentPrice>:nth-child(2)>span{
-        font-size: 12px;
     }
 }
 
@@ -1500,27 +1519,6 @@
     .promotionCardThree>p>span{
         font-size: 10px;
     }
-    .ProductCards{
-        max-height: 300px;
-    }
-    .ProductCardsTitle>p{
-        font-size: 18px;
-    }
-    .ProductCardsRating>p{
-        font-size: 13px;
-    }
-    .ProductCardsCurrentPrice{
-        padding: 0 12%;
-    }
-    .ProductCardsCurrentPrice>:nth-child(1){
-        font-size: 13px;
-    }
-    .ProductCardsCurrentPrice>:nth-child(2){
-        font-size: 10px;
-    }
-    .ProductCardsCurrentPrice>:nth-child(2)>span{
-        font-size: 10px;
-    }
     .HorizontalNewsCard>figure{
         width: 50px;
         height: 50px;
@@ -1534,5 +1532,26 @@
     .HorizontalNewsCardWriting>:nth-child(3){
         font-size: 7px;
         line-height: 110%;
+    }
+    .ProductCards{
+        max-height: 270px;
+    }
+    .ProductCardsTitle{
+        margin-top: 3%;
+    }
+    .ProductCardsTitle>p{
+        font-size: 13px;
+    }
+    .ProductCardsRating>p{
+        font-size: 10px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(1){
+        font-size: 14px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(2){
+        font-size: 12px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(2)>span{
+        font-size: 12px;
     }
 }

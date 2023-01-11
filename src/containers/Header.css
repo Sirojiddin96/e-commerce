@@ -3,8 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: flex-start;
-   
+    justify-content: flex-start;  
 }
 .profile{
     width: 100%;
@@ -29,35 +28,42 @@
     width: 4%;
     position: absolute;
     top: 50%;
+    left: 4%;
 }
 .profileLeft>:nth-child(2){
     left: 8%;
-}
-.ProfileInformation{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
 }
 .NavLink{
     text-decoration: none;
 }
 .profileRight{
-    width: 45%;
+    width: 55%;
+    height: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
 }
 .profileRight>:first-child{
-    width: 40%;
+    width: 30%;
 }
-.ProfileInformation>figure{
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
+.ProfileInformation{
+    width: 100%;
 }
-.ProfileInformation>figure>img{
+.ProfileInformationIcon{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.ProfileInformationIcon>figure{
+    width: 30px;
+    height: 30px;
+    margin-right: 5%;
+}
+.ProfileInformationIcon>figure>img{
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -68,26 +74,31 @@
     line-height: 24px;
     color: #262626;
 }
+.profileRight>:nth-child(2){
+    width: 9%;
+}
 .Cart{
-    width: 30px;
-    height: 40px;
+    width: 100%;
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
     position: relative;
 }
 .CartImage{
-    text-align: end;
-    width: 70%;
-    height: 70%;
+    width: 80%;
+    text-align: start;
 }
-.CartImage>img{
+.CartImage>figure{
+    width: 35px;
+    height: 40px;
+}
+.CartImage>figure>img{
     width: 100%;
     height: 100%;
 }
 .CartNumber{
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -95,11 +106,15 @@
     top: 0;
     right: 30%;
 }
-.CartNumber>figure{
+.CartNumberEllipse{
     width: 100%;
     height: 100%;
 }
-.CartNumber>figure>img{
+.CartNumberEllipse>figure{
+    width: 100%;
+    height: 100%;
+}
+.CartNumberEllipse>figure>img{
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -119,8 +134,50 @@
 .CartNumber.None{
     display: none;
 }
+.profileRight>:nth-child(3){
+    width: 15%;
+}
+.FavoriteNumber{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 5%;
+    right: -20%;
+}
+.FavoriteNumberEllipse{
+    width: 100%;
+    height: 100%;
+}
+.FavoriteNumberEllipse>figure{
+    width: 100%;
+    height: 100%;
+}
+.FavoriteNumberEllipse>figure>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.FavoriteNumber>p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 700;
+    font-size: 9px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: 0.5px;
+    color: #FFFFFF;
+}
+.FavoriteNumber.None{
+    display: none;
+}
 .Favorites{
-    width: 20%;
+    width: 100%;
+    position: relative;
 }
 .Favorites>p{
     font-weight: 400;
@@ -142,14 +199,18 @@
     opacity: 0.5;
 }
 .Search{
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
 }
-.Search>figure{
+.SearchIcon{
     width: 100%;
     height: 100%;
 }
-.Search>figure>img{
+.SearchIcon>figure{
+    width: 100%;
+    height: 100%;
+}
+.SearchIcon>figure>img{
     width: 100%;
     height: 100%;
 }
@@ -187,4 +248,301 @@
 }
 .NavLink.list.first{
     color: #40BFFF;
+}
+.MenuIcon{
+    display: none;
+}
+.SideBar{
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100vh;
+    z-index: 4;
+    background-color: #FAFAFB;
+    transform: translateX(-100%);
+    transition: all 0.3s ease-in;
+    padding: 5%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.SideBar.Show{
+    transform: translateX(0);
+}
+.SideBarBack{
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: #424242ad;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.SideBarBack.Show{
+    display: flex;
+}
+.SideBar>div{
+    width: 100%;
+    height: 10%;
+}
+.SideBar>div>:nth-child(1){
+    width: 100%;
+}
+.SideBarProfileInformation, .SideBarCart, .SideBarFavorites, .SideBarSearch{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.SideBarProfileInformation>p, .SideBarCart>p, .SideBarFavorites>p, .SideBarSearch>p{
+    font-size: 15px;
+}
+.SideBarProfileInformation>div, .SideBarCart>div, .SideBarFavorites>div, .SideBarSearch>div{
+    width: 25px;
+    height: 25px;
+    margin-right: 10%;
+}
+.SideBarProfileInformation>div>figure, .SideBarProfileInformation>div>figure>img, .SideBarCart>div>figure, .SideBarCart>div>figure>img, .SideBarFavorites>div>figure, .SideBarFavorites>div>figure>img, .SideBarSearch>div>figure, .SideBarSearch>div>figure>img{
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 1300px) {
+    .AccordionHolder{
+        width: 12%;
+    }
+    .CartNumber{
+        right: 20%;
+    }
+    .FavoriteNumber{
+        right: -35%;
+    }
+}
+@media (max-width: 1025px) {
+    .profile{
+        padding: 2% 5%;
+        width: 100%;
+    }
+    .profileLeft{
+        width: 10%;
+    }
+    .AccordionHolder{
+        width: 10%;
+    }
+    .profileLeft>:nth-child(2){
+        left: 9%;
+    }
+    .ProfileInformationIcon>p{
+        font-size: 15px;
+    }
+    .ProfileInformationIcon>figure{
+        width: 25px;
+        height: 25px;
+    }
+    .CartImage>figure{
+        width: 25px;
+        height: 35px;
+    }
+    .CartNumber{
+        width: 20px;
+        height: 20px;
+    }
+    .Favorites>p{
+        font-size: 16px;
+    }
+    .FavoriteNumber{
+        width: 20px;
+        height: 20px;
+        top: 15%;
+        right: -35%;
+    }
+    .Search{
+        width: 25px;
+        height: 25px;
+    }
+    .Total>p{
+        font-size: 15px;
+    }
+    .logo{
+        width: 12%;
+    }
+    .links{
+        padding: 2% 5%;
+    }
+    .NavLink.list{
+        font-size: 22px;
+    }
+}
+@media (max-width: 950px) {
+    .ProfileInformationIcon>p{
+        font-size: 15px;
+    }
+    .ProfileInformationIcon>figure{
+        width: 20px;
+        height: 20px;
+    }
+    .CartImage>figure{
+        width: 20px;
+        height: 30px;
+    }
+    .CartNumber{
+        width: 15px;
+        height: 15px;
+        right: 30%;
+    }
+    .CartNumber>p{
+        margin-top: 18%;
+        font-size: 8px;
+    }
+    .Favorites>p{
+        font-size: 15px;
+    }
+    .FavoriteNumber{
+        width: 15px;
+        height: 15px;
+        top: 15%;
+        right: -30%;
+    }
+    .FavoriteNumber>p{
+        margin-top: 18%;
+        font-size: 8px;
+    }
+    .Search{
+        width: 20px;
+        height: 20px;
+    }
+    .Total>p{
+        font-size: 15px;
+    }
+    .logo{
+        width: 12%;
+    }
+    .links{
+        padding: 2% 5%;
+    }
+    .NavLink.list{
+        font-size: 20px;
+    }
+}
+@media (max-width: 900px) {
+    .ProfileInformationIcon>p{
+        font-size: 14px;
+    }
+    .CartNumber{
+        right: 26%;
+    }
+    .Favorites>p{
+        font-size: 14px;
+    }
+    .Total>p{
+        font-size: 14px;
+    }
+    .NavLink.list{
+        font-size: 19px;
+    }
+}
+@media (max-width: 850px) {
+    .ProfileInformationIcon>p{
+        font-size: 13px;
+    }
+    .CartNumber{
+        right: 23%;
+    }
+    .Favorites>p{
+        font-size: 13px;
+    }
+    .Total>p{
+        font-size: 13px;
+    }
+    .NavLink.list{
+        font-size: 20px;
+    }
+}
+@media (max-width: 800px) {
+    .CartNumber{
+        right: 18%;
+    }
+    .FavoriteNumber{
+        right: -45%;
+    }
+}
+@media (max-width: 700px) {
+    .profileRight{
+        width: 70%;
+    }
+    .AccordionHolder{
+        top: 35%;
+    }
+    .CartNumber{
+        right: 25%;
+    }
+    .FavoriteNumber{
+        right: -30%;
+    }
+}
+@media (max-width: 650px) {
+    .profileLeft, .profileRight{
+        display: none;
+    }
+    .MenuIcon{
+        display: flex;
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+    }
+    .MenuIcon>figure{
+        width: 100%;
+        height: 100%;
+    }
+    .MenuIcon>figure>img{
+        width: 100%;
+        height: 100%;
+    }
+}
+@media (max-width: 550px) {
+    .SideBar{
+        width: 70%;
+    }
+    .NavLink.list{
+        font-size: 20px;
+    }
+    .logo{
+        width: 20%;
+    }
+}
+@media (max-width: 400px) {
+    .SideBar{
+        width: 80%;
+    }
+    .NavLink.list{
+        font-size: 18px;
+    }
+    .logo{
+        width: 25%;
+    }
+}
+@media (max-width: 350px) {
+    .SideBar{
+        width: 90%;
+    }
+    .NavLink.list{
+        font-size: 15px;
+    }
+    .logo{
+        width: 25%;
+    }
+}
+@media (max-width: 300px) {
+    .NavLink.list{
+        font-size: 14px;
+    }
+    .logo{
+        width: 25%;
+    }
 }
