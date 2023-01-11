@@ -16,6 +16,7 @@ function ContextProvider({children}) {
     const [allowed, setAllowed] = useState(mode === "Rectangular" ? 9 : 4);
     const [productlist, setProducts] = useState(changed===true ? (JSON.parse(localStorage.getItem("productlist")) ? JSON.parse(localStorage.getItem("productlist")) : []) : products);
     const [add, setAdd] = useState(false);
+    const [menu, setMenu] = useState(false);
     useEffect(() => {
       localStorage.setItem("data", JSON.stringify(cart));
     }, [cart]);
@@ -197,7 +198,7 @@ function ContextProvider({children}) {
         setChanged(true);
       }
     return(
-        <ContextData.Provider value={{handleInputBrand, handleInputNumber, editItem, setAdd, add, product, handleInput, handleRasm, handleSend, AdminDeleteProduct, productlist, adminlog, setAdminlog, deleteFavorite, addFavorite, favorites, allowed, mode, changeMode, checkout, calcShipping, calcTotal, delteCartItem, descreaseQuantity, increseQuantity, Clength, priceAfterDiscount, addCart, cart, toggle, open}}>
+        <ContextData.Provider value={{menu, setMenu, handleInputBrand, handleInputNumber, editItem, setAdd, add, product, handleInput, handleRasm, handleSend, AdminDeleteProduct, productlist, adminlog, setAdminlog, deleteFavorite, addFavorite, favorites, allowed, mode, changeMode, checkout, calcShipping, calcTotal, delteCartItem, descreaseQuantity, increseQuantity, Clength, priceAfterDiscount, addCart, cart, toggle, open}}>
             {children}
         </ContextData.Provider>
     )

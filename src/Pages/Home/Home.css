@@ -137,6 +137,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between; 
+    margin-top: 5%;
 }
 .service-section{
     width: 100%;
@@ -305,6 +306,9 @@
     .banner-title>p{
         font-size: 25px;
     }
+    .products{
+        width: 90%;
+    }
 }
 @media (max-width: 360px) {
     .home-section{
@@ -347,9 +351,6 @@
     .product-lists{
         justify-content: center;
         padding: 2% 5%;
-    }
-    .products{
-        width: 90%;
     }
     .service-section{
         flex-direction: column;

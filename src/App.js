@@ -6,16 +6,16 @@ import Adminpanel from "./admin-panel/Admin-panel";
 
 
 function App() {
-  const {adminlog} = useContext(ContextData);
+  const {adminlog, menu} = useContext(ContextData);
  
   return (
-    <div className="wrapper">
+    <div className={menu ? "wrapper noscroll" : "wrapper"}>
       { adminlog ? 
       <>
         <Adminpanel/>
       </> :
       <>
-        {/* <Header/> */}
+        <Header/>
         <Routers/>
       </>
       }
