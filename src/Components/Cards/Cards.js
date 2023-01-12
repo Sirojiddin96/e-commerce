@@ -94,7 +94,7 @@ export function ProductCards(props){
 
 export function ProductCardsHorizontal(props){
     const navig = useNavigate();
-    const {deleteFavorite, addFavorite, addCart} = useContext(ContextData);
+    const {deleteFavorite, windowSize, addFavorite, addCart} = useContext(ContextData);
     const {inFavorites, description, inCart, product, pic, title, originalPrice, discount, currentPrice} = props;
     return(
         <div onClick={()=>navig("/products/" + product.id)} className="ProductCardsHorizontal">

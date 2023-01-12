@@ -249,7 +249,6 @@
     width: 17.8px;
     height: 15.6px;
 }
-
 .IconCard{
     width: 100%;
     display: flex;
@@ -461,6 +460,7 @@
     width: 100%;
     display: flex;
     flex-direction: row;
+    margin-top: 5%;
 }
 .ProductCardsCartHorizontal{
     width: 150px;
@@ -488,7 +488,6 @@
     align-items: center;
     justify-content: center;
     margin-right: 7%;
-    
 }
 .ProductCardsLikeHorizontal{
     width: 46px;
@@ -617,6 +616,16 @@
         margin-top: 60%;
         font-size: 15px;
     }
+    .ProductCardsFigureHorizontal{
+        width: 250px;
+        height: 250px;
+    }
+    .ProductCardsRatingHorizontal{
+        margin: 2% 0;
+    }
+    .ProductCardsDescriptionHorizontal{
+        margin: 0;
+    }
 }
 @media (max-width: 1025px) {
     .promotionCardOne, .promotionCardThree, .promotionCardTwo{
@@ -635,7 +644,6 @@
     .promotionCardTwoPrice{
         margin-bottom: 20%;
     }
-    
     .promotionCardTwoTitle>:nth-child(1){
         font-size: 20px;
     }
@@ -665,6 +673,50 @@
     }
     .ProductCardsCurrentPrice>:nth-child(2)>span{
         font-size: 13px;
+    }
+    .ProductCardsFigureHorizontal{
+        width: 200px;
+        height: 200px;
+    }
+    .ProductCardsTitleHorizontal>p{
+        font-size: 20px;
+    }
+    .ProductCardsRatingHorizontal>:nth-child(2), .ProductCardsRatingHorizontal>:nth-child(3), .ProductCardsRatingHorizontal>:nth-child(3)>span{
+        font-size: 12px;
+    }
+    .ProductCardsCurrentPriceHorizontal{
+        margin: 1% 0 2%;
+    }
+    .ProductCardsCurrentPriceHorizontal>:nth-child(1){
+        font-size: 18px;
+    }
+    .ProductCardsCurrentPriceHorizontal>:nth-child(2), .ProductCardsCurrentPriceHorizontal>:nth-child(2)>span{
+        font-size: 13px;
+    }
+    .ProductCardsDescriptionHorizontal>p{
+        font-size: 13px;
+        line-height: 20px;
+    }
+    .ProductCardsCartHorizontal{
+        width: 140px;
+        height: 40px;
+    }
+    .ProductCardsLikeHorizontal{
+        width: 40px;
+        height: 40px;
+    }
+    .ProductCardsCartHorizontal>p{
+        font-size: 12px;
+    }
+    .ProductCardsFigureHorizontal{
+        width: 250px;
+        height: 250px;
+    }
+}
+@media (max-width: 1000px) {
+    .ProductCardsFigureHorizontal{
+        width: 190px;
+        height: 190px;
     }
 }
 @media (max-width: 950px) {
@@ -722,6 +774,44 @@
     }
     .ProductCardsCurrentPrice>:nth-child(2)>span{
         font-size: 12px;
+    }
+    .ProductCardsFigureHorizontal{
+        width: 180px;
+        height: 180px;
+    }
+    .ProductCardsTitleHorizontal>p{
+        font-size: 20px;
+    }
+    .ProductCardsRatingHorizontal>:nth-child(2), .ProductCardsRatingHorizontal>:nth-child(3), .ProductCardsRatingHorizontal>:nth-child(3)>span{
+        font-size: 12px;
+    }
+    .ProductCardsCurrentPriceHorizontal{
+        margin: 1% 0 2%;
+    }
+    .ProductCardsCurrentPriceHorizontal>:nth-child(1){
+        font-size: 18px;
+    }
+    .ProductCardsCurrentPriceHorizontal>:nth-child(2), .ProductCardsCurrentPriceHorizontal>:nth-child(2)>span{
+        font-size: 13px;
+    }
+    .ProductCardsDescriptionHorizontal>p{
+        font-size: 13px;
+        line-height: 20px;
+    }
+    .ProductCardsCartHorizontal{
+        width: 140px;
+        height: 40px;
+    }
+    .ProductCardsLikeHorizontal{
+        width: 40px;
+        height: 40px;
+    }
+    .ProductCardsCartHorizontal>p{
+        font-size: 12px;
+    }
+    .ProductCardsCartHorizontal>figure, .ProductCardsLikeHorizontal>figure{
+        width: 20px;
+        height: 20px;
     }
 }
 @media (max-width: 900px) {
@@ -801,6 +891,52 @@
     .ProductCardsCurrentPrice>:nth-child(2)>span{
         font-size: 10px;
     }
+    .ProductCardsFigureHorizontal{
+        width: 160px;
+        height: 160px;
+    }
+    .ProductCardsTitleHorizontal>p{
+        font-size: 19px;
+    }
+    .ProductCardsRatingHorizontal>:nth-child(2), .ProductCardsRatingHorizontal>:nth-child(3), .ProductCardsRatingHorizontal>:nth-child(3)>span{
+        font-size: 11px;
+    }
+    .ProductCardsCurrentPriceHorizontal{
+        margin: 1% 0 2%;
+    }
+    .ProductCardsCurrentPriceHorizontal>:nth-child(1){
+        font-size: 18px;
+    }
+    .ProductCardsCurrentPriceHorizontal>:nth-child(2), .ProductCardsCurrentPriceHorizontal>:nth-child(2)>span{
+        font-size: 12px;
+    }
+    .ProductCardsDescriptionHorizontal>p{
+        font-size: 12px;
+        line-height: 20px;
+    }
+    .ProductCardsCartHorizontal{
+        width: 120px;
+        height: 40px;
+    }
+    .ProductCardsLikeHorizontal{
+        width: 40px;
+        height: 40px;
+    }
+    .ProductCardsCartHorizontal>p{
+        font-size: 12px;
+    }
+    .ProductCardsCartHorizontal>figure, .ProductCardsLikeHorizontal>figure{
+        width: 18px;
+        height: 18px;
+    }
+    .ProductCardsDescriptionHorizontal>p{
+        font-size: 10px;
+        line-height: 15px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
 }
 @media (max-width: 870px) {
     .promotionCardOne>:nth-child(3){
@@ -871,6 +1007,40 @@
         margin-top: 53%;
         font-size: 18px;
     }
+    .ProductCardsTitleHorizontal>p{
+        font-size: 20px;
+    }
+    .ProductCardsRatingHorizontal>:nth-child(2), .ProductCardsRatingHorizontal>:nth-child(3), .ProductCardsRatingHorizontal>:nth-child(3)>span{
+        font-size: 12px;
+    }
+    .ProductCardsCurrentPriceHorizontal{
+        margin: 1% 0 2%;
+    }
+    .ProductCardsCurrentPriceHorizontal>:nth-child(1){
+        font-size: 18px;
+    }
+    .ProductCardsCurrentPriceHorizontal>:nth-child(2), .ProductCardsCurrentPriceHorizontal>:nth-child(2)>span{
+        font-size: 13px;
+    }
+    .ProductCardsDescriptionHorizontal>p{
+        font-size: 13px;
+        line-height: 20px;
+    }
+    .ProductCardsCartHorizontal{
+        width: 140px;
+        height: 40px;
+    }
+    .ProductCardsLikeHorizontal{
+        width: 40px;
+        height: 40px;
+    }
+    .ProductCardsCartHorizontal>p{
+        font-size: 12px;
+    }
+    .ProductCardsFigureHorizontal{
+        width: 200px;
+        height: 200px;
+    }
 }
 @media (max-width: 740px) {
     .promotionCardOne, .promotionCardThree, .promotionCardTwo{
@@ -935,6 +1105,40 @@
     }
     .IconCard>:nth-child(3){
         font-size: 13px;
+    }
+    .ProductCardsTitleHorizontal>p{
+        font-size: 19px;
+    }
+    .ProductCardsRatingHorizontal>:nth-child(2), .ProductCardsRatingHorizontal>:nth-child(3), .ProductCardsRatingHorizontal>:nth-child(3)>span{
+        font-size: 11px;
+    }
+    .ProductCardsCurrentPriceHorizontal{
+        margin: 1% 0 2%;
+    }
+    .ProductCardsCurrentPriceHorizontal>:nth-child(1){
+        font-size: 17px;
+    }
+    .ProductCardsCurrentPriceHorizontal>:nth-child(2), .ProductCardsCurrentPriceHorizontal>:nth-child(2)>span{
+        font-size: 12px;
+    }
+    .ProductCardsDescriptionHorizontal>p{
+        font-size: 12px;
+        line-height: 20px;
+    }
+    .ProductCardsCartHorizontal{
+        width: 140px;
+        height: 40px;
+    }
+    .ProductCardsLikeHorizontal{
+        width: 40px;
+        height: 40px;
+    }
+    .ProductCardsCartHorizontal>p{
+        font-size: 12px;
+    }
+    .ProductCardsFigureHorizontal{
+        width: 180px;
+        height: 180px;
     }
 }
 @media (max-width: 700px) {
@@ -1026,6 +1230,10 @@
     }
     .IconCard>:nth-child(3){
         font-size: 15px;
+    }
+    .ProductCardsFigureHorizontal{
+        width: 170px;
+        height: 170px;
     }
 }
 @media (max-width: 650px) {
@@ -1147,6 +1355,52 @@
     .HorizontalNewsCardWriting>:nth-child(3){
         font-size: 13px;
     }
+    .ProductCardsFigureHorizontal{
+        width: 160px;
+        height: 160px;
+    }
+    .ProductCardsTitleHorizontal>p{
+        font-size: 19px;
+    }
+    .ProductCardsRatingHorizontal>:nth-child(2), .ProductCardsRatingHorizontal>:nth-child(3), .ProductCardsRatingHorizontal>:nth-child(3)>span{
+        font-size: 11px;
+    }
+    .ProductCardsCurrentPriceHorizontal{
+        margin: 1% 0 2%;
+    }
+    .ProductCardsCurrentPriceHorizontal>:nth-child(1){
+        font-size: 18px;
+    }
+    .ProductCardsCurrentPriceHorizontal>:nth-child(2), .ProductCardsCurrentPriceHorizontal>:nth-child(2)>span{
+        font-size: 12px;
+    }
+    .ProductCardsDescriptionHorizontal>p{
+        font-size: 11px;
+        line-height: 20px;
+    }
+    .ProductCardsCartHorizontal{
+        width: 120px;
+        height: 40px;
+    }
+    .ProductCardsLikeHorizontal{
+        width: 40px;
+        height: 40px;
+    }
+    .ProductCardsCartHorizontal>p{
+        font-size: 11px;
+    }
+    .ProductCardsCartHorizontal>figure, .ProductCardsLikeHorizontal>figure{
+        width: 15px;
+        height: 15px;
+    }
+    .ProductCardsDescriptionHorizontal>p{
+        font-size: 10px;
+        line-height: 15px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
 }
 @media (max-width: 550px) {
     .promotionCardOne>:nth-child(3){
@@ -1188,6 +1442,14 @@
     .ProductCardsCurrentPrice>:nth-child(2)>span{
         font-size: 10px;
     }
+    .ProductCardsFigureHorizontal{
+        width: 140px;
+        height: 140px;
+    }
+    .ProductCardsDescriptionHorizontal>p{
+        font-size: 10px;
+        line-height: 15px;
+    }
 }
 @media (max-width: 500px) {
     .promotionCardThreeCurrentPrice>p{
@@ -1225,6 +1487,15 @@
         font-size: 11px;
         line-height: 110%;
     }
+    .ProductCardsFigureHorizontal{
+        width: 120px;
+        height: 120px;
+    }
+    .ProductCardsDescriptionHorizontal>p{
+        font-size: 10px;
+        line-height: 15px;
+    }
+    
 }
 @media (max-width: 460px) {
     .promotionCardOne, .promotionCardThree, .promotionCardTwo{
@@ -1322,6 +1593,39 @@
     .ProductCardsCurrentPrice>:nth-child(2)>span{
         font-size: 13px;
     }
+    .ProductCardsFigureHorizontal{
+        width: 150px;
+        height: 100px;
+    }
+    .ProductCardsCartHorizontal{
+        width: 100px;
+        height: 40px;
+    }
+    .ProductCardsLikeHorizontal{
+        width: 40px;
+        height: 40px;
+    }
+    .ProductCardsCartHorizontal>p{
+        font-size: 12px;
+    }
+    .ProductCardsCartHorizontal{
+        width: 100px;
+        height: 30px;
+    }
+    .ProductCardsCartHorizontal>p{
+        font-size: 10px;
+    }
+    .ProductCardsCartHorizontal>figure, .ProductCardsLikeHorizontal>figure{
+        width: 15px;
+        height: 20px;
+    }
+    .ProductCardsCartHorizontal>figure>img, .ProductCardsLikeHorizontal>figure>img{
+        width: 100%;
+    }
+    .ProductCardsLikeHorizontal{
+        width: 30px;
+        height: 30px;
+    }
 }
 @media (max-width: 400px) {
     .promotionCardOne, .promotionCardThree, .promotionCardTwo{
@@ -1399,6 +1703,58 @@
     }
     .ProductCardsCurrentPrice>:nth-child(2)>span{
         font-size: 15px;
+    }
+    .ProductCardsCurrentPriceHorizontal>:nth-child(1), .ProductCardsCurrentPriceHorizontal>:nth-child(2), .ProductCardsCurrentPriceHorizontal>:nth-child(3) {
+        font-size: 13px;
+    }
+    .ProductCardsFigureHorizontal{
+        width: 100px;
+        height: 80px;
+    }
+    .ProductCardsCartHorizontal{
+        width: 100px;
+        height: 40px;
+    }
+    .ProductCardsRatingHorizontal>:nth-child(1), .ProductCardsRatingHorizontal>:nth-child(2), .ProductCardsRatingHorizontal>:nth-child(3){
+        font-size: 8px;
+    }
+    .ProductCardsLikeHorizontal{
+        width: 30px;
+        height: 30px;
+    }
+    .ProductCardsCartHorizontal>p{
+        font-size: 11px;
+    }
+    .ProductCardsCartHorizontal{
+        width: 90px;
+        height: 30px;
+    }
+    .ProductCardsCurrentPriceHorizontal>p{
+        font-size: 8px;
+    }
+    .ProductCardsCartHorizontal>p{
+        font-size: 10px;
+    }
+    .ProductCardsCartHorizontal>figure, .ProductCardsLikeHorizontal>figure{
+        width: 12px;
+        height: 20px;
+    }
+    .ProductCardsCartHorizontal>figure>img, .ProductCardsLikeHorizontal>figure>img{
+        width: 100%;
+    }
+    .ProductCardsLikeHorizontal{
+        width: 30px;
+        height: 30px;
+    }
+    .ProductCardsActionHorizontal{
+        margin: 10% 0 ;
+    }
+    .ProductCardsDescriptionHorizontal>p{
+        font-size: 10px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
     }
 }
 @media (max-width: 360px) {

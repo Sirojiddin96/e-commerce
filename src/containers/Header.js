@@ -23,8 +23,11 @@ function Header(){
         <div onClick={()=>setMenu(false)} className={menu ? "SideBarBack Show" : "SideBarBack"}>
         </div>
         <div className={menu ? "SideBar Show" : "SideBar"}>
+            <div className="ButtonBackDiv">
+                <button onClick={()=>setMenu(false)}>X</button>
+            </div>
             <div>
-                <NavLink onClick={()=>setMenu(false)} className="NavLink" to="/profile">
+                <NavLink onClick={()=>setMenu(false)} className="SideBarNavLink" to="/profile">
                     <div className="SideBarProfileInformation">
                         <div>
                             <figure>
@@ -36,7 +39,7 @@ function Header(){
                 </NavLink>
             </div>
             <div>
-                <NavLink onClick={()=>setMenu(false)} className="NavLink" to="/cart">
+                <NavLink onClick={()=>setMenu(false)} className="SideBarNavLink" to="/cart">
                     <div className="SideBarCart">
                         <div> 
                             <figure>
@@ -48,7 +51,7 @@ function Header(){
                 </NavLink>
             </div>
             <div>
-                <NavLink onClick={()=>setMenu(false)} className="NavLink" to="/favorites">
+                <NavLink onClick={()=>setMenu(false)} className="SideBarNavLink" to="/favorites">
                     <div className="SideBarFavorites">
                         <div> 
                             <figure>
@@ -60,7 +63,7 @@ function Header(){
                 </NavLink>
             </div>
             <div>
-                <NavLink onClick={()=>setMenu(false)} className="NavLink" to="/search">
+                <NavLink onClick={()=>setMenu(false)} className="SideBarNavLink" to="/search">
                 <div className="SideBarSearch">
                         <div> 
                             <figure>

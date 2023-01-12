@@ -70,15 +70,21 @@ thead>tr>th{
     border: none;
     cursor: pointer;
 }
-.CartProductFistPart>figure{
+.CartImageDiv{
     width: 137.85px;
     height: 94px;
-    margin: 0 10%;
+    margin: 0 10% 0 0;
+    text-align: start;
 }
-.CartProductFistPart>figure>img{
+.CartImageDiv>figure{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+}
+.CartImageDiv>figure>img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    
 }
 .CartProductTotal{
     font-weight: 400;
@@ -238,4 +244,468 @@ thead>tr>th{
     font-size: 18px;
     line-height: 27px;
     color: #FFFFFF;
+}
+@media (max-width: 1024px) {
+    thead>tr>th{
+        font-size: 18px;
+    }
+    .NoItemRow>td{
+        font-size: 18px;
+    }
+    .VoucherSide{
+        width: 300px;
+        height: 50px;
+    }
+    .VoucherSide>input, .VoucherSide>input::placeholder{
+        font-size: 14px;
+    }
+    .VoucherSide>button{
+        font-size: 15px;
+    }
+    .CalculateTotalCart>:nth-child(1), .CalculateTotalCart>:nth-child(2), .CalculateTotalCart>:nth-child(3){
+        height: 50px;
+    }
+    .CalculateTotalCart>:nth-child(1)>p, .CalculateTotalCart>:nth-child(2)>p, .CalculateTotalCart>:nth-child(3)>p{
+        font-size: 15px;
+    }
+    .FinalTotal>p{
+        font-size: 25px;
+    }
+    .CheckoutBtn{
+        height: 50px;
+        font-size: 18px;
+    }
+}
+@media (max-width: 900px) {
+    thead>tr>th{
+        font-size: 17px;
+    }
+    .NoItemRow>td{
+        font-size: 17px;
+    }
+    .VoucherSide{
+        width: 280px;
+        height: 50px;
+    }
+    .VoucherSide>input, .VoucherSide>input::placeholder{
+        font-size: 13px;
+    }
+    .VoucherSide>button{
+        font-size: 14px;
+    }
+    .CalculateTotalCart>:nth-child(1)>p, .CalculateTotalCart>:nth-child(2)>p, .CalculateTotalCart>:nth-child(3)>p{
+        font-size: 14px;
+    }
+    .FinalTotal>p{
+        font-size: 23px;
+    }
+    .CheckoutBtn{
+        font-size: 17px;
+    }
+    .CartProductFistPart>button{
+        width: 20px;
+        height: 20px;
+    }
+    .CartImageDiv{
+        width: 110px;
+        height: 80px;
+    }
+    .CartProductFistPart>p{
+        font-size: 16px;
+    }
+    .CartProductTotal{
+        font-size: 16px;
+    }
+    .CartProductQuantityDiv{
+        width: 90px;
+        height: 35px;
+    }
+    .CartProductQuantityDiv>div>p{
+        font-size: 16px;
+    }
+}
+@media (max-width: 800px){
+    thead>tr>th{
+        font-size: 16px;
+    }
+    .NoItemRow>td{
+        font-size: 16px;
+    }
+    .VoucherSide{
+        width: 280px;
+        height: 45px;
+    }
+    .VoucherSide>input, .VoucherSide>input::placeholder{
+        font-size: 13px;
+    }
+    .VoucherSide>button{
+        font-size: 14px;
+    }
+    .CalculateTotalCart>:nth-child(1), .CalculateTotalCart>:nth-child(2), .CalculateTotalCart>:nth-child(3){
+        height: 45px;
+    }
+    .CalculateTotalCart>:nth-child(1)>p, .CalculateTotalCart>:nth-child(2)>p, .CalculateTotalCart>:nth-child(3)>p{
+        font-size: 14px;
+    }
+    .FinalTotal>p{
+        font-size: 20px;
+    }
+    .CheckoutBtn{
+        height: 48px;
+        font-size: 17px;
+    }
+    .CartProductFistPart>button{
+        width: 20px;
+        height: 20px;
+    }
+    .CartImageDiv{
+        width: 90px;
+        height: 60px;
+    }
+    .CartProductFistPart>p{
+        font-size: 15px;
+    }
+    .CartProductTotal{
+        font-size: 15px;
+    }
+    .CartProductQuantityDiv{
+        width: 80px;
+        height: 35px;
+    }
+    .CartProductQuantityDiv>div>p{
+        font-size: 15px;
+    }
+}
+@media (max-width: 700px) {
+    thead>tr>th, .NoItemRow>td{
+        font-size: 15px;
+    }
+    .VoucherSide{
+        width: 250px;
+        height: 40px;
+    }
+    
+    .CalculateTotalCart>:nth-child(1), .CalculateTotalCart>:nth-child(2), .CalculateTotalCart>:nth-child(3){
+        height: 40px;
+    }
+    .VoucherSide>input, .VoucherSide>input::placeholder, .CalculateTotalCart>:nth-child(1)>p, .CalculateTotalCart>:nth-child(2)>p, .CalculateTotalCart>:nth-child(3)>p{
+        font-size: 13px;
+    }
+    .FinalTotal>p{
+        font-size: 18px;
+    }
+    .CheckoutBtn{
+        height: 45px;
+        font-size: 16px;
+    }
+    .CartProductFistPart>button{
+        width: 20px;
+        height: 20px;
+    }
+    .CartImageDiv{
+        width: 80px;
+        height: 50px;
+    }
+    .CartProductQuantityDiv{
+        width: 70px;
+        height: 30px;
+    }
+    .VoucherSide>button, .CartProductQuantityDiv>div>p, tbody>tr>:last-child, .CartProductTotal, .CartProductFistPart>p{
+        font-size: 14px;
+    }
+}
+@media (max-width: 600px) {
+    thead>tr>th, .NoItemRow>td{
+        font-size: 14px;
+    }
+    .VoucherSide{
+        width: 200px;
+        height: 40px;
+    }
+    .CalculateTotalCart>:nth-child(1), .CalculateTotalCart>:nth-child(2), .CalculateTotalCart>:nth-child(3){
+        height: 30px;
+    }
+    .VoucherSide>input, .VoucherSide>input::placeholder, .CalculateTotalCart>:nth-child(1)>p, .CalculateTotalCart>:nth-child(2)>p, .CalculateTotalCart>:nth-child(3)>p{
+        font-size: 12px;
+    }
+    .FinalTotal>p{
+        font-size: 15px;
+    }
+    .CheckoutBtn{
+        height: 45px;
+        font-size: 16px;
+    }
+    .CartProductFistPart>button{
+        width: 15px;
+        height: 15px;
+    }
+    .CartImageDiv{
+        width: 90px;
+        height: 60px;
+    }
+    .CartProductQuantityDiv{
+        width: 60px;
+        height: 25px;
+    }
+    .VoucherSide>button, .CartProductQuantityDiv>div>p, tbody>tr>:last-child, .CartProductTotal, .CartProductFistPart>p{
+        font-size: 12px;
+    }
+    thead>tr>:nth-child(1){
+        width: 40%;
+    }
+    thead>tr>:nth-child(2), tbody>tr>:nth-child(2){
+        text-align: start;
+        width: 10%;
+    }
+    thead>tr>:nth-child(3), thead>tr>:nth-child(3){
+        text-align: start;
+        width: 15%;
+    }
+    thead>tr>:nth-child(4), thead>tr>:nth-child(4){
+        text-align: start;
+        width: 15%;
+    }
+    .CartProductFistPart>button{
+        width: 18px;
+        height: 18px;
+        font-size: 10px;
+    }
+}
+@media (max-width: 500px) {
+    thead>tr>th, .NoItemRow>td{
+        font-size: 14px;
+    }
+    .VoucherSide{
+        width: 180px;
+        height: 35px;
+    }
+    thead{
+        height: 50px;
+    }
+    table{
+        max-height: 50px;
+        overflow: auto;
+    }
+    tbody>tr{
+        min-height: 250px;
+    }
+    .CalculateTotalCart>:nth-child(1), .CalculateTotalCart>:nth-child(2), .CalculateTotalCart>:nth-child(3){
+        height: 30px;
+    }
+    .VoucherSide>input, .VoucherSide>input::placeholder, .CalculateTotalCart>:nth-child(1)>p, .CalculateTotalCart>:nth-child(2)>p, .CalculateTotalCart>:nth-child(3)>p{
+        font-size: 11px;
+    }
+    .FinalTotal>p{
+        font-size: 13px;
+    }
+    .CheckoutBtn{
+        height: 45px;
+        font-size: 16px;
+    }
+    .CartProductFistPart>button{
+        width: 25px;
+        height: 25px;
+    }
+    .CartImageDiv{
+        width: 200px;
+        height: 120px;
+    }
+    .CartProductQuantityDiv{
+        width: 100px;
+        height: 40px;
+    }
+    .CartProductQuantityDiv>button{
+        font-size: 20px;
+    }
+    .VoucherSide>button{
+        font-size: 11px;
+    }
+    .CartProductQuantityDiv>div>p, tbody>tr>:last-child, .CartProductTotal, .CartProductFistPart>p{
+        font-size: 18px;
+    }
+    thead>tr, tbody>tr{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    thead>tr>:nth-child(1), tbody>tr>:nth-child(1){
+        width: 100%;
+        text-align: center;
+    }
+    thead>tr>:nth-child(2), tbody>tr>:nth-child(2){
+        width: 40%;
+        text-align: end;
+    }
+    thead>tr>:nth-child(3), tbody>tr>:nth-child(3){
+        text-align: start;
+        width: 40%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    thead>tr>:nth-child(4), tbody>tr>:nth-child(4){
+        text-align: start;
+        width: 20%;
+        text-align: start;
+    }
+    .CartProductFistPart>button{
+        width: 25px;
+        height: 25px;
+        font-size: 12px;
+    }
+}
+@media (max-width: 450px) {
+    thead>tr>th, .NoItemRow>td{
+        font-size: 12px;
+    }
+    .VoucherSide{
+        width: 180px;
+        height: 35px;
+    }
+    .CalculateTotalCart>:nth-child(1), .CalculateTotalCart>:nth-child(2), .CalculateTotalCart>:nth-child(3){
+        height: 30px;
+    }
+    .CalculateTotalCart>:nth-child(4){
+        height: 50px;
+    }
+    .VoucherSide>input, .VoucherSide>input::placeholder, .CalculateTotalCart>:nth-child(1)>p, .CalculateTotalCart>:nth-child(2)>p, .CalculateTotalCart>:nth-child(3)>p{
+        font-size: 11px;
+    }
+    .CartProductTotal, tbody>tr>:last-child{
+        font-size: 15px;
+    }
+    .FinalTotal>p{
+        font-size: 13px;
+    }
+    .CheckoutBtn{
+        height: 30px;
+        font-size: 13px;
+    }
+    .CartProductFistPart>button{
+        width: 10px;
+        height: 10px;
+    }
+    .CartImageDiv{
+        width: 180px;
+        height: 100px;
+    }
+    .CartProductQuantityDiv{
+        width: 80px;
+        height: 35px;
+    }
+    .VoucherSide>button{
+        font-size: 8px;
+    }
+    .CartProductFistPart>button{
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+    }
+}
+@media (max-width: 400px) {
+    thead>tr>th, .NoItemRow>td{
+        font-size: 12px;
+    }
+    .VoucherSide{
+        width: 150px;
+        height: 35px;
+    }
+    .CalculateTotalCart>:nth-child(1), .CalculateTotalCart>:nth-child(2), .CalculateTotalCart>:nth-child(3){
+        height: 25px;
+    }
+    .CalculateTotalCart>:nth-child(4){
+        height: 40px;
+    }
+    .VoucherSide>input, .VoucherSide>input::placeholder, .CalculateTotalCart>:nth-child(1)>p, .CalculateTotalCart>:nth-child(2)>p, .CalculateTotalCart>:nth-child(3)>p{
+        font-size: 11px;
+    }
+    .CartProductTotal, tbody>tr>:last-child{
+        font-size: 14px;
+    }
+    .FinalTotal>p{
+        font-size: 12px;
+    }
+    .CheckoutBtn{
+        height: 30px;
+        font-size: 13px;
+    }
+    .CartImageDiv{
+        width: 150px;
+        height: 80px;
+    }
+    .CartProductQuantityDiv{
+        width: 70px;
+        height: 30px;
+    }
+    .VoucherSide>button{
+        font-size: 8px;
+    }
+    .CartProductFistPart>p{
+        font-size: 15px;
+    }
+    .CartProductQuantityDiv>button, .CartProductQuantityDiv>div>p{
+        font-size: 15px;
+    }
+    .CartProductFistPart>button{
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+    }
+}
+@media (max-width: 300px) {
+    thead>tr>th, .NoItemRow>td{
+        font-size: 12px;
+    }
+    .VoucherSide{
+        width: 150px;
+        height: 35px;
+    }
+    thead>tr>:last-child{
+        line-height: 20px;
+    }
+    .CalculateTotalCart>:nth-child(1), .CalculateTotalCart>:nth-child(2), .CalculateTotalCart>:nth-child(3){
+        height: 25px;
+    }
+    .CalculateTotalCart>:nth-child(4){
+        height: 40px;
+    }
+    .VoucherSide>input, .VoucherSide>input::placeholder, .CalculateTotalCart>:nth-child(1)>p, .CalculateTotalCart>:nth-child(2)>p, .CalculateTotalCart>:nth-child(3)>p{
+        font-size: 11px;
+    }
+    .CartProductTotal, tbody>tr>:last-child{
+        font-size: 13px;
+    }
+    .FinalTotal>p{
+        font-size: 12px;
+    }
+    .CheckoutBtn{
+        height: 30px;
+        font-size: 13px;
+    }
+    .CartImageDiv{
+        width: 120px;
+        height: 60px;
+    }
+    .CartProductQuantityDiv{
+        width: 70px;
+        height: 30px;
+    }
+    .VoucherSide>button{
+        font-size: 8px;
+    }
+    .CartProductFistPart>p{
+        font-size: 15px;
+    }
+    .CartProductQuantityDiv>button, .CartProductQuantityDiv>div>p{
+        font-size: 13px;
+    }
+    .CartProductFistPart>button{
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+    }
+    tbody>tr{
+        min-height: 150px;
+    }
 }
