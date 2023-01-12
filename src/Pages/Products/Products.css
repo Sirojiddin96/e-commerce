@@ -81,12 +81,19 @@
     flex-wrap: wrap;
     align-content: flex-start;
     justify-content: flex-start;
+    padding-left: 5%;
 }
-.ProductsList.Rectangular{
+.ProductsList.Rectangular9{
     height: 1300px;
 }
+.ProductsList.Rectangular4{
+    height: 1200px;
+}
+.ProductsList.Rectangular6{
+    height: 1200px;
+}
 .ProductsList.Line{
-    height: 1900px;
+    height: 1800px;
     flex-direction: column;
 }
 .ProductCard{
@@ -124,14 +131,14 @@
     width: 100%;
 }
 .ProductsFilterLeft{
-    width: 60%;
+    width: 80%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
     position: relative;
 }
-.ProductsFilterLeft>p{
+.ProductsFilterLeft>div>p{
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
@@ -155,6 +162,9 @@
     padding: 0.5% 0 0 3%;
     background-color: #F6F7F8;
 }
+.ProductsFilterLeft>:nth-child(4){
+    display: none;
+}
 .ProductsFilterLeft>select:active{
     outline: 2px solid #c9caca;
 }
@@ -175,6 +185,7 @@
 .ProductsPageNumbers{
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -203,4 +214,381 @@
     line-height: 82px;
     color: #22262A;
     margin-top: 2%;
+}
+.FilterIconDiv{
+    margin-left: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border: #60636544 1px solid;
+}
+.FilterIconDiv>figure{
+    width: 80%;
+    height: 80%;
+}
+.FilterIconDiv>figure>img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.FilterSideContent{
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 120vh;
+    z-index: 4;
+    background-color: #FAFAFB;
+    transform: translateX(-100%);
+    transition: all 0.3s ease-in;
+    padding: 10%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.FilterSideContent.Show{
+    transform: translateX(0);
+}
+.FilterModalBlack{
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: #424242ad;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.ProductsFilter>:nth-child(4){
+    display: none;
+}
+.FilterModalBlack.Show{
+    display: flex;
+}
+.FilterSideContent>div{
+    width: 100%;
+}
+.ButtonCloseDiv{
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+.ButtonCloseDiv>button{
+    width: 10%;
+    background: transparent;
+    border: #22262a66 1px solid;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.FilterSideBrands{
+        width: 10%;
+        display: flex;
+        flex-direction: column;
+        background: #F6F7F8;
+        padding: 5%;
+        margin-top: 5%;
+}
+.FilterSideBrands>p{
+    font-size: 20px;
+    line-height: 27px;
+    color: #22262A;
+    margin-bottom: 5%;
+    font-weight: 600;
+}
+.SidebarBrandsName{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 3% 0;
+    cursor: pointer;
+}
+.SidebarBrandsName>p{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #262626;
+}
+.SidebarBrandsName.Active>p{
+    color: #33A0FF;
+}
+.FilterSidePrice{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #F6F7F8;
+    margin: 5% 0;
+    padding: 5%;
+}
+.FilterSidePrice>div{
+    width: 100%;
+}
+.FilterSidePrice>:nth-child(2){
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5% 0;
+}
+.FilterSidePrice>p{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    color: #22262A;
+}
+.FilterSidePrice>div>input{
+    width: 100%;
+}
+@media (max-width: 1025px) {
+    .ProductCard{
+       width: 44%;
+    }
+}
+@media (max-width: 1000px) {
+    .ProductsList.Line{
+        height: 1300px;
+    }
+}
+@media (max-width: 900px) {
+    .ProductsList.Rectangular6{
+        height: 1000px;
+    }
+}
+@media (max-width: 800px) {
+    .ProductsPagesSidebar{
+        display: none;
+    }
+    .ProductsFilterLeft>:nth-child(4){
+        display: flex;
+    }
+    .FilterSideContent{
+        width: 45%;
+    }
+    .ProductsSide{
+        width: 100%;
+        padding: 5%;
+    }
+    .ProductsList{
+        padding-left: 5%;
+    }
+    .ProductCard{
+        margin: 2%;
+    }
+    .ProductsFilterLeft>p, .PaginationPage>p{
+        font-size: 14px;
+    }
+    .PaginationPage{
+        width: 45px;
+        height: 45px;
+    }
+    .ProductsFilterLeft>select{
+        width: 150px;
+        height: 30px;
+        font-size: 14px;
+    }
+    .FilterIconDiv{
+        display: flex;
+    }
+}
+@media (max-width: 700px) {
+    .ProductsPagesSidebar{
+        display: none;
+    }
+    .ProductsSide{
+        width: 100%;
+        padding: 5%;
+    }
+    .FilterSideContent{
+        width: 50%;
+    }
+    .ProductsList{
+        padding-left: 5%;
+    }
+    .ProductCard{
+        margin: 2%;
+    }
+    .ProductsFilterLeft>div>p, .PaginationPage>p{
+        font-size: 14px;
+    }
+    .PaginationPage{
+        width: 45px;
+        height: 45px;
+    }
+    .ProductsFilterLeft>select{
+        width: 150px;
+        height: 30px;
+        font-size: 14px;
+    }
+    .ProductsFilterRight{
+        width: 10%;
+    }
+    .ProductsList.Rectangular6{
+        height: 800px;
+    }
+}
+@media (max-width: 650px) {
+    .ProductsList.Rectangular6{
+        height: 1150px;
+    }
+}
+@media (max-width: 630px) {
+    .ProductsList.Rectangular6{
+        height: 1000px;
+    }
+    .FilterSideContent{
+        width: 55%;
+    }
+}
+@media (max-width: 550px) {
+    .ProductsList.Rectangular6{
+        height: 900px;
+    }
+    .ProductsFilterLeft>select{
+        width: 80px;
+        height: 30px;
+        font-size: 14px;
+    }
+    .ProductsList.Line{
+        height: 1150px;
+    }
+    .FilterSideContent{
+        width: 60%;
+    }
+}
+@media (max-width: 460px) {
+    .ProductCard{
+        width: 90%;
+    }
+    .ProductsList.Rectangular4{
+        height: 1550px;
+    }
+    .ProductsFilterLeft>select{
+        width: 80px;
+        height: 30px;
+        font-size: 14px;
+    }
+    .ProductsList.Line{
+        height: 1100px;
+    }
+    .FilterSideContent{
+        width: 70%;
+    }
+}
+@media (max-width: 410px) {
+    .ProductsList.Line{
+        height: 1000px;
+    }
+    .ProductsFilterLeft{
+        width: 100%;
+        flex-wrap: wrap;
+        padding: 5%;
+    }
+    .ProductsFilterLeft>div>p{
+       font-size: 13px;
+    }
+    .ProductsFilterLeft>:nth-child(1){
+        width: 100%;
+    }
+    .ProductsFilterLeft>:nth-child(2){
+        width: 30%;
+    }
+    .FilterIconDiv{
+        width: 25px;
+        height: 25px;
+        margin-left: 20%;
+    }
+    .ProductsFilterLeft>select{
+        width: 150px;
+        height: 30px;
+        font-size: 13px;
+        margin: 10% 0;
+    }
+    .ProductsFilterRight{
+        width: 20%;
+    }
+    .FilterSideContent{
+        width: 80%;
+    }
+}
+@media (max-width: 360px) {
+    .ProductsList.Line{
+        height: 900px;
+    }
+    .ProductsFilterRight{
+        display: none;
+    }
+    .ProductsFilterLeft>select{
+        width: 160px;
+        height: 30px;
+    }
+    .FilterSideContent{
+        width: 90%;
+    }
+}
+@media (max-width: 320px) {
+    .ProductsFilterLeft>select{
+        width: 150px;
+        height: 30px;
+    }
+}
+@media (max-width: 300px) {
+    .ProductsList.Line{
+        height: 1000px;
+    }
+    .ProductsList.Rectangular4{
+        height: 1150px;
+    }
+    .ProductsFilter{
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .ProductsFilterLeft{
+        width: 100%;
+        flex-wrap: wrap;
+        padding: 5%;
+    }
+    .ProductsFilterLeft>div>p{
+       font-size: 13px;
+    }
+    .ProductsFilterLeft>:nth-child(1){
+        width: 80%;
+    }
+    .ProductsFilterLeft>:nth-child(2){
+        width: 30%;
+    }
+    .FilterIconDiv{
+        width: 25px;
+        height: 25px;
+        margin-left: 20%;
+    }
+    .ProductsFilterLeft>select{
+        width: 120px;
+        height: 30px;
+        font-size: 13px;
+        margin: 10% 0;
+    }
+   
+}
+@media (max-width: 250px) {
+    .ProductsFilterLeft>select{
+        width: 100px;
+        height: 30px;
+        font-size: 13px;
+        margin: 10% 0;
+    }
+}
+@media (max-width: 200px) {
+    .ProductsFilterLeft>select{
+        width: 80px;
+        height: 30px;
+        font-size: 13px;
+        margin: 10% 0;
+    }
 }

@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: flex-start;  
+    justify-content: flex-start;
 }
 .profile{
     width: 100%;
@@ -263,7 +263,7 @@
     background-color: #FAFAFB;
     transform: translateX(-100%);
     transition: all 0.3s ease-in;
-    padding: 5%;
+    padding: 5% 10%;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
@@ -287,18 +287,27 @@
 }
 .SideBar>div{
     width: 100%;
-    height: 10%;
+    height: 15%;
 }
-.SideBar>div>:nth-child(1){
+.ButtonBackDiv{
     width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+.ButtonBackDiv>button{
+    width: 10%;
+    background: transparent;
+    border: #22262a66 1px solid;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .SideBarProfileInformation, .SideBarCart, .SideBarFavorites, .SideBarSearch{
     width: 100%;
-    height: auto;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
+    margin: 0;
 }
 .SideBarProfileInformation>p, .SideBarCart>p, .SideBarFavorites>p, .SideBarSearch>p{
     font-size: 15px;
@@ -311,6 +320,17 @@
 .SideBarProfileInformation>div>figure, .SideBarProfileInformation>div>figure>img, .SideBarCart>div>figure, .SideBarCart>div>figure>img, .SideBarFavorites>div>figure, .SideBarFavorites>div>figure>img, .SideBarSearch>div>figure, .SideBarSearch>div>figure>img{
     width: 100%;
     height: 100%;
+}
+.SideBarNavLink, .SideBarNavLink>div{
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+}
+.SideBarNavLink>div>p{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #262626;
 }
 
 @media (max-width: 1300px) {

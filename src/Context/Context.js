@@ -4,6 +4,7 @@ import { products } from "../data/products.js";
 import { brands } from "../data/categories";
 export const ContextData = React.createContext();
 function ContextProvider({children}) {
+    const [windowSize, detectW] = useState({innerWidth: window.innerWidth});
     const navig = useNavigate();
     const nav = useNavigate();
     const [changed, setChanged] = useState(localStorage.getItem("changed") ? true : false);
@@ -13,10 +14,25 @@ function ContextProvider({children}) {
     const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favorites")) ? JSON.parse(localStorage.getItem("favorites")) : []);
     const [Clength, setClength] = useState(cart.length);
     const [mode, setMode] = useState("Rectangular");
-    const [allowed, setAllowed] = useState(mode === "Rectangular" ? 9 : 4);
+    const [allowed, setAllowed] = useState(windowSize.innerWidth > 1024 ? (mode === "Rectangular" ? 9 : 4) : windowSize.innerWidth >= 460 ? (mode === "Rectangular" ? 6 : 3) : (mode === "Rectangular" ? 4 : 2));
     const [productlist, setProducts] = useState(changed===true ? (JSON.parse(localStorage.getItem("productlist")) ? JSON.parse(localStorage.getItem("productlist")) : []) : products);
     const [add, setAdd] = useState(false);
     const [menu, setMenu] = useState(false);
+    const [modal, setModal] = useState(false);
+
+    const detectScreentWidth = ()=> {
+      detectW({
+        innerWidth: window.innerWidth
+      })
+      setAllowed(windowSize.innerWidth >= 1024 ? (mode === "Rectangular" ? 9 : 4) : windowSize.innerWidth >= 460 ? (mode === "Rectangular" ? 6 : 4) : 4)
+    }
+    useEffect(()=>{
+      window.addEventListener("resize", detectScreentWidth);
+      return()=> {
+        window.removeEventListener("resize", detectScreentWidth)
+      }
+    }, [windowSize]);
+    
     useEffect(() => {
       localStorage.setItem("data", JSON.stringify(cart));
     }, [cart]);
@@ -198,7 +214,7 @@ function ContextProvider({children}) {
         setChanged(true);
       }
     return(
-        <ContextData.Provider value={{menu, setMenu, handleInputBrand, handleInputNumber, editItem, setAdd, add, product, handleInput, handleRasm, handleSend, AdminDeleteProduct, productlist, adminlog, setAdminlog, deleteFavorite, addFavorite, favorites, allowed, mode, changeMode, checkout, calcShipping, calcTotal, delteCartItem, descreaseQuantity, increseQuantity, Clength, priceAfterDiscount, addCart, cart, toggle, open}}>
+        <ContextData.Provider value={{modal, setModal, windowSize, menu, setMenu, handleInputBrand, handleInputNumber, editItem, setAdd, add, product, handleInput, handleRasm, handleSend, AdminDeleteProduct, productlist, adminlog, setAdminlog, deleteFavorite, addFavorite, favorites, allowed, mode, changeMode, checkout, calcShipping, calcTotal, delteCartItem, descreaseQuantity, increseQuantity, Clength, priceAfterDiscount, addCart, cart, toggle, open}}>
             {children}
         </ContextData.Provider>
     )

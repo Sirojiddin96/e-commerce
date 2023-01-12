@@ -36,7 +36,7 @@
     line-height: 150%;
     letter-spacing: 0.5px;
     color: #FFFFFF;
-    margin-bottom: 110px;
+    padding-bottom: 110px;
 }
 .best-seller-area{
     width: 100%;
@@ -117,7 +117,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 2% 0;
+    padding: 2% 0;
 }
 .load-more-products>div{
     border-bottom: 3px solid  #33A0FF;
@@ -137,7 +137,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between; 
-    margin-top: 5%;
+    padding-top: 5%;
 }
 .service-section{
     width: 100%;
@@ -293,18 +293,13 @@
 }
 @media (max-width: 460px) {
     .banner-title>p{
-        font-size: 30px;
+        font-size: 25px;
     }
     .best-seller-section{
         padding: 2% 15%;
     }
     .best-seller-section>div>p{
         font-size: 15px;
-    }
-}
-@media (max-width: 460px) {
-    .banner-title>p{
-        font-size: 25px;
     }
     .products{
         width: 90%;

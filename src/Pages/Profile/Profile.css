@@ -169,3 +169,153 @@
     color: #40BFFF;
     cursor: pointer;
 }
+@media (max-width: 1024px) {
+    .LoginHolder{
+        width: 60%;
+    }
+    .SigninForm>input{
+        height: 50px;
+        font-size: 15px;
+    }
+    .SigninForm>input::placeholder{
+        font-size: 15px;
+    }
+}
+@media (max-width: 800px){
+    .LoginHolder{
+        width: 65%;
+    }
+    .SigninForm>input{
+        height: 45px;
+        font-size: 13px;
+    }
+    .SigninForm>input::placeholder{
+        font-size: 13px;
+    }
+    .LoginHolder>:nth-child(1){
+        font-size: 22px;
+    }
+    .LoginHolder>:nth-child(2){
+        font-size: 18px;
+    }
+    .SigninForm>button{
+        height: 50px;
+        font-size: 18px;
+    }
+    .OrDevision>p{
+        font-size: 13px;
+    }
+    .LoginWithGoogle, .LoginWithFacebook{
+        height: 50px;
+    }
+    .LoginWithGoogle>p, .LoginWithFacebook>p {
+        font-size: 14px;
+    }
+    .CannotLog>:nth-child(1), .CannotLog>:nth-child(2), .CannotLog>:nth-child(2)>span{
+        font-size: 14px;
+    }
+}
+@media (max-width: 700px) {
+    .LoginHolder{
+        width: 65%;
+    }
+    .SigninForm>input{
+        height: 45px;
+        font-size: 11px;
+    }
+    .SigninForm>input::placeholder{
+        font-size: 11px;
+    }
+    .LoginHolder>:nth-child(1){
+        font-size: 20px;
+    }
+    .LoginHolder>:nth-child(2){
+        font-size: 16px;
+    }
+    .SigninForm>button{
+        height: 45px;
+        font-size: 15px;
+    }
+    .OrDevision>p{
+        font-size: 11px;
+    }
+    .LoginWithGoogle, .LoginWithFacebook{
+        height: 45px;
+    }
+    .LoginWithGoogle>p, .LoginWithFacebook>p {
+        font-size: 12px;
+    }
+    .CannotLog>:nth-child(1), .CannotLog>:nth-child(2), .CannotLog>:nth-child(2)>span{
+        font-size: 12px;
+    }
+}
+@media (max-width: 600px) {
+    .LoginHolder{
+        width: 70%;
+    }
+}
+@media (max-width: 500px) {
+    .LoginHolder{
+        width: 80%;
+    }
+}
+@media (max-width: 400px) {
+    .LoginHolder{
+        width: 80%;
+    }
+    .SigninForm>input{
+        height: 45px;
+        font-size: 11px;
+    }
+    .SigninForm>input::placeholder{
+        font-size: 11px;
+    }
+    .LoginHolder>:nth-child(1){
+        font-size: 17px;
+    }
+    .LoginHolder>:nth-child(2){
+        font-size: 13px;
+    }
+    .SigninForm>button{
+        height: 45px;
+        font-size: 15px;
+    }
+    .OrDevision>p{
+        font-size: 10px;
+    }
+}
+@media (max-width: 300px) {
+    .LoginHolder{
+        width: 85%;
+    }
+    .SigninForm>input{
+        height: 40px;
+        font-size: 11px;
+        padding: 0 5%;
+    }
+    .SigninForm>input::placeholder{
+        font-size: 11px;
+    }
+    .LoginHolder>:nth-child(1){
+        font-size: 15px;
+    }
+    .LoginHolder>:nth-child(2){
+        font-size: 11px;
+    }
+    .SigninForm>button{
+        height: 40px;
+        font-size: 13px;
+    }
+    .OrDevision>p{
+        font-size: 9px;
+    }
+    .LoginWithGoogle, .LoginWithFacebook{
+        height: 40px;
+    }
+    .LoginWithGoogle>p, .LoginWithFacebook>p {
+        font-size: 10px;
+    }
+    .CannotLog>:nth-child(1), .CannotLog>:nth-child(2), .CannotLog>:nth-child(2)>span{
+        font-size: 10px;
+    }
+}
