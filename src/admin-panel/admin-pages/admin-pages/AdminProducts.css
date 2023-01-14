@@ -1,6 +1,6 @@
 .AdminProductsPage{
     width: 100%;
-    padding: 5%;
+    padding: 5% 1%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -15,6 +15,38 @@
 .ProductsPagesFilter{
     width: 100%;
 }
+.ProductsFilter{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: #F6F7F8;
+    margin: 2% 0;
+    padding: 2% 3%; 
+}
+.AdminProductsList{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    padding-left: 5%;
+}
+.AdminProductsList.Rectangular9{
+    height: 1300px;
+}
+.AdminProductsList.Rectangular4{
+    height: 1200px;
+}
+.AdminProductsList.Rectangular6{
+    height: 1200px;
+}
+.AdminProductCard{
+    width: 30%;
+    margin: 2% 1%;
+}
 .AdminBrands{
     width: 100%;
     display: flex;
@@ -22,4 +54,61 @@
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: flex-start;
+}
+
+@media (max-width: 1025px) {
+    .AdminProductCard{
+        width: 44%;
+    }
+    .AdminProductsList.Rectangular6{
+        height: 1500px;
+    }
+}
+@media (max-width: 950px) {
+    .AdminProductsList.Rectangular6{
+        height: 1350px;
+    }
+}
+@media (max-width: 800px) {
+    .AdminProductsList.Rectangular6{
+        height: 1200px;
+    }
+}
+@media (max-width: 700px) {
+    .AdminProductsList.Rectangular6{
+        height: 1100px;
+    }
+}
+@media (max-width: 650px) {
+    .AdminProductsList.Rectangular6{
+        height: 1050px;
+    }
+}
+@media (max-width: 600px) {
+    .AdminProductsList.Rectangular6{
+        height: 1000px;
+    }
+}
+@media (max-width: 550px) {
+    .AdminProductsList.Rectangular6{
+        height: 850px;
+    }
+}
+@media (max-width: 500px) {
+    .AdminProductCard{
+        width: 90%;
+    }
+    .AdminProductsList.Rectangular6{
+        height: 2300px;
+    }
+}
+@media (max-width: 460px) {
+    .AdminProductsList.Rectangular4{
+        height: 1550px;
+    }
+}
+@media (max-width: 300px) {
+    .AdminProductsList.Rectangular4{
+        height: 1100px;
+    }
 }

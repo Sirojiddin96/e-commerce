@@ -2,13 +2,14 @@ import "./AdminSidebar.css";
 import { NavLink } from "react-router-dom";
 import AllProductsIconGray from "../../assets/icons/AllProductsIconGray.svg";
 import AddProductIconGray from "../../assets/icons/AddProductIconGray.svg";
-import AllProductsIconBlue from "../../assets/icons/AllProductsIconBlue.svg";
-import AddProductIconBlue from "../../assets/icons/AddProductIconBlue.svg";
+import { useContext } from "react";
+import { ContextData } from "../../context/Context";
 
 function AdminSideBar(){
+    const {setSide} = useContext(ContextData);
     return(
         <div className="AdminSidebar">
-            <NavLink to="/uhgjobiejfoprfrtyuiyuowiw[wpriirqrr]p[fewfdkfjdlgja" className="AdminNavLink">
+            <NavLink onClick={()=>setSide(false)} to="/uhgjobiejfoprfrtyuiyuowiw[wpriirqrr]p[fewfdkfjdlgja" className="AdminNavLink">
                 <div>
                     <figure>
                         <img src={AllProductsIconGray} alt="AllProductsIconGray" />
@@ -16,7 +17,7 @@ function AdminSideBar(){
                     <p>Products</p>
                 </div>
             </NavLink>
-            <NavLink to="/uhgjobiejfoprfrtyuiyuowiw[wpriirqrr]p[fewfdkfjdlgja/AddProduct" className="AdminNavLink">
+            <NavLink onClick={()=>setSide(false)} to="/uhgjobiejfoprfrtyuiyuowiw[wpriirqrr]p[fewfdkfjdlgja/AddProduct" className="AdminNavLink">
                 <div>
                     <figure>
                         <img src={AddProductIconGray} alt="AddProductIconGray" />

@@ -19,12 +19,17 @@ function ContextProvider({children}) {
     const [add, setAdd] = useState(false);
     const [menu, setMenu] = useState(false);
     const [modal, setModal] = useState(false);
-
+    const [side, setSide] = useState(false);
+    const [allow, setAllow] = useState(8);
+    const [Cmodal, setCModal] = useState(false);
+    const [Amodal, setAModal] = useState(false);
+    const [Aprod, setAProduct] = useState();
     const detectScreentWidth = ()=> {
       detectW({
         innerWidth: window.innerWidth
       })
-      setAllowed(windowSize.innerWidth >= 1024 ? (mode === "Rectangular" ? 9 : 4) : windowSize.innerWidth >= 460 ? (mode === "Rectangular" ? 6 : 4) : 4)
+      setAllowed(windowSize.innerWidth >= 1024 ? (mode === "Rectangular" ? 9 : 4) : windowSize.innerWidth >= 460 ? (mode === "Rectangular" ? 6 : 4) : 4);
+      setAllowed(windowSize.innerWidth >= 1024 ? (mode === "Rectangular" ? 9 : 4) : windowSize.innerWidth >= 460 ? (mode === "Rectangular" ? 6 : 4) : 4);
     }
     useEffect(()=>{
       window.addEventListener("resize", detectScreentWidth);
@@ -180,8 +185,8 @@ function ContextProvider({children}) {
       )));
     }
     function delteCartItem(i){
-      setCart(cart.filter((elem)=>(elem.id !== i.id)));
-      setClength(cart.length-1); 
+        setCart(cart.filter((elem)=>(elem.id !== i.id)));
+        setClength(cart.length-1);
     }
     const calcTotal=()=>{
       let totalNumber = 0;
@@ -214,7 +219,7 @@ function ContextProvider({children}) {
         setChanged(true);
       }
     return(
-        <ContextData.Provider value={{modal, setModal, windowSize, menu, setMenu, handleInputBrand, handleInputNumber, editItem, setAdd, add, product, handleInput, handleRasm, handleSend, AdminDeleteProduct, productlist, adminlog, setAdminlog, deleteFavorite, addFavorite, favorites, allowed, mode, changeMode, checkout, calcShipping, calcTotal, delteCartItem, descreaseQuantity, increseQuantity, Clength, priceAfterDiscount, addCart, cart, toggle, open}}>
+        <ContextData.Provider value={{Aprod, setAProduct, Amodal, setAModal, Cmodal, setCModal, allow, setAllow, side, setSide, modal, setModal, windowSize, menu, setMenu, handleInputBrand, handleInputNumber, editItem, setAdd, add, product, handleInput, handleRasm, handleSend, AdminDeleteProduct, productlist, adminlog, setAdminlog, deleteFavorite, addFavorite, favorites, allowed, mode, changeMode, checkout, calcShipping, calcTotal, delteCartItem, descreaseQuantity, increseQuantity, Clength, priceAfterDiscount, addCart, cart, toggle, open}}>
             {children}
         </ContextData.Provider>
     )

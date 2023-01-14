@@ -1,0 +1,96 @@
+.SearchPage{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 5%;
+}
+.SearchInputDiv{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.SearchInputDiv>input{
+    width: 40%;
+    height: 60px;
+    padding: 0 1%;
+    font-size: 18px;
+    border-radius: 10px;
+}
+.SearchInputDiv>input::placeholder{
+    font-size: 18px;
+}
+.SearchProducts{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 2%;
+}
+.SearchProductsHolder{
+    width: 23%;
+    margin: 2% 1%;
+}
+@media (max-width: 1025px) {
+    .SearchProductsHolder{
+       width: 31%;
+    }
+}
+@media (max-width: 800px) {
+    .SearchInputDiv>input{
+        height: 50px;
+        padding: 0 2%;
+        font-size: 15px;
+    }
+    .SearchInputDiv>input::placeholder{
+        font-size: 15px;
+    }
+}
+@media (max-width: 700px) {
+    .SearchProductsHolder{
+       width: 45%;
+    }
+    .SearchProducts{
+        padding-left: 10%;
+    }
+    .SearchInputDiv>input{
+        width: 60%;
+        height: 50px;
+        padding: 0 2%;
+        font-size: 15px;
+    }
+    .SearchInputDiv>input::placeholder{
+        font-size: 15px;
+    }
+}
+@media (max-width: 460px) {
+    .SearchProductsHolder{
+        width: 90%;
+    }
+}
+@media (max-width: 400px) {
+    .SearchInputDiv>input{
+        width: 80%;
+        height: 40px;
+        padding: 0 4%;
+        font-size: 14px;
+    }
+    .SearchInputDiv>input::placeholder{
+        font-size: 14px;
+    }
+}
+@media (max-width: 300px) {
+    .SearchInputDiv>input{
+        width: 80%;
+        height: 40px;
+        padding: 0 2%;
+        font-size: 12px;
+    }
+    .SearchInputDiv>input::placeholder{
+        font-size: 12px;
+    }
+}

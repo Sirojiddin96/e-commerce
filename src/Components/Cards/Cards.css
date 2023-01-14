@@ -653,10 +653,24 @@
     .promotionCardOneCurrentPrice>p{
         font-size: 20px;
     }
-    .promotionCardThreeCurrentPrice>p{
-        margin-top: 65%;
-        font-size: 25px;
-        margin-bottom: 30%;
+    .AdminProductCards{
+        height: 450px;
+    }
+    .AdminProductCardsCurrentPrice{
+        margin-top: 3%;
+        padding: 0 20%;
+    }
+    .AdminProductCardsCurrentPrice{
+        padding: 0 15%;
+    }
+    .AdminProductCardsCurrentPrice>:nth-child(1){
+        font-size: 17px;
+    }
+    .AdminProductCardsCurrentPrice>:nth-child(2){
+        font-size: 13px;
+    }
+    .AdminProductCardsCurrentPrice>:nth-child(2)>span{
+        font-size: 13px;
     }
     .ProductCardsCurrentPrice{
         margin-top: 3%;
@@ -749,6 +763,31 @@
         margin-top: 63%;
         font-size: 18px;
         margin-bottom: 30%;
+    }
+    .AdminProductCards{
+        max-height: 400px;
+    }
+    .AdminProductCardsTitle{
+        margin-top: 3%;
+    }
+    .AdminProductCardsCurrentPrice{
+        margin-top: 3%;
+        padding: 0 10%;
+    }
+    .AdminProductCardsTitle>p{
+        font-size: 20px;
+    }
+    .AdminProductCardsRating>p{
+        font-size: 15px;
+    }
+    .AdminProductCardsCurrentPrice>:nth-child(1){
+        font-size: 20px;
+    }
+    .AdminProductCardsCurrentPrice>:nth-child(2){
+        font-size: 15px;
+    }
+    .AdminProductCardsCurrentPrice>:nth-child(2)>span{
+        font-size: 15px;
     }
     .ProductCards{
         max-height: 270px;
@@ -1007,6 +1046,24 @@
         margin-top: 53%;
         font-size: 18px;
     }
+    .AdminProductCards{
+        max-height: 350px;
+    }
+    .AdminProductCardsTitle>p{
+        font-size: 18px;
+    }
+    .AdminProductCardsRating>p{
+        font-size: 13px;
+    }
+    .AdminProductCardsCurrentPrice>:nth-child(1){
+        font-size: 18px;
+    }
+    .AdminProductCardsCurrentPrice>:nth-child(2){
+        font-size: 14px;
+    }
+    .AdminProductCardsCurrentPrice>:nth-child(2)>span{
+        font-size: 14px;
+    }
     .ProductCardsTitleHorizontal>p{
         font-size: 20px;
     }
@@ -1198,6 +1255,24 @@
     .promotionCardThreeCurrentPrice>p{
         margin-top: 50%;
         font-size: 13px;
+    }
+    .AdminProductCards{
+        max-height: 320px;
+    }
+    .AdminProductCardsTitle>p{
+        font-size: 17px;
+    }
+    .AdminProductCardsRating>p{
+        font-size: 10px;
+    }
+    .AdminProductCardsCurrentPrice>:nth-child(1){
+        font-size: 17px;
+    }
+    .AdminProductCardsCurrentPrice>:nth-child(2){
+        font-size: 12px;
+    }
+    .AdminProductCardsCurrentPrice>:nth-child(2)>span{
+        font-size: 12px;
     }
     .ProductCards{
         max-height: 230px;
@@ -1402,6 +1477,33 @@
         -webkit-box-orient: vertical;
     }
 }
+@media (max-width: 600px) {
+    .AdminProductCards{
+        max-height: 300px;
+    }
+    .AdminProductCardsTitle{
+        margin-top: 3%;
+    }
+    .AdminProductCardsCurrentPrice{
+        margin-top: 3%;
+        padding: 0 10%;
+    }
+    .AdminProductCardsTitle>p{
+        font-size: 17px;
+    }
+    .AdminProductCardsRating>p{
+        font-size: 10px;
+    }
+    .AdminProductCardsCurrentPrice>:nth-child(1){
+        font-size: 17px;
+    }
+    .AdminProductCardsCurrentPrice>:nth-child(2){
+        font-size: 10px;
+    }
+    .AdminProductCardsCurrentPrice>:nth-child(2)>span{
+        font-size: 10px;
+    }
+}
 @media (max-width: 550px) {
     .promotionCardOne>:nth-child(3){
         margin-top: 55%;
@@ -1450,6 +1552,27 @@
         font-size: 10px;
         line-height: 15px;
     }
+    .AdminProductCards{
+        max-height: 250px;
+    }
+    .AdminProductCardsTitle>p{
+        font-size: 15px;
+    }
+    .AdminProductCardsRating>p{
+        font-size: 10px;
+    }
+    .AdminProductCardsCurrentPrice{
+        margin-top: 0;
+    }
+    .AdminProductCardsCurrentPrice>:nth-child(1){
+        font-size: 16px;
+    }
+    .AdminProductCardsCurrentPrice>:nth-child(2){
+        font-size: 9px;
+    }
+    .AdminProductCardsCurrentPrice>:nth-child(2)>span{
+        font-size: 9px;
+    }
 }
 @media (max-width: 500px) {
     .promotionCardThreeCurrentPrice>p{
@@ -1495,7 +1618,48 @@
         font-size: 10px;
         line-height: 15px;
     }
-    
+    .ProductCards{
+        max-height: 230px;
+    }
+    .ProductCardsTitle>p{
+        font-size: 10px;
+    }
+    .ProductCardsRating>p{
+        font-size: 8px;
+    }
+    .ProductCardsCurrentPrice{
+        padding: 0 10%;
+    }
+    .ProductCardsCurrentPrice>:nth-child(1){
+        font-size: 11px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(2){
+        font-size: 7px;
+    }
+    .ProductCardsCurrentPrice>:nth-child(2)>span{
+        font-size: 7px;
+    }
+    .AdminProductCards{
+        max-height: 360px;
+    }
+    .AdminProductCardsTitle>p{
+        font-size: 20px;
+    }
+    .AdminProductCardsRating>p{
+        font-size: 15px;
+    }
+    .AdminProductCardsCurrentPrice{
+        padding: 0 12%;
+    }
+    .AdminProductCardsCurrentPrice>:nth-child(1){
+        font-size: 20px;
+    }
+    .AdminProductCardsCurrentPrice>:nth-child(2){
+        font-size: 16px;
+    }
+    .AdminProductCardsCurrentPrice>:nth-child(2)>span{
+        font-size: 16px;
+    }
 }
 @media (max-width: 460px) {
     .promotionCardOne, .promotionCardThree, .promotionCardTwo{
@@ -1815,6 +1979,24 @@
     .promotionCardThree>p>span{
         font-size: 15px;
     }
+    .AdminProductCardsTitle>p{
+        font-size: 20px;
+    }
+    .AdminProductCardsRating>p{
+        font-size: 10px;
+    }
+    .AdminProductCardsCurrentPrice{
+        padding: 0 5%;
+    }
+    .AdminProductCardsCurrentPrice>:nth-child(1){
+        font-size: 20px;
+    }
+    .AdminProductCardsCurrentPrice>:nth-child(2){
+        font-size: 15px;
+    }
+    .AdminProductCardsCurrentPrice>:nth-child(2)>span{
+        font-size: 15px;
+    }
 }
 
 @media (max-width: 300px) {
@@ -1909,5 +2091,49 @@
     }
     .ProductCardsCurrentPrice>:nth-child(2)>span{
         font-size: 12px;
+    }
+    .AdminProductCards{
+        height: 300px;
+    }
+    .AdminProductCardsTitle>p{
+        font-size: 17px;
+    }
+    .AdminProductCardsRating>p{
+        font-size: 8px;
+    }
+    .AdminProductCardsCurrentPrice{
+        padding: 0 5%;
+    }
+    .AdminProductCardsCurrentPrice>:nth-child(1){
+        font-size: 18px;
+    }
+    .AdminProductCardsCurrentPrice>:nth-child(2){
+        font-size: 12px;
+    }
+    .AdminProductCardsCurrentPrice>:nth-child(2)>span{
+        font-size: 12px;
+    }
+}
+@media (max-width: 250px) {
+    .AdminProductCards{
+        height: 250px;
+    }
+    .AdminProductCardsTitle>p{
+        font-size: 15px;
+    }
+    .AdminProductCardsRating>p{
+        font-size: 7px;
+    }
+    .AdminProductCardsCurrentPrice{
+        padding: 0 5%;
+    }
+    .AdminProductCardsCurrentPrice>:nth-child(1){
+        font-size: 15px;
+    }
+    .AdminProductCardsCurrentPrice>:nth-child(2){
+        font-size: 10px;
+    }
+    .AdminProductCardsCurrentPrice>:nth-child(2)>span{
+        font-size: 10px;
     }
 }

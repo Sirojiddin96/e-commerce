@@ -17,18 +17,18 @@ import "./Home.css";
 import "../../styles/home/home.css";
 
 import PromotionImage from "../../assets/images/PromotionImage.svg";
+import Header from "../../containers/Header";
 
 function Home() {
-    const {productlist, favorites, cart, priceAfterDiscount } = useContext(ContextData);
+    const {allow, setAllow, productlist, favorites, cart, priceAfterDiscount } = useContext(ContextData);
     const [module, setModule] = useState("All");
-    const [allowed, setAllowed] = useState(8);
     const [loading, setLoading] = useState(false);
     const [filteredProds, setFilteredProds] = useState([])
 
     function sortProducts(name) {
         setLoading(true);
         setModule(name);
-        setAllowed(8)
+        setAllow(8)
         setTimeout(() => {
             setLoading(false); /// loading
         }, 1000);
@@ -36,12 +36,13 @@ function Home() {
         const filteredProd = productlist.filter(prod => prod.category === name)
         setFilteredProds(filteredProd)
     }
-    const requestLoadMore = () => setAllowed(prevState => prevState + 8)
+    const requestLoadMore = () => setAllow(prevState => prevState + 8)
     useEffect(() => {
         sortProducts('All')
     }, []);
     return (
         <div className="home-page">
+            <Header/>
             <div className="home-section">
                 <figure>
                     <img src={PromotionImage} alt="Promotion" />
@@ -84,7 +85,7 @@ function Home() {
                                 <p>Loading...</p>
                             </div>
                             :
-                            filteredProds.map((item, index) => index < allowed ? (
+                            filteredProds.map((item, index) => index < allow ? (
                                 <div key={index} className="products">
                                     <ProductCards
                                         inFavorites={favorites.length ?
@@ -104,7 +105,7 @@ function Home() {
                     }
                 </div>
                 {
-                    filteredProds.length > allowed ?
+                    filteredProds.length > allow ?
                         <div
                             className="load-more-products"
                             onClick={() => requestLoadMore()}>

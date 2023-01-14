@@ -192,6 +192,30 @@
     background: #FAFAFB;
     margin-bottom: 5%;
 }
+.ProductsPageNumbersLeft{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.ProductsPageNumbersMiddle{
+    width: 35%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.ProductsPageNumbersRight{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.ProductsPageNumbersRight>.PaginationPage>p, .ProductsPageNumbersLeft>.PaginationPage>p{
+    font-weight: 900;
+    font-size: 20px;
+}
 .PaginationPage{
     width: 62.92px;
     height: 56px;
@@ -199,6 +223,9 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+}
+.PaginationPage:hover{
+    background-color: #d4d4d4;
 }
 .PaginationPage.Active{
     background-color: #40BFFF;
@@ -397,6 +424,11 @@
         display: flex;
     }
 }
+@media (max-width: 720px) {
+    .ProductsPageNumbersMiddle{
+        width: 40%;
+    }
+}
 @media (max-width: 700px) {
     .ProductsPagesSidebar{
         display: none;
@@ -445,6 +477,9 @@
     .FilterSideContent{
         width: 55%;
     }
+    .ProductsPageNumbersMiddle{
+        width: 50%;
+    }
 }
 @media (max-width: 550px) {
     .ProductsList.Rectangular6{
@@ -460,6 +495,16 @@
     }
     .FilterSideContent{
         width: 60%;
+    }
+    .ProductsPageNumbersRight>.PaginationPage>p, .ProductsPageNumbersLeft>.PaginationPage>p{
+        font-weight: 800;
+        font-size: 15px;
+    }
+}
+@media (max-width: 500px) {
+    .PaginationPage{
+        width: 40px;
+        height: 45px;
     }
 }
 @media (max-width: 460px) {
@@ -479,6 +524,20 @@
     }
     .FilterSideContent{
         width: 70%;
+    }
+    .ProductsFilterRight{
+        display: none;
+    }
+    .PaginationPage{
+        width: 35px;
+        height: 40px;
+    }
+    .PaginationPage>p{
+        font-size: 13px;
+    }
+    .ProductsPageNumbersRight>.PaginationPage>p, .ProductsPageNumbersLeft>.PaginationPage>p{
+        font-weight: 700;
+        font-size: 13px;
     }
 }
 @media (max-width: 410px) {
@@ -505,7 +564,7 @@
         margin-left: 20%;
     }
     .ProductsFilterLeft>select{
-        width: 150px;
+        width: 60%;
         height: 30px;
         font-size: 13px;
         margin: 10% 0;
@@ -516,13 +575,18 @@
     .FilterSideContent{
         width: 80%;
     }
+    .ProductsPageNumbersMiddle{
+        width: 60%;
+    }
+    .PaginationPage{
+        width: 30px;
+        height: 35px;
+    }
 }
+
 @media (max-width: 360px) {
     .ProductsList.Line{
         height: 900px;
-    }
-    .ProductsFilterRight{
-        display: none;
     }
     .ProductsFilterLeft>select{
         width: 160px;
@@ -558,7 +622,7 @@
        font-size: 13px;
     }
     .ProductsFilterLeft>:nth-child(1){
-        width: 80%;
+        width: 100%;
     }
     .ProductsFilterLeft>:nth-child(2){
         width: 30%;
@@ -569,12 +633,18 @@
         margin-left: 20%;
     }
     .ProductsFilterLeft>select{
-        width: 120px;
+        width: 60%;
         height: 30px;
         font-size: 13px;
         margin: 10% 0;
     }
-   
+    .PaginationPage{
+        width: 20px;
+        height: 25px;
+    }
+    .ProductsPageNumbersMiddle{
+        width: 50%;
+    }
 }
 @media (max-width: 250px) {
     .ProductsFilterLeft>select{
@@ -582,6 +652,18 @@
         height: 30px;
         font-size: 13px;
         margin: 10% 0;
+    }
+}
+@media (max-width: 230px) {
+    .PaginationPage{
+        width: 15px;
+        height: 20px;
+    }
+    .ProductsPageNumbersMiddle{
+        width: 50%;
+    }
+    .ProductsPageNumbersRight, .ProductsPageNumbersLeft{
+        width: 23%;
     }
 }
 @media (max-width: 200px) {

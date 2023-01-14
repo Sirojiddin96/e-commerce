@@ -49,7 +49,54 @@
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     transition-duration: 0.3s;
 }
+.AddProductPageForm>form>select{
+    margin-top: 2%;
+}
 .SubmitButton:hover{
     transform: scale(1.2);
     background-color: #1d48b4;
+}
+@media (max-width: 1000px) {
+    .AddProductPageForm>form>p{
+        font-size: 20px;
+    }
+}
+@media (max-width: 900px) {
+    .AddProductPageForm>form>p{
+        font-size: 18px;
+    }
+    .AddProductPageForm>form>input::placeholder, .AddProductPageForm>form>input,.AddProductPageForm>form>select{
+        font-size: 16px;
+    }
+}
+@media (max-width: 700px) {
+    .AddProductPageForm>form>p{
+        font-size: 17px;
+    }
+    .AddProductPageForm>form>input, .AddProductPageForm>form>select{
+       height: 50px;
+    }
+    .AddProductPageForm>form>input::placeholder, .AddProductPageForm>form>input,.AddProductPageForm>form>select{
+        font-size: 15px;
+    }
+}
+@media (max-width: 500px) {
+    .AddProductPageForm>form>p{
+        font-size: 16px;
+    }
+    .AddProductPageForm>form>input, .AddProductPageForm>form>select{
+       height: 40px;
+    }
+    .AddProductPageForm>form>input::placeholder, .AddProductPageForm>form>input,.AddProductPageForm>form>select{
+        font-size: 14px;
+    }
+}
+@media (max-width: 400px) {
+   .AddProductPageForm{
+    padding: 10%;
+   }
+   .AddProductPageForm>form>button{
+        height: 40px;
+        font-size: 18px;
+   }
 }
