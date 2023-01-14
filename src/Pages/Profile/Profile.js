@@ -26,7 +26,7 @@ function Profile(){
             alert("Incorrect");
         }
     }
-    return(
+    return(        
         <div className="ProfilePage">
             <div className="LoginHolder">
                 <p>Welcome to E-comm</p>

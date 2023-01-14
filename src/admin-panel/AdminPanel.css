@@ -33,7 +33,7 @@
     border-radius: 0 0 30px 30px;
 }
 .AdminProfile{
-    width: 10%;
+    width: 50%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -53,7 +53,8 @@
     font-size: 20px;
 }
 .SidebarAdmin{
-    width: 30%;
+    width: 25%;
+    padding: 6% 2%;
 }
 .AdminpanelTop>button{
     background-color: #2F80ED;
@@ -65,9 +66,177 @@
     font-size: 20px;
 }
 .AdminpanelWorkingPage{
-    width: 65%;
+    width: 70%;
     background: #ffffff;
     min-height: 70vh;
     margin: 3% 0;
     border-radius: 15px;
+}
+.AdminlogShow{
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+}
+.AdminMenuIconDiv{
+    width: 8%;
+    display: none;
+}
+.AdminMenuIconDiv>figure, .AdminMenuIconDiv>figure>img{
+    width: 100%;
+}
+.AdminSideBar{
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100vh;
+    z-index: 4;
+    background-color: #FAFAFB;
+    transform: translateX(-100%);
+    transition: all 0.3s ease-in;
+    padding: 0 5%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.AdminSideBar.Show{
+    transform: translateX(0);
+}
+.AdminSideBarBack{
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: #424242ad;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.AdminSideBarBack.Show{
+    display: flex;
+}
+.AdminSideBar>div{
+    width: 100%;
+    height: 20%;
+}
+.AdminSideBar>:nth-child(1){
+    margin-bottom: 10%;
+}
+.SideSidebarAdmin{
+    width: 100%;
+}
+@media (max-width: 1300px){
+    .AdminMenuIconDiv{
+        display: flex;
+    }
+    .SidebarAdmin{
+        display: none;
+    }
+    .AdminpanelWorkingPage{
+        width: 100%;
+    }
+}
+@media (max-width: 900px){
+    .AdminMenuIconDiv{
+        width: 10%;
+    }
+    .AdminpanelTop>button{
+        font-size: 18px;
+    }
+    .AdminProfile>p{
+        font-size: 18px;
+    }
+}
+@media (max-width: 700px){
+    .AdminMenuIconDiv{
+        margin-left: 10%;
+    }
+    .AdminpanelTop>button{
+        font-size: 17px;
+    }
+    .AdminProfile>p{
+        font-size: 17px;
+    }
+    .AdminSideBar{
+        width: 80%;
+    }
+}
+@media (max-width: 600px){
+    .AdminpanelTop{
+        padding: 4%;
+    }
+    .AdminlogShow{
+        width: 50%;
+    }
+    .AdminpanelTop>button{
+        font-size: 17px;
+    }
+    .AdminProfile>p{
+        font-size: 17px;
+    }
+}
+@media (max-width: 500px){
+    .AdminpanelTop{
+        padding: 4% 6%;
+    }
+    .AdminlogShow{
+        width: 60%;
+    }
+    .AdminpanelTop>button{
+        font-size: 15px;
+    }
+    .AdminProfile>p{
+        font-size: 15px;
+    }
+}
+@media (max-width: 400px){
+    .AdminpanelTop{
+        padding: 4% 6%;
+    }
+    .AdminlogShow{
+        width: 60%;
+    }
+    .AdminpanelTop>button{
+        font-size: 15px;
+        padding: 2.5% 2%;
+    }
+    .AdminProfile>p{
+        font-size: 15px;
+    }
+    .AdminSideBar{
+        width: 90%;
+    }
+}
+@media (max-width: 360px){
+    .AdminpanelTop{
+        padding: 4% 4%;
+    }
+    .AdminlogShow{
+        width: 65%;
+    }
+    .AdminpanelTop>button{
+        font-size: 13px;
+        padding: 2.5% 2%;
+    }
+    .AdminProfile>p{
+        font-size: 14px;
+    }
+}
+@media (max-width: 360px){
+    .AdminpanelTop{
+        padding: 8% 4%;
+        flex-direction: column;
+    }
+    .AdminlogShow{
+        width: 100%;
+    }
+    .AdminpanelTop>button{
+        font-size: 13px;
+        padding: 2.5% 2%;
+        margin-top: 5%;
+    }
+    .AdminProfile>p{
+        font-size: 14px;
+    }
 }

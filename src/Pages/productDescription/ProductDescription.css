@@ -1,6 +1,13 @@
 .ProductDescriptionPage{
     width: 100%;
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.ProductDescriptionContent{
+    width: 100%;
+    display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
@@ -51,7 +58,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 2%;
+    padding-bottom: 5%;
 }
 .ProductDescriptionTitle, .ProductDescriptionReview{
     width: 100%;
@@ -67,7 +74,7 @@
 }
 .ProductDescriptionPageRight>:nth-child(1)>p{
     font-weight: 600;
-    font-size: 24px;
+    font-size: 35px;
     line-height: 36px;
     color: #22262A;
 }
@@ -75,15 +82,20 @@
     padding: 4% 0 2%;
     border-bottom: #F6F7F8 2px solid;
 }
+.ProductDescriptionReview>:nth-child(1){
+    font-weight: 400;
+    font-size: 18px;
+    color: #C1C8CE;
+}
 .ProductDescriptionReview>:nth-child(2){
     font-weight: 400;
-    font-size: 16px;
+    font-size: 18px;
     color: #C1C8CE;
     margin: 0 3%;
 }
 .ProductDescriptionReview>:nth-child(3){
     font-weight: 400;
-    font-size: 16px;
+    font-size: 18px;
     color: #33A0FF;
     cursor: pointer;
 }
@@ -97,7 +109,7 @@
 }
 .ProductDescriptionPrice>:nth-child(1){
     font-weight: 700;
-    font-size: 20px;
+    font-size: 25px;
     letter-spacing: 0.5px;
     color: #40BFFF;
 }
@@ -105,28 +117,454 @@
     padding-top: 0.5%;
     width: 50%;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 18px;
     letter-spacing: 0.5px;
     color: #9098B1;
     margin: 0 2%;
 }
 .ProductDescriptionPrice>:nth-child(2)>span{
     font-weight: 700;
-    font-size: 14px;
+    font-size: 18px;
     color: #FB7181;
     margin: 0 2%;
 }
+.ProductDescription{
+    width: 100%;
+}
+.ProductDescription>p, .Availability>p, .Category>p, .Shipping>p{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    color: #262626;
+}
 .Availability, .Category, .Shipping{
-    width: 40%;
+    width: 50%;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
     margin: 0.5% 0;
 }
-.Availability>p, .Category>p, .Shipping>p{
+.Availability{
+    margin-top: 4%;
+}
+.ProductDescriptionCardsAction{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 5%;
+}
+.ProductDescriptionCardsCart{
+    width: 200px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    background: #33a0ff1d;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+}
+.ProductDescriptionCardsCart>p{
     font-weight: 400;
-    font-size: 14px;
-    line-height: 21px;
-    color: #262626;
+    font-size: 18px;
+    line-height: 17px;
+    color: #33A0FF;
+}
+.ProductDescriptionCardsCart:hover{
+    transform: scale(1.1);
+}
+.ProductDescriptionCardsCart>figure{
+    width: 13%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 7%;
+}
+.ProductDescriptionCardsCart>figure>img, .ProductDescriptionCardsLike>figure>img{
+    width: 100%;
+}
+.ProductDescriptionCardsLike{
+    width: 60px;
+    height: 60px;
+    background: #33a0ff1d;
+    margin-left: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+}
+.ProductDescriptionCardsLike:hover{
+    transform: scale(1.1);
+}
+.ProductDescriptionCardsLike>figure{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media (max-width: 1025px) {
+    .ProductDescriptionPageLeft>figure{
+        width: 320px;
+        height: 271.68px;
+    }
+    .ProductDescriptionPicturesFigure{
+        width: 75px;
+        height: 75px;
+    }
+    .ProductDescriptionPageRight{
+        padding-left: 3%;
+    }
+    .ProductDescriptionPageRight>:nth-child(1)>p{
+        font-size: 30px;
+    }
+    .ProductDescription>p{
+        font-size: 15px;
+        line-height: 23px;
+    }
+    .ProductDescriptionReview>:nth-child(1),  .ProductDescriptionReview>:nth-child(2), .ProductDescriptionReview>:nth-child(3){
+        font-size: 17px;
+    }
+    .ProductDescriptionPrice{
+        padding: 2% 0;
+    }
+    .ProductDescriptionPrice>:nth-child(1){
+        font-size: 26px;
+    }
+    .ProductDescriptionPrice>:nth-child(2),  .ProductDescriptionPrice>:nth-child(2)>span{
+        font-size: 18px;
+    }
+    .Availability{
+        margin-top: 3%;
+    }
+    .Availability>p, .Category>p, .Shipping>p{
+        font-size: 18px;
+        line-height: 25px;
+    }
+    .ProductDescriptionCardsAction{
+        margin-top: 10%;
+    }
+    .ProductDescriptionCardsCart{
+        width: 150px;
+        height: 50px;
+    }
+    .ProductDescriptionCardsCart>p{
+        font-size: 15px;
+    }
+    .ProductDescriptionCardsLike{
+        width: 50px;
+        height: 50px;
+    }
+}
+@media (max-width: 950px) {
+    .ProductDescriptionPageLeft>figure{
+        width: 320px;
+        height: 271.68px;
+    }
+    .ProductDescriptionPicturesFigure{
+        width: 75px;
+        height: 75px;
+    }
+    .ProductDescriptionPageRight{
+        padding-left: 3%;
+    }
+    .ProductDescriptionPicturesFigure{
+        width: 70px;
+        height: 70px;
+    }
+    .ProductDescriptionPageRight>:nth-child(1)>p{
+        font-size: 28px;
+    }
+    .ProductDescription>p{
+        font-size: 15px;
+        line-height: 23px;
+    }
+    .ProductDescriptionReview>:nth-child(1),  .ProductDescriptionReview>:nth-child(2), .ProductDescriptionReview>:nth-child(3){
+        font-size: 15px;
+    }
+    .ProductDescriptionPrice{
+        padding: 2% 0;
+    }
+    .ProductDescriptionPrice>:nth-child(1){
+        font-size: 24px;
+    }
+    .ProductDescriptionPrice>:nth-child(2),  .ProductDescriptionPrice>:nth-child(2)>span{
+        font-size: 15px;
+    }
+    .Availability{
+        margin-top: 3%;
+    }
+    .Availability>p, .Category>p, .Shipping>p{
+        font-size: 15px;
+        line-height: 20px;
+    }
+    .ProductDescriptionCardsAction{
+        margin-top: 5%;
+    }
+    .ProductDescriptionCardsCart{
+        width: 150px;
+        height: 50px;
+    }
+    .ProductDescriptionCardsCart>p{
+        font-size: 15px;
+    }
+    .ProductDescriptionCardsLike{
+        width: 50px;
+        height: 50px;
+    }
+}
+@media (max-width: 900px) {
+    .ProductDescription>p{
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .ProductDescriptionReview>:nth-child(1),  .ProductDescriptionReview>:nth-child(2), .ProductDescriptionReview>:nth-child(3){
+        font-size: 14px;
+    }
+    .Availability>p, .Category>p, .Shipping>p{
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .ProductDescriptionCardsCart{
+        width: 140px;
+        height: 45px;
+    }
+    .ProductDescriptionCardsCart>p{
+        font-size: 15px;
+    }
+    .ProductDescriptionCardsLike{
+        width: 45px;
+        height: 45px;
+    }
+}
+@media (max-width: 850px) {
+    .ProductDescriptionPageLeft>figure{
+        width: 280px;
+        height: 250px;
+    }
+    .ProductDescriptionPicturesFigure{
+        width: 60px;
+        height: 60px;
+    }
+    .ProductDescriptionPageRight>:nth-child(1)>p{
+        font-size: 28px;
+    }
+    .ProductDescription>p{
+        font-size: 13px;
+        line-height: 20px;
+    }
+    .ProductDescriptionReview>:nth-child(1),  .ProductDescriptionReview>:nth-child(2), .ProductDescriptionReview>:nth-child(3){
+        font-size: 14px;
+    }
+    .ProductDescriptionPrice{
+        padding: 2% 0;
+    }
+    .ProductDescriptionPrice>:nth-child(1){
+        font-size: 23px;
+    }
+    .ProductDescriptionPrice>:nth-child(2),  .ProductDescriptionPrice>:nth-child(2)>span{
+        font-size: 14px;
+    }
+    .Availability{
+        margin-top: 3%;
+    }
+    .Availability>p, .Category>p, .Shipping>p{
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .ProductDescriptionCardsAction{
+        margin-top: 5%;
+    }
+    .ProductDescriptionCardsCart{
+        width: 140px;
+        height: 45px;
+    }
+    .ProductDescriptionCardsCart>p{
+        font-size: 14px;
+    }
+    .ProductDescriptionCardsLike{
+        width: 45px;
+        height: 45px;
+    }
+}
+@media (max-width: 750px) {
+    .ProductDescriptionContent{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .ProductDescriptionPageLeft{
+        width: 100%;
+    }
+    .ProductDescriptionPageLeft>figure{
+        width: 350px;
+        height: 300px;
+    }
+    .ProductDescriptionPictures{
+        margin-top: 2%;
+        width: 100%;
+    }
+    .ProductDescriptionPicturesFigure{
+        width: 80px;
+        height: 80px;
+    }
+    .ProductDescriptionPageRight{
+        width: 100%;
+    }
+    .ProductDescriptionReview{
+        padding: 1% 0 2%;
+    }
+    .ProductDescriptionPageRight>:nth-child(1)>p{
+        font-size: 28px;
+    }
+    .ProductDescription>p{
+        font-size: 13px;
+        line-height: 20px;
+    }
+    .ProductDescriptionReview>:nth-child(1),  .ProductDescriptionReview>:nth-child(2), .ProductDescriptionReview>:nth-child(3){
+        font-size: 14px;
+    }
+    .ProductDescriptionPrice{
+        padding: 0;
+    }
+    .ProductDescriptionPrice>:nth-child(1){
+        font-size: 23px;
+    }
+    .ProductDescriptionPrice>:nth-child(2),  .ProductDescriptionPrice>:nth-child(2)>span{
+        font-size: 14px;
+    }
+    .Availability{
+        margin-top: 3%;
+    }
+    .Availability>p, .Category>p, .Shipping>p{
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .ProductDescriptionCardsAction{
+        margin-top: 5%;
+    }
+    .ProductDescriptionCardsCart{
+        width: 140px;
+        height: 45px;
+    }
+    .ProductDescriptionCardsCart>p{
+        font-size: 14px;
+    }
+    .ProductDescriptionCardsLike{
+        width: 45px;
+        height: 45px;
+    }
+}
+@media (max-width: 460px) {
+    .ProductDescriptionReview{
+        padding: 3% 0;
+    }
+    .Availability, .Category, .Shipping{
+        width: 80%;
+    }
+    .Availability>p, .Category>p, .Shipping>p{
+        font-size: 14px;
+        line-height: 25px;
+    }
+    .ProductDescriptionPageLeft>figure{
+        width: 90%;
+        height: 300px;
+    }
+    .ProductDescriptionPicturesFigure{
+        width: 80px;
+        height: 80px;
+    }
+}
+@media (max-width: 400px) {
+    .ProductDescriptionReview{
+        padding: 3% 0;
+    }
+    .Availability, .Category, .Shipping{
+        width: 80%;
+    }
+    .Availability>p, .Category>p, .Shipping>p{
+        font-size: 14px;
+        line-height: 25px;
+    }
+    .ProductDescriptionPageLeft>figure{
+        height: 260px;
+    }
+    .ProductDescriptionPictures{
+        margin-top: 5%;
+    }
+    .ProductDescriptionPicturesFigure{
+        width: 70px;
+        height: 70px;
+    }
+}
+@media (max-width: 350px) {
+    .ProductDescriptionPageLeft>figure{
+        height: 240px;
+    }
+    .ProductDescriptionPicturesFigure{
+        width: 60px;
+        height: 60px;
+    }
+    .ProductDescriptionReview>:nth-child(1), .ProductDescriptionReview>:nth-child(2), .ProductDescriptionReview>:nth-child(3){
+        font-size: 12px;
+    }
+    .ProductDescriptionPrice>:nth-child(1){
+        font-size: 20px;
+    }
+    .ProductDescriptionPrice>:nth-child(2), .ProductDescriptionPrice>:nth-child(2)>span{
+        font-size: 13px;
+    }
+    .ProductDescription>p{
+        font-size: 12px;
+    }
+}
+@media (max-width: 300px) {
+    .ProductDescriptionPageLeft>figure{
+        height: 220px;
+    }
+    .ProductDescriptionPicturesFigure{
+        width: 55px;
+        height: 55px;
+    }
+    .ProductDescriptionPageRight>:nth-child(1)>p{
+        font-size: 25px;
+    }
+}
+@media (max-width: 270px) {
+    .ProductDescriptionPageLeft>figure{
+        height: 200px;
+    }
+    .ProductDescriptionPicturesFigure{
+        width: 50px;
+        height: 50px;
+    }
+    .ProductDescriptionPageRight>:nth-child(1)>p{
+        font-size: 23px;
+    }
+    .ProductDescription>p{
+        line-height: 18px;
+    }
+    
+}
+@media (max-width: 240px) {
+    .ProductDescriptionPageLeft>figure{
+        height: 180px;
+    }
+    .ProductDescriptionPicturesFigure{
+        width: 45px;
+        height: 45px;
+    }
+    .ProductDescriptionPageRight>:nth-child(1)>p{
+        font-size: 22px;
+    }
+    .ProductDescription>p{
+        line-height: 18px;
+    }
+    .ProductDescriptionPrice>:nth-child(1){
+        font-size: 18px;
+    }
+    .ProductDescriptionPrice>:nth-child(2), .ProductDescriptionPrice>:nth-child(2)>span{
+        font-size: 11px;
+    }
 }

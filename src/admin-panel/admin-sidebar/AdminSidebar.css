@@ -1,11 +1,11 @@
 .AdminSidebar{
-    width: 80%;
+    width: 95%;
     height: 70vh;
     background-color: rgb(254, 254, 254);
     padding: 5% 10%;
     border-radius: 20px;
 }
-.NavLink{
+.AdminNavLink{
     text-decoration: none;
     font-weight: 500;
     font-size: 20px;
@@ -13,7 +13,7 @@
     letter-spacing: 0.1px;
     color: rgba(0, 0, 0, 0.87);
 }
-.NavLink>div{
+.AdminNavLink>div{
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -26,12 +26,22 @@
 .AdminNavLink>div:hover{
     background-color: #2f81ed34;
 }
-.NavLink>div>figure{
+.AdminNavLink>div>figure{
     width: 30px;
     height: 30px;
     margin-right: 20px;
 }
-.NavLink>div>figure>img{
+.AdminNavLink>div>figure>img{
     width: 100%;
     height: 100%;
+}
+@media (max-width: 360px) {
+    .AdminNavLink{
+        font-size: 18px;
+    }
+}
+@media (max-width: 300px) {
+    .AdminNavLink{
+        font-size: 16px;
+    }
 }

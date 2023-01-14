@@ -17,16 +17,25 @@
     -webkit-tap-highlight-color: transparent;
     font-family: Poppins;
 }
+#root{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
 .wrapper{
     width: 100%;
     max-width: 1440px;
     margin: auto;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
     justify-content: flex-start;
 }
 .wrapper.noscroll{
+    width: 100%;
     max-height: 100vh;
     overflow-y: hidden;
     position: fixed;

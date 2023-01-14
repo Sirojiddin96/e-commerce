@@ -3,11 +3,13 @@ import { ProductCards } from "../../components/Cards/Cards";
 import { ContextData } from "../../context/Context";
 import Footer from "../../containers/Footer";
 import "./Favorites.css";
+import Header from "../../containers/Header";
 
 function Favorites(){
     const {priceAfterDiscount, favorites, cart} = useContext(ContextData);
     return(
         <div className="FavoritesPage">
+            <Header/>
             <div>
                 <h1>{favorites.length} favorite Items</h1>
                 <div className="FavoriteProducts">

@@ -15,10 +15,10 @@ function AdminProducts(){
     return(
         <div className="AdminProductsPage">
         <div className="AdminProductsSide">
-                <div className={"ProductsList Rectangular"}>
+                <div className={allowed === 9 ? "AdminProductsList Rectangular9" : allowed === 6 ? "AdminProductsList Rectangular6": "AdminProductsList Rectangular4"}>
                 {   productlist.length !== 0 ? 
                     productlist.slice((page-1)*allowed,allowed*page).map((item, index)=>(
-                    <div key={index} className="ProductCard">
+                    <div key={index} className="AdminProductCard">
                         <AdminProductCards product={item} pic={item.picture[0]} title={item.title} originalPrice={item.originalPrice} discount={item.discount} currentPrice={priceAfterDiscount(item.discount, item.originalPrice).toFixed(2)}/>
                     </div>))
                     :

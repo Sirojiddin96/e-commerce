@@ -94,7 +94,7 @@ export function ProductCards(props){
 
 export function ProductCardsHorizontal(props){
     const navig = useNavigate();
-    const {deleteFavorite, windowSize, addFavorite, addCart} = useContext(ContextData);
+    const {deleteFavorite, addFavorite, addCart} = useContext(ContextData);
     const {inFavorites, description, inCart, product, pic, title, originalPrice, discount, currentPrice} = props;
     return(
         <div onClick={()=>navig("/products/" + product.id)} className="ProductCardsHorizontal">
@@ -162,7 +162,7 @@ export function HorizontalNewsCard(props){
     )
 }
 export function AdminProductCards(props){
-    const {editItem, AdminDeleteProduct} = useContext(ContextData);
+    const {setAProduct, setAModal, editItem} = useContext(ContextData);
     const {product, pic, title, originalPrice, discount, currentPrice} = props;
     return(
         <div className="AdminProductCards">
@@ -170,7 +170,7 @@ export function AdminProductCards(props){
                 <img src={pic} alt="product" />
                 <div className="AdminProductCardsHover">
                     <div className="AdminCartIconHolder">
-                        <figure  onClick={()=>AdminDeleteProduct(product)}>
+                        <figure  onClick={()=>{ setAModal(true); setAProduct(product)}}>
                             <img src={XButton} alt="XButton" />
                         </figure>
                     </div>
@@ -181,13 +181,13 @@ export function AdminProductCards(props){
                     </div>
                 </div>
             </figure>
-            <div className="ProductCardsTitle">
+            <div className="AdminProductCardsTitle">
                 <p>{title}</p>
             </div>
-            <div className="ProductCardsRating">
+            <div className="AdminProductCardsRating">
                 <p>Rating</p>
             </div>
-            <div className="ProductCardsCurrentPrice">
+            <div className="AdminProductCardsCurrentPrice">
                 <p>${currentPrice}</p>
                 <p><del>${originalPrice}</del><span>{discount}% Off</span></p>
             </div>

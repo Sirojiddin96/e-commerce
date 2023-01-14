@@ -10,7 +10,12 @@ import LineCardIconGray from "../../assets/icons/LineCardIconGray.svg";
 import RecCardIconBlue from "../../assets/icons/RecCardIconBlue.svg";
 import LineCardIconBlue from "../../assets/icons/LineCardIconBlue.svg";
 import FilterIcon from "../../assets/icons/FilterIcon.png";
+import Header from "../../containers/Header";
 function Products(){
+    const firstP = "<<";
+    const prevP = "<";
+    const lastP = ">>";
+    const nextP = ">";
     const [brandID, setBrandID] = useState("All");
     const {modal, setModal, productlist, favorites, allowed, mode, changeMode, cart, priceAfterDiscount} = useContext(ContextData);
     const [value, onChange] = useState(1000);
@@ -19,6 +24,8 @@ function Products(){
     const listLenght = sort.filter(item=>(brandID === "All" && priceAfterDiscount(item.discount, item.originalPrice) < value ? item : brandID === item.categoryId && priceAfterDiscount(item.discount, item.originalPrice) < value)).length;
     const lastPage = Math.ceil(listLenght/allowed);
     const pageNumbers = [];
+    const [blank, setBlank] = useState(false);
+    const [range, setRange] = useState({beginnig: 0, ending: listLenght > 6 ? 6 : listLenght});
     for(let i = 0; i < lastPage; i++){
         pageNumbers.push(i+1);
     }
@@ -56,8 +63,38 @@ function Products(){
             listFilter.push(sort[i]);
         }
     }
+    function settingPage(item){
+        setTimeout(()=>setBlank(false), 100);
+        setBlank(true);
+        setPage(item);
+        if(item>=4){
+            if(item < lastPage - 2){
+                setRange({beginnig: item-1, ending: item + 3});
+                console.log(pageNumbers);
+            }else if(item === lastPage - 2){
+                setRange({beginnig:  item-1, ending: item + 3});
+            }else if(item === lastPage - 1){
+                setRange({beginnig:  item-2, ending: item + 2});
+            }else if(item === lastPage){
+                setRange({beginnig:  item-3, ending: item+1});
+            }
+        }else if(item<4){
+            if(item === 3){
+                setRange({beginnig: item-1, ending: item + 3});
+            }else if(item === 2){
+                setRange({beginnig: item-1, ending: item + 4});
+            }else{
+                setRange({beginnig: item, ending: item + 5});
+            }
+        }
+    }
     return(
         <>
+        { blank ? 
+        <div style={{height: "100vh"}}>
+        </div> :
+        <>
+        <Header/>
         <div onClick={()=>setModal(false)} className={modal ? "FilterModalBlack Show" : "FilterModalBlack"}>
             </div>
             <div className={modal ? "FilterSideContent Show" : "FilterSideContent"}> 
@@ -102,15 +139,15 @@ function Products(){
             <div className="ProductsPagesSidebar">
                 <div className="SidebarBrands">
                     <p>Brands</p>
-                    <div onClick={()=>{setBrandID("All"); setPage(1)}} className={brandID === "All" ? "SidebarBrandsName Active" : "SidebarBrandsName"}>
+                    <div onClick={()=>{setBrandID("All"); settingPage(1)}} className={brandID === "All" ? "SidebarBrandsName Active" : "SidebarBrandsName"}>
                             <p>All</p>
                             <p>{productlist.length}</p>
                             </div>
                     {
                         brands.map((item, index)=>(
-                            <div onClick={()=>{setBrandID(item.id); setPage(1)}} className={brandID === item.id ? "SidebarBrandsName Active" : "SidebarBrandsName"} key={index}>
-                            <p>{item.name}</p>
-                            <p>{productlist.filter(elem=>(item.id === elem.categoryId)).length }</p>
+                            <div onClick={()=>{setBrandID(item.id); settingPage(1)}} className={brandID === item.id ? "SidebarBrandsName Active" : "SidebarBrandsName"} key={index}>
+                                <p>{item.name}</p>
+                                <p>{productlist.filter(elem=>(item.id === elem.categoryId)).length }</p>
                             </div>
                         ))
                     }
@@ -155,10 +192,10 @@ function Products(){
                             </div>
                         </div>
                         <div className="ProductsFilterRight">
-                            <figure onClick={()=>changeMode("Rectangular")}>
+                            <figure onClick={()=>{changeMode("Rectangular"); settingPage(1)}}>
                                 <img src={mode === "Rectangular" ? RecCardIconBlue : RecCardIconGray} alt="RecCardIconGray" />
                             </figure>
-                            <figure onClick={()=>changeMode("Line")}>
+                            <figure onClick={()=>{changeMode("Line"); settingPage(1)}}>
                                 <img src={mode === "Line" ? LineCardIconBlue : LineCardIconGray} alt="RecCardIconGray" />
                             </figure>
                         </div>
@@ -178,16 +215,68 @@ function Products(){
                     }
                </div>
                <div className="ProductsPageNumbers">
-               {pageNumbers.map(item=>(
-                    <div onClick={()=>setPage(item)} className={item === page ? "PaginationPage Active" : "PaginationPage"} key={item}>
-                        <p>{item}</p>
-                    </div>
-               ))}
-                
+                <div className="ProductsPageNumbersLeft"> 
+                {    page !== 1 ? 
+                    <>
+                        <div onClick={()=>settingPage(1)} className={"PaginationPage"}>
+                            <p>{firstP}</p>
+                        </div>
+                        <div onClick={()=>settingPage(page-1)} className={"PaginationPage"}>
+                        <p>{prevP}</p>
+                        </div>
+                    </>
+                      : <><div className={"PaginationPage"}></div><div className={"PaginationPage"}></div></>
+                }
+                {    range.beginnig >= 3 ? 
+                        <>
+                            <div onClick={()=>settingPage(1)} className={"PaginationPage"}>
+                            <p>{1}</p>
+                            </div>
+                            <div className={"PaginationPage"}>
+                                <p>...</p>
+                            </div>
+                        </>
+                        : <><div className={"PaginationPage"}></div><div className={"PaginationPage"}></div></>
+                        
+                }
+                </div>
+                <div className="ProductsPageNumbersMiddle">
+                {   pageNumbers.map(item=>(item>range.beginnig-2 && item<range.ending ?
+                            <div onClick={()=>settingPage(item)} className={item === page ? "PaginationPage Active" : "PaginationPage"} key={item}>
+                                <p>{item}</p>
+                            </div> : <></>
+                ))
+                }
+                </div>
+                <div className="ProductsPageNumbersRight">
+                 {    page < lastPage - 2 && lastPage > 5 ? 
+                      <>
+                      <div className={"PaginationPage"}>
+                          <p>...</p>
+                      </div>
+                      <div onClick={()=>settingPage(lastPage)} className={"PaginationPage"}>
+                      <p>{lastPage}</p>
+                      </div>
+                  </>
+                  : <><div className={"PaginationPage"}></div><div className={"PaginationPage"}></div></>
+                }
+                 {    page !== lastPage ? 
+                    <>
+                        <div onClick={()=>settingPage(page+1)} className={"PaginationPage"}>
+                            <p>{nextP}</p>
+                        </div>
+                        <div onClick={()=>settingPage(lastPage)} className={"PaginationPage"}>
+                            <p>{lastP}</p>
+                        </div>
+                    </>
+                      : <><div className={"PaginationPage"}></div><div className={"PaginationPage"}></div></>
+                }
+                </div>
                </div>
             </div>
         </div>
         <Footer/>
+        </>}
         </>
     )
 }
