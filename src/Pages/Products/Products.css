@@ -192,6 +192,39 @@
     background: #FAFAFB;
     margin-bottom: 5%;
 }
+
+
+/* Pagination Start */
+.pagination-section{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.paging{
+    width: 62.92px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.paging:hover{
+    background-color: #d4d4d4;
+}
+.paging.Active{
+    background-color: #40BFFF;
+}
+.page-number{
+    font-weight: 700 !important;
+    font-size: 19px !important;
+}
+.pagination{
+display: flex;
+}
+
 .ProductsPageNumbersLeft{
     width: 20%;
     display: flex;
