@@ -10,6 +10,7 @@ import ProductDescription from "../pages/productDescription/ProductDescription";
 import { useContext } from "react";
 import { ContextData } from "../context/Context";
 import Adminpanel from "../admin-panel/Admin-panel";
+import { mainProducts } from "../data/products";
 
 function Routers() {
     const {productlist, cart, favorites} = useContext(ContextData);
@@ -24,6 +25,18 @@ function Routers() {
             <Route path="/uhgjobiejfoprfrtyuiyuowiw[wpriirqrr]p[fewfdkfjdlgja" element={<Adminpanel />} />
             {
                 productlist.map((item, index) => (
+                    <Route
+                        key={index}
+                        path={"/products/" + item.id}
+                        element={<ProductDescription
+                            inFavorites={favorites.length ? favorites.filter((elem)=>(elem.id === item.id)).length : false}
+                            item={item}
+                            inCart={cart.length ? cart.filter((elem) => (elem.id === item.id)).length : false} />}
+                    />
+                ))
+            }
+             {
+                mainProducts.map((item, index) => (
                     <Route
                         key={index}
                         path={"/products/" + item.id}

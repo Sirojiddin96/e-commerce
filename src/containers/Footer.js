@@ -1,25 +1,33 @@
-import "./Footer.css";
-import Logo from "../assets/images/Logo.svg";
-import FacebookIcon from "../assets/icons/facebook.svg";
-import TwitterIcon from "../assets/icons/twitter.svg";
-import WesternUnion from "../assets/icons/WesternUnion.svg";
-import MasterCard from "../assets/icons/MasterCard.svg";
-import Paypal from "../assets/icons/Paypal.svg";
-import Visa from "../assets/icons/Visa.svg";
+import './Footer.css';
+import Logo from '../assets/images/Logo.svg';
+import FacebookIcon from '../assets/icons/facebook.svg';
+import TwitterIcon from '../assets/icons/twitter.svg';
+import WesternUnion from '../assets/icons/WesternUnion.svg';
+import MasterCard from '../assets/icons/MasterCard.svg';
+import Paypal from '../assets/icons/Paypal.svg';
+import Visa from '../assets/icons/Visa.svg';
 
-function Footer(){
-    return(
+function Footer() {
+    return (
         <footer className="Footer">
             <div className="FooterSection1">
                 <div className="FooterSection1Writing1">
                     <figure>
                         <img src={Logo} alt="" />
                     </figure>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.Since the 1500s, when an unknown printer.</p>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the
+                        industry's standard dummy text ever.Since the 1500s,
+                        when an unknown printer.
+                    </p>
                 </div>
                 <div className="FooterSection1Writing2">
                     <p>Follow Us</p>
-                    <p>Since the 1500s, when an unknown printer took a galley of type and scrambled.</p>
+                    <p>
+                        Since the 1500s, when an unknown printer took a galley
+                        of type and scrambled.
+                    </p>
                     <div className="FooterSocialMedia">
                         <figure>
                             <img src={FacebookIcon} alt="FacebookIcon" />
@@ -82,7 +90,6 @@ function Footer(){
                 </div>
             </div>
         </footer>
-    )
-
+    );
 }
 export default Footer;

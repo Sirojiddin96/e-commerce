@@ -33,15 +33,7 @@
     align-content: flex-start;
     justify-content: flex-start;
     padding-left: 5%;
-}
-.AdminProductsList.Rectangular9{
-    height: 1300px;
-}
-.AdminProductsList.Rectangular4{
-    height: 1200px;
-}
-.AdminProductsList.Rectangular6{
-    height: 1200px;
+    margin-bottom: 5%;
 }
 .AdminProductCard{
     width: 30%;
