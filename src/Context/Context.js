@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { products } from '../data/products.js';
-import { brands } from '../data/categories';
+import {vouchers} from "../data/voucher";
+import Swal from 'sweetalert2';
+import 'react-toastify/dist/ReactToastify.css';
 export const ContextData = React.createContext();
 function ContextProvider({ children }) {
+    const [brandID, setBrandID] = useState('All');
     const [windowSize, detectW] = useState({ innerWidth: window.innerWidth });
+    const [payment, setPayment] = useState(false);
     const navig = useNavigate();
     const nav = useNavigate();
     const [changed, setChanged] = useState(
@@ -49,9 +53,18 @@ function ContextProvider({ children }) {
     const [modal, setModal] = useState(false);
     const [side, setSide] = useState(false);
     const [allow, setAllow] = useState(8);
-    const [Cmodal, setCModal] = useState(false);
-    const [Amodal, setAModal] = useState(false);
-    const [Aprod, setAProduct] = useState();
+    const [voucher, setVoucher] = useState();
+    const [coupon, setCoupon] = useState("");
+    
+    function checkVoucher(e) {
+        e.preventDefault();
+        vouchers.forEach(element => {
+            if(element.code === voucher){
+                setCoupon(element.discount);
+            }
+        });
+
+    }
     const detectScreentWidth = () => {
         detectW({
             innerWidth: window.innerWidth,
@@ -84,7 +97,7 @@ function ContextProvider({ children }) {
         return () => {
             window.removeEventListener('resize', detectScreentWidth);
         };
-    }, [windowSize]);
+    });
 
     useEffect(() => {
         localStorage.setItem('data', JSON.stringify(cart));
@@ -102,10 +115,9 @@ function ContextProvider({ children }) {
         originalPrice: '',
         discount: '',
         shippingFee: '',
-        categoryId: '',
         decription: '',
         brand: '',
-        picture: '',
+        picture: [""],
     });
     let handleInput = (e) => {
         setProduct({
@@ -114,35 +126,23 @@ function ContextProvider({ children }) {
         });
     };
     let handleInputNumber = (e) => {
-        setProduct({
-            ...product,
-            [e.target.name]: +e.target.value,
-        });
-    };
-    let handleInputBrand = (e) => {
-        let name = e.target.value;
-        setProduct({
-            ...product,
-            brand: name,
-        });
-        brands.forEach((item) => {
-            if (name.includes(item.name)) {
-                setProduct({
-                    ...product,
-                    categoryId: +item.id,
-                });
-            } else {
-                setProduct({
-                    ...product,
-                    brand: name,
-                });
-            }
-        });
+        if(+e.target.value>0){
+            setProduct({
+                ...product,
+                [e.target.name]: +e.target.value,
+            });
+        }else{
+            setProduct({
+                ...product,
+                [e.target.name]: "",
+            });
+        }
     };
     let handleRasm = (e) => {
+
         setProduct({
             ...product,
-            picture: [...product.picture, e.target.value],
+            [e.target.name]: [e.target.value]
         });
     };
     function clearInput() {
@@ -155,8 +155,7 @@ function ContextProvider({ children }) {
             shippingFee: '',
             brand: '',
             decription: '',
-            categoryId: '',
-            picture: '',
+            picture: [""],
         });
     }
     function handleSend(e) {
@@ -164,7 +163,7 @@ function ContextProvider({ children }) {
         if (product.id === '') {
             setProducts([
                 ...productlist,
-                { ...product, id: new Date().getTime() },
+                { ...product, id: new Date().getTime()},
             ]);
         } else {
             setProducts(
@@ -176,6 +175,7 @@ function ContextProvider({ children }) {
         clearInput();
         setAdd(!add);
         setChanged(true);
+        localStorage.setItem('changed', JSON.stringify(true));
         navig('/uhgjobiejfoprfrtyuiyuowiw[wpriirqrr]p[fewfdkfjdlgja');
     }
     function editItem(item) {
@@ -189,25 +189,25 @@ function ContextProvider({ children }) {
             discount: item.discount,
             shippingFee: item.shippingFee,
             brand: item.brand,
-            description: item.description,
+            decription: item.decription,
             picture: item.picture[0],
         });
     }
 
-    function addCart(i) {
+    function addCart(n) {
         if (cart.length !== 0) {
-            cart.forEach((item) => {
-                if (i.id !== item.id) {
-                    setCart([...cart, { ...i, quantityInCart: 1 }]);
-                } else {
-                    alert('You have already added this item');
-                }
-            });
-        } else {
-            setCart([...cart, { ...i, quantityInCart: 1 }]);
+            for(let i = 0; i < cart.length; i++){
+                if (cart[i].id === n.id) {
+                    delteCartItem(i);
+                    return;
+                } 
+            }
+            setCart([...cart, { ...n, quantityInCart: 1 }]);
+            setClength(cart.length + 1);
+        }else{
+            setCart([...cart, { ...n, quantityInCart: 1 }]);
+            setClength(cart.length + 1);
         }
-
-        setClength(cart.length + 1);
     }
     function addFavorite(i) {
         setFavorites([...favorites, { ...i, quantityInFavorites: 1 }]);
@@ -243,8 +243,19 @@ function ContextProvider({ children }) {
         );
     }
     function delteCartItem(i) {
-        setCart(cart.filter((elem) => elem.id !== i.id));
-        setClength(cart.length - 1);
+        Swal.fire({
+            title: 'Romove from Cart?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, remove it!',
+            cancelButtonText: 'No, keep it'
+          }).then((result) => {
+            if (result.isConfirmed) {
+                setCart(cart.filter((elem) => elem.id !== i.id));
+                setClength(cart.length - 1);
+      }
+          })
+        
     }
     const calcTotal = () => {
         let totalNumber = 0;
@@ -270,26 +281,41 @@ function ContextProvider({ children }) {
                 item.quantityInCart *
                     priceAfterDiscount(item.discount, item.originalPrice);
         });
-        return totalNumber.toFixed(2);
+        if(coupon === ""){
+            return totalNumber.toFixed(2);
+        }else{
+            return priceAfterDiscount(coupon, totalNumber).toFixed(2);
+        }
     };
     function changeMode(modeName) {
         setMode(modeName);
         setAllowed(modeName === 'Rectangular' ? 9 : 4);
     }
     function AdminDeleteProduct(i) {
-        setProducts(productlist.filter((elem) => elem.id !== i.id));
-        localStorage.setItem('changed', JSON.stringify(true));
-        setChanged(true);
+        Swal.fire({
+            title: 'Delete this item?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, keep it'
+          }).then((result) => {
+            if (result.isConfirmed) {
+                setProducts(productlist.filter((elem) => elem.id !== i.id));
+                localStorage.setItem('changed', JSON.stringify(true));
+                setChanged(true);
+      }
+          })
+    }
+    function clearCart(){
+        setCart([]);
+        setClength(0);
     }
     return (
         <ContextData.Provider
-            value={{
-                Aprod,
-                setAProduct,
-                Amodal,
-                setAModal,
-                Cmodal,
-                setCModal,
+            value={{checkVoucher,
+                voucher, setVoucher,coupon,
+                payment, 
+                setPayment,
                 allow,
                 setAllow,
                 side,
@@ -299,7 +325,6 @@ function ContextProvider({ children }) {
                 windowSize,
                 menu,
                 setMenu,
-                handleInputBrand,
                 handleInputNumber,
                 editItem,
                 setAdd,
@@ -330,6 +355,8 @@ function ContextProvider({ children }) {
                 cart,
                 toggle,
                 open,
+                clearCart,
+                brandID, setBrandID
             }}>
             {children}
         </ContextData.Provider>

@@ -38,6 +38,7 @@ function Profile() {
                         type="email"
                         value={user.email}
                         placeholder="Your Email"
+                        required
                     />
                     <input
                         onInput={(e) => InputHandler(e)}
@@ -45,6 +46,7 @@ function Profile() {
                         type="password"
                         value={user.password}
                         placeholder="Password"
+                        required
                     />
                     <button>Sign In</button>
                 </form>

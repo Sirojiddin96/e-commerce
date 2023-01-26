@@ -20,11 +20,41 @@
     align-items: center;
     justify-content: center;
 }
-.ProductDescriptionPageLeft>figure{
+.ProductDescriptionImageHolder{
     width: 375px;
-    height: 271.68px;
+    height: 350.68px;
+    display: grid;
+    grid-auto-flow: column;
+    overflow: hidden;
+    position: relative;
 }
-.ProductDescriptionPageLeft>figure>img{
+.ProductDescriptionImageHolder>figure{
+    width: 375px;
+    height: 350.68px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s ease-in;
+}
+.ProductDescriptionImageHolderLeft{
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.ProductDescriptionImageHolderRight{
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+.ProductDescriptionImageHolder>figure>img{
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -205,7 +235,7 @@
     justify-content: center;
 }
 @media (max-width: 1025px) {
-    .ProductDescriptionPageLeft>figure{
+    .ProductDescriptionImageHolder, .ProductDescriptionImageHolder>figure{
         width: 320px;
         height: 271.68px;
     }
@@ -258,7 +288,7 @@
     }
 }
 @media (max-width: 950px) {
-    .ProductDescriptionPageLeft>figure{
+    .ProductDescriptionImageHolder, .ProductDescriptionImageHolder>figure{
         width: 320px;
         height: 271.68px;
     }
@@ -339,7 +369,7 @@
     }
 }
 @media (max-width: 850px) {
-    .ProductDescriptionPageLeft>figure{
+    .ProductDescriptionImageHolder, .ProductDescriptionImageHolder>figure{
         width: 280px;
         height: 250px;
     }
@@ -397,7 +427,7 @@
     .ProductDescriptionPageLeft{
         width: 100%;
     }
-    .ProductDescriptionPageLeft>figure{
+    .ProductDescriptionImageHolder, .ProductDescriptionImageHolder>figure{
         width: 350px;
         height: 300px;
     }
@@ -467,8 +497,8 @@
         font-size: 14px;
         line-height: 25px;
     }
-    .ProductDescriptionPageLeft>figure{
-        width: 90%;
+    .ProductDescriptionImageHolder, .ProductDescriptionImageHolder>figure{
+        width: 300px;
         height: 300px;
     }
     .ProductDescriptionPicturesFigure{
@@ -487,7 +517,8 @@
         font-size: 14px;
         line-height: 25px;
     }
-    .ProductDescriptionPageLeft>figure{
+    .ProductDescriptionImageHolder, .ProductDescriptionImageHolder>figure{
+        width: 260px;
         height: 260px;
     }
     .ProductDescriptionPictures{
@@ -520,8 +551,9 @@
     }
 }
 @media (max-width: 300px) {
-    .ProductDescriptionPageLeft>figure{
+    .ProductDescriptionImageHolder, .ProductDescriptionImageHolder>figure{
         height: 220px;
+        width: 220px;
     }
     .ProductDescriptionPicturesFigure{
         width: 55px;
@@ -532,8 +564,9 @@
     }
 }
 @media (max-width: 270px) {
-    .ProductDescriptionPageLeft>figure{
+    .ProductDescriptionImageHolder, .ProductDescriptionImageHolder>figure{
         height: 200px;
+        width: 200px;
     }
     .ProductDescriptionPicturesFigure{
         width: 50px;
@@ -548,8 +581,9 @@
     
 }
 @media (max-width: 240px) {
-    .ProductDescriptionPageLeft>figure{
+    .ProductDescriptionImageHolder, .ProductDescriptionImageHolder>figure{
         height: 180px;
+        width: 180px;
     }
     .ProductDescriptionPicturesFigure{
         width: 45px;

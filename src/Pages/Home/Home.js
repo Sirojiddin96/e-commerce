@@ -202,6 +202,7 @@ function Home() {
                                 date={item.date}
                                 title={item.title}
                                 description={item.description}
+                                url={item.url}
                             />
                         </div>
                     ))}

@@ -1,4 +1,7 @@
 import './Cards.css';
+import * as React from 'react';
+import Rating from '@mui/material/Rating';
+import Stack from '@mui/material/Stack';
 import CartIcon from '../../assets/icons/CartIcon.svg';
 import LikeIcon from '../../assets/icons/HeartIcon.svg';
 import HeartIconRed from '../../assets/icons/HeartIconRed.svg';
@@ -84,7 +87,7 @@ export function PromotionCardThree(props) {
 }
 export function ProductCards(props) {
     const navig = useNavigate();
-    const { deleteFavorite, addFavorite, addCart } = useContext(ContextData);
+    const { deleteFavorite, addFavorite, addCart,delteCartItem } = useContext(ContextData);
     const {
         inFavorites,
         inCart,
@@ -111,7 +114,7 @@ export function ProductCards(props) {
                         className={
                             inCart ? 'CartIconHolder Red' : 'CartIconHolder'
                         }>
-                        <figure onClick={() => addCart(product)}>
+                        <figure onClick={() => {inCart ? delteCartItem(product) : addCart(product)}}>
                             <img
                                 src={inCart ? CartIconRed : CartIcon}
                                 alt="CartIcon"
@@ -142,7 +145,8 @@ export function ProductCards(props) {
                 <p>{title}</p>
             </div>
             <div className="ProductCardsRating">
-                <p>Rating</p>
+            <Stack  onClick={(event) => event.stopPropagation()} spacing={1}>
+            <Rating name="half-rating" defaultValue={2.5} precision={0.5} /></Stack>
             </div>
             <div className="ProductCardsCurrentPrice">
                 <p>${currentPrice}</p>
@@ -181,7 +185,9 @@ export function ProductCardsHorizontal(props) {
                     <p>{title}</p>
                 </div>
                 <div className="ProductCardsRatingHorizontal">
-                    <p>Rating</p>
+                <Stack  onClick={(event) => event.stopPropagation()} spacing={1}>
+                <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
+                </Stack>
                     <p>0 reviews</p>
                     <p>Submit a review</p>
                 </div>
@@ -241,9 +247,9 @@ export function IconCard(props) {
     );
 }
 export function HorizontalNewsCard(props) {
-    const { picture, date, title, description } = props;
+    const {url, picture, date, title, description } = props;
     return (
-        <div className="HorizontalNewsCard">
+        <div onClick={()=>window.location.replace(url)} className="HorizontalNewsCard">
             <figure>
                 <img src={picture} alt="news" />
             </figure>
@@ -256,7 +262,7 @@ export function HorizontalNewsCard(props) {
     );
 }
 export function AdminProductCards(props) {
-    const { setAProduct, setAModal, editItem } = useContext(ContextData);
+    const { AdminDeleteProduct, editItem } = useContext(ContextData);
     const { product, pic, title, originalPrice, discount, currentPrice } =
         props;
     return (
@@ -266,10 +272,7 @@ export function AdminProductCards(props) {
                 <div className="AdminProductCardsHover">
                     <div className="AdminCartIconHolder">
                         <figure
-                            onClick={() => {
-                                setAModal(true);
-                                setAProduct(product);
-                            }}>
+                            onClick={() => AdminDeleteProduct(product)}>
                             <img src={XButton} alt="XButton" />
                         </figure>
                     </div>
@@ -284,7 +287,9 @@ export function AdminProductCards(props) {
                 <p>{title}</p>
             </div>
             <div className="AdminProductCardsRating">
-                <p>Rating</p>
+                <Stack spacing={1}>
+                <Rating name="half-rating" defaultValue={2.5} precision={0.5} disabled />
+                </Stack>
             </div>
             <div className="AdminProductCardsCurrentPrice">
                 <p>${currentPrice}</p>

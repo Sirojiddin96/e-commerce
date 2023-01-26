@@ -304,11 +304,13 @@
     align-items: flex-end;
     justify-content: flex-end;
 }
-.ButtonCloseDiv>button{
-    width: 10%;
-    background: transparent;
-    border: #22262a66 1px solid;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+.ButtonCloseDiv>figure{
+    width: 25px;
+    height: 25px;
+}
+.ButtonCloseDiv>figure>img{
+    width: 100%;
+    height: 100%;
 }
 .FilterSideBrands{
         width: 10%;

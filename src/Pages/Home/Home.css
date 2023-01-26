@@ -92,9 +92,9 @@
 .HomePageCards>div{
     margin: 0 -0.1%;
     width: 33.3%;
-    transition: all 3s ease-in;
+    transition: all 0.3s ease-in-out;
 }
-.HomePageCards>div>:hover{
+.HomePageCards>div:hover{
     transform: scale(1.1);
 }
 .product-lists{

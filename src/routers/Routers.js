@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Profile from "../pages/Profile/Profile";
 import Cart from "../pages/Cart/Cart";
 import Products from "../pages/Products/Products";
@@ -16,7 +16,8 @@ function Routers() {
     const {productlist, cart, favorites} = useContext(ContextData);
     return (
         <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Navigate to="/home" />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/products" element={<Products />} />

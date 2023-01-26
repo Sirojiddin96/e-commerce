@@ -9,10 +9,6 @@ import AddProduct from '../admin-panel/admin-pages/admin-addproduct/AddProduct';
 import MenuIcon from '../assets/icons/MenuIcon.png';
 function Adminpanel() {
     const {
-        Amodal,
-        AdminDeleteProduct,
-        setAModal,
-        Aprod,
         side,
         setSide,
         adminlog,
@@ -21,32 +17,6 @@ function Adminpanel() {
     const navig = useNavigate();
     return (
         <>
-            {Amodal ? (
-                <div onClick={() => setAModal(false)} className="ConfirmBack">
-                    <div
-                        onClick={(e) => e.stopPropagation()}
-                        className="ConfirmContent">
-                        <div>
-                            <p>Do you really want to remove this item?</p>
-                        </div>
-                        <div className="ConfirmContentAction">
-                            <button
-                                onClick={() => {
-                                    AdminDeleteProduct(Aprod);
-                                    setAModal(false);
-                                }}>
-                                Yes
-                            </button>
-                            <button onClick={() => setAModal(false)}>
-                                Cancel
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            ) : (
-                <></>
-            )}
-            <>
                 <div
                     onClick={() => setSide(false)}
                     className={
@@ -115,7 +85,6 @@ function Adminpanel() {
                     )}
                 </div>
             </>
-        </>
     );
 }
 export default Adminpanel;

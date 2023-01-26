@@ -1,4 +1,7 @@
 import { useContext } from "react";
+import * as React from 'react';
+import Rating from '@mui/material/Rating';
+import Stack from '@mui/material/Stack';
 import { useState } from "react";
 import { ContextData } from "../../context/Context";
 import Footer from "../../containers/Footer";
@@ -17,9 +20,17 @@ const ProductDescription = (props) =>{
             <Header/>
             <div className="ProductDescriptionContent">
                 <div className="ProductDescriptionPageLeft">
-                        <figure>
-                            <img src={item.picture[selected]} alt="itempicture"/>
-                        </figure>
+                    <div className="ProductDescriptionImageHolder">
+                        <div onClick={()=>{selected !== 0 ? setSelected(selected-1) :  setSelected(selected)}} className="ProductDescriptionImageHolderLeft"></div>
+                                {
+                                item.picture.map((elem, index)=>(
+                                    <figure style={{transform: `translateX(-${(selected)*100}%)`}} key={index}>
+                                        <img src={elem} alt="itempicture"/>
+                                    </figure>
+                                ))
+                                }
+                        <div onClick={()=>{selected !== item.picture.length-1 ? setSelected(selected+1) :  setSelected(selected)}} className="ProductDescriptionImageHolderRight"></div>
+                        </div>
                         <div className="ProductDescriptionPictures">
                             {
                                 item.picture.map((elem, index)=>(
@@ -35,7 +46,9 @@ const ProductDescription = (props) =>{
                             <p>{item.title}</p>
                         </div>
                         <div className="ProductDescriptionReview">
-                            <p>Rating</p>
+                        <Stack onClick={(event) => event.stopPropagation()} spacing={1}>
+                        <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
+                        </Stack>
                             <p>0 reviews</p>
                             <p>Submit a review</p>
                         </div>

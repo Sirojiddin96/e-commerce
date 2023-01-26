@@ -20,13 +20,14 @@ import Prev from '../../assets/pagination/prev.png';
 import NextPage from '../../assets/pagination/next-paging.png';
 import PrevPage from '../../assets/pagination/prev-paging.png';
 import { Slider } from '@mui/material';
+import close from "../../assets/icons/close.png";
 
 
 const minDistance = 10;
 
 function Products() {
-    const [brandID, setBrandID] = useState('All');
     const {
+        brandID, setBrandID,
         modal,
         setModal,
         productlist,
@@ -45,7 +46,7 @@ function Products() {
         value1[0] < priceAfterDiscount(item.discount, item.originalPrice) &&
         priceAfterDiscount(item.discount, item.originalPrice) < value1[1]
             ? item
-            : brandID === item.categoryId &&
+            : brandID === item.brand &&
             value1[0] < priceAfterDiscount(item.discount, item.originalPrice) &&
             priceAfterDiscount(item.discount, item.originalPrice) < value1[1]
     ).length;
@@ -102,7 +103,7 @@ function Products() {
         ) {
             listFilter.push(sort[i]);
         } else if (
-            brandID === sort[i].categoryId &&
+            brandID === sort[i].brand &&
             priceAfterDiscount(sort[i].discount, sort[i].originalPrice) < value1[1]  &&
             value1[0] < priceAfterDiscount(sort[i].discount, sort[i].originalPrice)
         ) {
@@ -149,10 +150,6 @@ function Products() {
   };
     return (
         <>
-            {blank ? (
-                <div style={{ height: '100vh' }}></div>
-            ) : (
-                <>
                     <Header />
                     <div
                         onClick={() => setModal(false)}
@@ -166,7 +163,9 @@ function Products() {
                                 : 'FilterSideContent'
                         }>
                         <div className="ButtonCloseDiv">
-                            <button onClick={() => setModal(false)}>x</button>
+                            <figure onClick={() => setModal(false)}>
+                            <img src={close} alt="close" />
+                            </figure>
                         </div>
                         <div className="FilterSideBrands">
                             <p>Brands</p>
@@ -186,11 +185,11 @@ function Products() {
                             {brands.map((item, index) => (
                                 <div
                                     onClick={() => {
-                                        setBrandID(item.id);
+                                        setBrandID(item.name);
                                         setPage(1);
                                     }}
                                     className={
-                                        brandID === item.id
+                                        brandID === item.name
                                             ? 'SidebarBrandsName Active'
                                             : 'SidebarBrandsName'
                                     }
@@ -245,11 +244,11 @@ function Products() {
                                 {brands.map((item, index) => (
                                     <div
                                         onClick={() => {
-                                            setBrandID(item.id);
+                                            setBrandID(item.name);
                                             settingPage(1);
                                         }}
                                         className={
-                                            brandID === item.id
+                                            brandID === item.name
                                                 ? 'SidebarBrandsName Active'
                                                 : 'SidebarBrandsName'
                                         }
@@ -259,8 +258,8 @@ function Products() {
                                             {
                                                 productlist.filter(
                                                     (elem) =>
-                                                        item.id ===
-                                                        elem.categoryId,
+                                                        item.name ===
+                                                        elem.brand,
                                                 ).length
                                             }
                                         </p>
@@ -285,6 +284,9 @@ function Products() {
                                 </div>
                             </div>
                         </div>
+                        {blank ? (
+                        <div style={{ height: '100vh' }}></div>
+                        ) : (
                         <div className="ProductsSide">
                             <div className="ProductsFilter">
                                 <div className="ProductsFilterLeft">
@@ -554,11 +556,11 @@ function Products() {
                                 )}
                             </div>
                         </div>
+                        )
+}
                     </div>
                     <Footer />
-                </>
-            )}
-        </>
+            </>
     );
 }
 

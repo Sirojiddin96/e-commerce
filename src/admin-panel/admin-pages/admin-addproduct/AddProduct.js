@@ -3,7 +3,6 @@ import { ContextData } from '../../../context/Context';
 import './AddProduct.css';
 function AddProduct() {
     const {
-        handleInputBrand,
         handleInputNumber,
         product,
         handleInput,
@@ -21,6 +20,7 @@ function AddProduct() {
                         value={product.title}
                         placeholder="Enter Product name"
                         onInput={(e) => handleInput(e)}
+                        required
                     />
                     <p>Product Category</p>
                     <select
@@ -42,6 +42,7 @@ function AddProduct() {
                         value={product.originalPrice}
                         placeholder="Enter Original Price"
                         onInput={(e) => handleInputNumber(e)}
+                        required
                     />
                     <p>Discount</p>
                     <input
@@ -50,6 +51,7 @@ function AddProduct() {
                         value={product.discount}
                         placeholder="Enter Discount"
                         onInput={(e) => handleInputNumber(e)}
+                        required
                     />
                     <p>Shipping Fee</p>
                     <input
@@ -58,14 +60,16 @@ function AddProduct() {
                         value={product.shippingFee}
                         placeholder="Enter Shipping Fee"
                         onInput={(e) => handleInputNumber(e)}
+                        required
                     />
                     <p>Brand</p>
                     <input
                         type="text"
                         name="brand"
                         value={product.brand}
-                        placeholder="Enter Brand"
-                        onInput={(e) => handleInputBrand(e)}
+                        placeholder="Enter Brand(capitalize first letters)"
+                        onInput={(e) => handleInput(e)}
+                        required
                     />
                     <p>Description</p>
                     <input
@@ -74,6 +78,7 @@ function AddProduct() {
                         value={product.decription}
                         placeholder="Enter Decription"
                         onInput={(e) => handleInput(e)}
+                        required
                     />
                     <p>Picture URL</p>
                     <input
@@ -81,7 +86,8 @@ function AddProduct() {
                         name="picture"
                         value={product.picture[0]}
                         placeholder="Enter Picture"
-                        onInput={(e) => handleRasm(e)}
+                        onChange={(e) => handleRasm(e)}
+                        required
                     />
                     <button className="SubmitButton">Submit</button>
                 </form>
