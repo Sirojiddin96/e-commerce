@@ -245,6 +245,10 @@ thead>tr>th{
     line-height: 27px;
     color: #FFFFFF;
 }
+.CheckoutBtn.Gray{
+    background: #9f9e9e;
+    cursor: unset;
+}
 .ConfirmBack{
     width: 100%;
     height: 100vh;
@@ -302,6 +306,315 @@ thead>tr>th{
 .ConfirmContentAction>:nth-child(2){
     background-color: #0a9333;
 }
+.payment-content{
+    width: 1021px;
+    max-width: 100wh;
+    height: 650px;
+    max-height: 100vh;
+    background-color: #FFFFFF;
+    padding: 2% 5%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+.payment-content-top{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2%;
+}
+.payment-content-top>figure{
+   width: 20px;
+   height: 20px;
+   cursor: pointer;
+}
+.payment-content-top>figure>img{
+    width: 100%;
+    height: 100%;
+}
+.make-payment-div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.make-payment-div>p{
+    font-family: Raleway;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 20px;
+    color: #40BFFF;
+}
+.payment-paging{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2% 0 3%;
+}
+.payment-paging-container{
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.payment-paging-number{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #DFDEDE;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 25px;
+}
+.payment-paging-number.active{
+    background-color: #40BFFF;
+}
+.payment-paging-container>hr{
+    width: 25%;
+    border: 2px solid #DFDEDE;
+}
+.payment-form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.payment-form-top{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.payment-form-top-left{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 8% 2% 0;
+}
+.payment-form-top-left>input{
+    width: 100%;
+    height: 45px;
+    margin: 3%;
+    background: #dfdede53;
+    border-radius: 10px;
+    border: none;
+    padding: 0 5%;
+    outline: none;
+}
+.payment-form-top-left>input::placeholder{
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.02em;
+    color: #999999;
+}
+.payment-form-top-left>input:focus{
+    outline: 2px solid #999999;
+}
+.payment-form-top-left>p{
+    font-family: Raleway;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 23px;
+    display: flex;
+    color: #40BFFF;
+    margin: 3% 0;
+}
+.payment-method{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4% 2%;
+    cursor: pointer;
+}
+.payment-method:hover{
+    background: #EBF0FF;
+}
+.payment-method>div{
+   width: 80%;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+}
+.payment-method>div>figure{
+    width: 24px;
+    height: 24px;
+} 
+.payment-method>div>figure>img{
+    width: 100%;
+    height: 100%;
+}
+.payment-method>div>p{
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 150%;
+    letter-spacing: 0.5px;
+    color: #223263;
+    margin-left: 8%;
+}
+.payment-form-top-right{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0 2% 5%;
+}
+.payment-form-top-right>input{
+    width: 100%;
+    height: 45px;
+    margin: 3%;
+    background: #dfdede53;
+    border-radius: 10px;
+    border: none;
+    padding: 0 5%;
+    outline: none;
+}
+.payment-form-top-right>input::placeholder{
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.02em;
+    color: #999999;
+}
+.payment-form-top-right>input:focus{
+    outline: 2px solid #999999;
+}
+.payment-form-top-right>textarea{
+    height: 123px;
+    width: 100%;
+    margin: 3%;
+    background: #dfdede53;
+    border-radius: 10px;
+    border: none;
+    padding: 5%;
+    outline: none;
+}
+.payment-form-top-right>textarea::placeholder{
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.02em;
+    color: #999999;
+}
+.payment-form-top-right>textarea:focus{
+    outline: 2px solid #999999;
+}
+.form-submit-btn-div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-submit-btn-div>button{
+    width: 338px;
+    height: 60px;
+    background: #33A0FF;
+    border-radius: 10px;
+    font-weight: 800;
+    font-size: 15px;
+    line-height: 33px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+}
+.credit-card-holder{
+    width: 100%;
+}
+.credit-card-holder>img{
+    width: 100%;
+}
+.card-info-dates{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5% 0;
+}
+.card-info-dates-inside{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: #dfdede53;
+    border-radius: 10px;
+}
+.card-info-dates-inside>input{
+    width: 49%;
+    width: 100%;
+    height: 45px;
+    margin: 3%;
+    background: transparent;
+    border: none;
+    padding: 0 5%;
+    outline: none;
+}
+.card-info-dates>input{
+    width: 49%;
+    width: 100%;
+    height: 45px;
+    margin: 3%;
+    background: #dfdede53;
+    border-radius: 10px;
+    border: none;
+    padding: 0 5%;
+    outline: none;
+}
+.save-card-div{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 2% 0 10%;
+}
+.save-card-div>p{
+    margin-left: 5%;
+}
+.success-modal-content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.success-modal-content>figure{
+    width: 20%;
+}
+.success-modal-content>figure>img{
+    width: 100%;
+}
+.success-modal-content>p{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: 0.5px;
+    color: #223263;
+    margin-bottom: 5%;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 @media (max-width: 1024px) {
     thead>tr>th{
         font-size: 18px;
@@ -338,6 +651,72 @@ thead>tr>th{
     }
     .ConfirmContentAction>button{
         height: 45px;
+    }
+    .payment-content{
+        width: 900px;
+        height: 550px;
+        padding: 2% 5%;
+    }
+    .payment-content-top>figure{
+        width: 18px;
+        height: 18px;
+    }
+    .make-payment-div>p{
+        font-size: 25px;
+    }
+    .payment-paging-number{
+        width: 25px;
+        height: 25px;
+        font-size: 15px;
+    }
+    .payment-paging-container{
+        width: 15%;
+    }
+    .payment-paging-container>hr{
+        width: 20%;
+    }
+    .payment-form-top-left>input{
+        width: 100%;
+        height: 35px;
+    }
+    .payment-form-top-left>input::placeholder{
+        font-size: 14px;
+    }
+    .payment-form-top-left>p{
+        font-size: 15px;
+        line-height: 15px;
+    }
+    .payment-method>div>figure{
+        width: 20px;
+        height: 20px;
+    } 
+    .payment-method>div>p{
+        font-size: 12px;
+        line-height: 50%;
+    }
+    .payment-form-top-right>input{
+        height: 35px;
+    }
+    .payment-form-top-right>input::placeholder{
+        font-size: 14px;
+    }
+    .payment-form-top-right>textarea{
+        height: 100px;
+        width: 100%;
+    }
+    .payment-form-top-right>textarea::placeholder{
+        font-size: 14px;
+    }
+    .form-submit-btn-div>button{
+        width: 250px;
+        height: 45px;
+        font-size: 15px;
+    }
+    .card-info-dates-inside>input{
+        height: 35px;
+    }
+    .card-info-dates>input{
+        height: 40px;
     }
 }
 @media (max-width: 900px) {
@@ -386,6 +765,11 @@ thead>tr>th{
     }
     .CartProductQuantityDiv>div>p{
         font-size: 16px;
+    }
+    .payment-content{
+        width: 800px;
+        height: 530px;
+        padding: 2% 5%;
     }
 }
 @media (max-width: 800px){
@@ -450,6 +834,104 @@ thead>tr>th{
         height: 45px;
         font-size: 18px;
     }
+    .payment-form-top{
+        flex-direction: column;
+    }
+    .payment-content{
+        width: 700px;
+        height: 900px;
+        padding: 5%;
+    }
+    .payment-content-top>figure{
+        width: 20px;
+        height: 20px;
+    }
+    .make-payment-div>p{
+        font-size: 24px;
+    }
+    .payment-paging-number{
+        width: 25px;
+        height: 25px;
+        font-size: 15px;
+    }
+    .payment-paging-container{
+        width: 25%;
+    }
+    .payment-paging-container>hr{
+        width: 25%;
+    }
+    .payment-form-top{
+        align-items: center;
+        justify-content: center;
+    }
+    .payment-form-top-left{
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-items: center;
+    }
+    .payment-form-top-left,.payment-form-top-right{
+        width: 80%;
+        padding: 0;
+    }
+    .payment-method{
+        width: 70%;
+    }
+    .payment-form-top-left>input{
+        width: 100%;
+        height: 50px;
+        margin: 2% 0;
+        font-size: 18px;
+    }
+    .payment-form-top-left>input::placeholder{
+        font-size: 18px;
+    }
+    .payment-form-top-left>p{
+        font-size: 18px;
+        line-height: 15px;
+    }
+    .payment-method>div>figure{
+        width: 25px;
+        height: 25px;
+    } 
+    .payment-method>div>p{
+        font-size: 18px;
+        line-height: 50%;
+    }
+    .payment-form-top-right>input, .card-info-dates>input{
+        height: 50px;
+        margin: 2% 0;
+        font-size: 18px;
+    }
+    .card-info-dates-inside>input{
+        font-size: 18px;
+    }
+    .payment-form-top-right>input::placeholder{
+        font-size: 18px;
+    }
+    .payment-form-top-right>textarea{
+        height: 100px;
+        width: 100%;
+        font-size: 18px;
+    }
+    .payment-form-top-right>textarea::placeholder{
+        font-size: 18px;
+    }
+    .form-submit-btn-div>button{
+        width: 250px;
+        height: 50px;
+        font-size: 18px;
+        margin-top: 2%;
+    }
+    .card-info-dates {
+        width: 100%;
+    }
+    .card-info-dates-inside, .card-info-dates>input{
+        width: 49%;
+        font-size: 18px;
+    }
+    .save-card-div>p{
+        font-size: 18px;
+    }
 }
 @media (max-width: 700px) {
     thead>tr>th, .NoItemRow>td{
@@ -498,6 +980,19 @@ thead>tr>th{
     .ConfirmContentAction>button{
         height: 40px;
         font-size: 16px;
+    }
+    .payment-paging-container, .payment-paging-container>hr{
+        width: 30%;
+    }
+    .payment-method{
+       width: 100%;
+       padding: 5% 0;
+    }
+    .payment-method>div>p{
+        line-height: 120%;
+    }
+    .payment-form-top-left>input{
+        margin: 3% 0;
     }
 }
 @media (max-width: 600px) {
@@ -566,6 +1061,13 @@ thead>tr>th{
     .ConfirmContentAction>button{
         height: 35px;
         font-size: 15px;
+    }
+    .payment-paging-container{
+        width: 40%;
+    }
+    .payment-paging-container>div{
+        width: 30px;
+        height: 30px;
     }
 }
 @media (max-width: 500px) {
@@ -651,6 +1153,12 @@ thead>tr>th{
         height: 25px;
         font-size: 12px;
     }
+    .payment-form-top-left>input, .payment-form-top-right>input{
+        margin: 5% 0;
+    }
+    .payment-paging-container>hr{
+        width: 25%;
+    }
 }
 @media (max-width: 450px) {
     thead>tr>th, .NoItemRow>td{
@@ -698,6 +1206,24 @@ thead>tr>th{
         width: 20px;
         height: 20px;
         font-size: 12px;
+    }
+    .payment-form-top-left, .payment-form-top-right{
+        width: 90%;
+        align-items: center;
+        justify-content: center;
+    }
+    .form-submit-btn-div{
+        width: 100%;
+    }
+    .form-submit-btn-div>button{
+        width: 90%;
+        height: 60px;
+    }
+    .payment-paging-container{
+        width: 70%;
+    }
+    .payment-paging-container>hr{
+        width: 30%;
     }
 }
 @media (max-width: 400px) {

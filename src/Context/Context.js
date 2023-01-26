@@ -1,228 +1,365 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { products } from "../data/products.js";
-import { brands } from "../data/categories";
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { products } from '../data/products.js';
+import {vouchers} from "../data/voucher";
+import Swal from 'sweetalert2';
+import 'react-toastify/dist/ReactToastify.css';
 export const ContextData = React.createContext();
-function ContextProvider({children}) {
-    const [windowSize, detectW] = useState({innerWidth: window.innerWidth});
+function ContextProvider({ children }) {
+    const [brandID, setBrandID] = useState('All');
+    const [windowSize, detectW] = useState({ innerWidth: window.innerWidth });
+    const [payment, setPayment] = useState(false);
     const navig = useNavigate();
     const nav = useNavigate();
-    const [changed, setChanged] = useState(localStorage.getItem("changed") ? true : false);
-    const [adminlog, setAdminlog] = useState(localStorage.getItem("changed") ? true : false);
+    const [changed, setChanged] = useState(
+        localStorage.getItem('changed') ? true : false,
+    );
+    const [adminlog, setAdminlog] = useState(false);
     const [open, setOpen] = useState(null);
-    const [cart, setCart] = useState(JSON.parse(localStorage.getItem("data")) ? JSON.parse(localStorage.getItem("data")) : []);
-    const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favorites")) ? JSON.parse(localStorage.getItem("favorites")) : []);
+    const [cart, setCart] = useState(
+        JSON.parse(localStorage.getItem('data'))
+            ? JSON.parse(localStorage.getItem('data'))
+            : [],
+    );
+    const [favorites, setFavorites] = useState(
+        JSON.parse(localStorage.getItem('favorites'))
+            ? JSON.parse(localStorage.getItem('favorites'))
+            : [],
+    );
     const [Clength, setClength] = useState(cart.length);
-    const [mode, setMode] = useState("Rectangular");
-    const [allowed, setAllowed] = useState(windowSize.innerWidth > 1024 ? (mode === "Rectangular" ? 9 : 4) : windowSize.innerWidth >= 460 ? (mode === "Rectangular" ? 6 : 3) : (mode === "Rectangular" ? 4 : 2));
-    const [productlist, setProducts] = useState(changed===true ? (JSON.parse(localStorage.getItem("productlist")) ? JSON.parse(localStorage.getItem("productlist")) : []) : products);
+    const [mode, setMode] = useState('Rectangular');
+    const [allowed, setAllowed] = useState(
+        windowSize.innerWidth > 1024
+            ? mode === 'Rectangular'
+                ? 9
+                : 4
+            : windowSize.innerWidth >= 460
+            ? mode === 'Rectangular'
+                ? 6
+                : 3
+            : mode === 'Rectangular'
+            ? 4
+            : 2,
+    );
+    const [productlist, setProducts] = useState(
+        changed === true
+            ? JSON.parse(localStorage.getItem('productlist'))
+                ? JSON.parse(localStorage.getItem('productlist'))
+                : []
+            : products,
+    );
     const [add, setAdd] = useState(false);
     const [menu, setMenu] = useState(false);
     const [modal, setModal] = useState(false);
     const [side, setSide] = useState(false);
     const [allow, setAllow] = useState(8);
-    const [Cmodal, setCModal] = useState(false);
-    const [Amodal, setAModal] = useState(false);
-    const [Aprod, setAProduct] = useState();
-    const detectScreentWidth = ()=> {
-      detectW({
-        innerWidth: window.innerWidth
-      })
-      setAllowed(windowSize.innerWidth >= 1024 ? (mode === "Rectangular" ? 9 : 4) : windowSize.innerWidth >= 460 ? (mode === "Rectangular" ? 6 : 4) : 4);
-      setAllowed(windowSize.innerWidth >= 1024 ? (mode === "Rectangular" ? 9 : 4) : windowSize.innerWidth >= 460 ? (mode === "Rectangular" ? 6 : 4) : 4);
-    }
-    useEffect(()=>{
-      window.addEventListener("resize", detectScreentWidth);
-      return()=> {
-        window.removeEventListener("resize", detectScreentWidth)
-      }
-    }, [windowSize]);
+    const [voucher, setVoucher] = useState();
+    const [coupon, setCoupon] = useState("");
     
+    function checkVoucher(e) {
+        e.preventDefault();
+        vouchers.forEach(element => {
+            if(element.code === voucher){
+                setCoupon(element.discount);
+            }
+        });
+
+    }
+    const detectScreentWidth = () => {
+        detectW({
+            innerWidth: window.innerWidth,
+        });
+        setAllowed(
+            windowSize.innerWidth >= 1024
+                ? mode === 'Rectangular'
+                    ? 9
+                    : 4
+                : windowSize.innerWidth >= 460
+                ? mode === 'Rectangular'
+                    ? 6
+                    : 4
+                : 4,
+        );
+        setAllowed(
+            windowSize.innerWidth >= 1024
+                ? mode === 'Rectangular'
+                    ? 9
+                    : 4
+                : windowSize.innerWidth >= 460
+                ? mode === 'Rectangular'
+                    ? 6
+                    : 4
+                : 4,
+        );
+    };
     useEffect(() => {
-      localStorage.setItem("data", JSON.stringify(cart));
+        window.addEventListener('resize', detectScreentWidth);
+        return () => {
+            window.removeEventListener('resize', detectScreentWidth);
+        };
+    });
+
+    useEffect(() => {
+        localStorage.setItem('data', JSON.stringify(cart));
     }, [cart]);
     useEffect(() => {
-      localStorage.setItem("favorites", JSON.stringify(favorites));
+        localStorage.setItem('favorites', JSON.stringify(favorites));
     }, [favorites]);
     useEffect(() => {
-      localStorage.setItem("productlist", JSON.stringify(productlist));
+        localStorage.setItem('productlist', JSON.stringify(productlist));
     }, [productlist]);
-    const [product, setProduct] = useState(
-        {
-            id: "",
-            title: "",
-            category: "",
-            originalPrice: "",
-            discount: "",
-            shippingFee: "",
-            categoryId: "",
-            decription: "",
-            brand: "",
-            picture: "",
-        }
-    )
+    const [product, setProduct] = useState({
+        id: '',
+        title: '',
+        category: '',
+        originalPrice: '',
+        discount: '',
+        shippingFee: '',
+        decription: '',
+        brand: '',
+        picture: [""],
+    });
     let handleInput = (e) => {
         setProduct({
-          ...product,
-          [e.target.name]: e.target.value,
+            ...product,
+            [e.target.name]: e.target.value,
         });
-      };
-      let handleInputNumber = (e) => {
-        setProduct({
-          ...product,
-          [e.target.name]: +(e.target.value),
-        });
-      };
-      let handleInputBrand = (e) => {
-        let name = e.target.value;
-        setProduct({
-          ...product,
-          brand: name,
-        });
-        brands.forEach(item=>{
-          if(name.includes(item.name)){
+    };
+    let handleInputNumber = (e) => {
+        if(+e.target.value>0){
             setProduct({
-              ...product,
-              categoryId: +item.id,
+                ...product,
+                [e.target.name]: +e.target.value,
             });
-          }else{
-            setProduct({
-              ...product,
-              brand: name,
-            });
-          }
-        })
-      };
-      let handleRasm = (e) => {
-        setProduct({
-          ...product,
-          picture: [...product.picture, e.target.value],
-        });
-      };
-      function clearInput(){
-        setProduct({
-          id: "",
-          title: "",
-          category: "",
-          originalPrice: "",
-          discount: "",
-          shippingFee: "",
-          brand: "",
-          decription: "",
-          categoryId: "",
-          picture: "",
-        })
-      }
-      function handleSend(e){
-        e.preventDefault();
-        if(product.id === ""){
-          setProducts([...productlist, {...product, id: new Date().getTime()}]);
         }else{
-          setProducts(
-            productlist.map((item)=>(
-              item.id === product.id ? product : item
-            ))
-          )
+            setProduct({
+                ...product,
+                [e.target.name]: "",
+            });
+        }
+    };
+    let handleRasm = (e) => {
+
+        setProduct({
+            ...product,
+            [e.target.name]: [e.target.value]
+        });
+    };
+    function clearInput() {
+        setProduct({
+            id: '',
+            title: '',
+            category: '',
+            originalPrice: '',
+            discount: '',
+            shippingFee: '',
+            brand: '',
+            decription: '',
+            picture: [""],
+        });
+    }
+    function handleSend(e) {
+        e.preventDefault();
+        if (product.id === '') {
+            setProducts([
+                ...productlist,
+                { ...product, id: new Date().getTime()},
+            ]);
+        } else {
+            setProducts(
+                productlist.map((item) =>
+                    item.id === product.id ? product : item,
+                ),
+            );
         }
         clearInput();
         setAdd(!add);
         setChanged(true);
-        navig("/uhgjobiejfoprfrtyuiyuowiw[wpriirqrr]p[fewfdkfjdlgja")
+        localStorage.setItem('changed', JSON.stringify(true));
+        navig('/uhgjobiejfoprfrtyuiyuowiw[wpriirqrr]p[fewfdkfjdlgja');
     }
-    function editItem(item){
-      nav("/uhgjobiejfoprfrtyuiyuowiw[wpriirqrr]p[fewfdkfjdlgja/AddProduct")
-      setAdd(!add);
-      setProduct({
-        id: item.id,
-        title: item.title,
-        category: item.category,
-        originalPrice: item.originalPrice,
-        discount: item.discount,
-        shippingFee: item.shippingFee,
-        brand: item.brand,
-        description: item.description,
-        picture: item.picture[0]
-      })
+    function editItem(item) {
+        nav('/uhgjobiejfoprfrtyuiyuowiw[wpriirqrr]p[fewfdkfjdlgja/AddProduct');
+        setAdd(!add);
+        setProduct({
+            id: item.id,
+            title: item.title,
+            category: item.category,
+            originalPrice: item.originalPrice,
+            discount: item.discount,
+            shippingFee: item.shippingFee,
+            brand: item.brand,
+            decription: item.decription,
+            picture: item.picture[0],
+        });
     }
-     
-    function addCart(i) {
-      if(cart.length !== 0){
-        cart.forEach((item)=>{
-          if(i.id !== item.id){
-            setCart([...cart, {...i, quantityInCart: 1}]);
-          }else{
-            alert("You have already added this item");
-          }
-      })}else{
-        setCart([...cart, {...i, quantityInCart: 1}]);
-      }
-      
-      setClength(cart.length+1);
+
+    function addCart(n) {
+        if (cart.length !== 0) {
+            for(let i = 0; i < cart.length; i++){
+                if (cart[i].id === n.id) {
+                    delteCartItem(i);
+                    return;
+                } 
+            }
+            setCart([...cart, { ...n, quantityInCart: 1 }]);
+            setClength(cart.length + 1);
+        }else{
+            setCart([...cart, { ...n, quantityInCart: 1 }]);
+            setClength(cart.length + 1);
+        }
     }
     function addFavorite(i) {
-            setFavorites([...favorites, {...i, quantityInFavorites: 1}]);
-        }
-    function deleteFavorite(i){
-      setFavorites(favorites.filter((elem)=>(elem.id !== i.id )));
+        setFavorites([...favorites, { ...i, quantityInFavorites: 1 }]);
     }
-    function toggle(i){
-        if(open === i){
-          return setOpen(null);
+    function deleteFavorite(i) {
+        setFavorites(favorites.filter((elem) => elem.id !== i.id));
+    }
+    function toggle(i) {
+        if (open === i) {
+            return setOpen(null);
         }
         setOpen(i);
+    }
+    function priceAfterDiscount(dis, cur) {
+        return cur - (cur * dis) / 100;
+    }
+    function increseQuantity(i) {
+        setCart(
+            cart.map((elem) =>
+                elem.id === i.id
+                    ? { ...elem, quantityInCart: elem.quantityInCart + 1 }
+                    : elem,
+            ),
+        );
+    }
+    function descreaseQuantity(i) {
+        setCart(
+            cart.map((elem) =>
+                elem.id === i.id && elem.quantityInCart > 1
+                    ? { ...elem, quantityInCart: elem.quantityInCart - 1 }
+                    : elem,
+            ),
+        );
+    }
+    function delteCartItem(i) {
+        Swal.fire({
+            title: 'Romove from Cart?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, remove it!',
+            cancelButtonText: 'No, keep it'
+          }).then((result) => {
+            if (result.isConfirmed) {
+                setCart(cart.filter((elem) => elem.id !== i.id));
+                setClength(cart.length - 1);
       }
-    function priceAfterDiscount(dis, cur){
-        return cur - (cur*dis/100);
+          })
+        
     }
-    function increseQuantity(i){
-      setCart(cart.map((elem) => (elem.id === i.id ?
-        {...elem, quantityInCart: elem.quantityInCart + 1} : elem
-      )));
-    }
-    function descreaseQuantity(i){
-      setCart(cart.map((elem) => (elem.id === i.id && elem.quantityInCart > 1 ?
-        {...elem, quantityInCart: elem.quantityInCart - 1} : elem
-      )));
-    }
-    function delteCartItem(i){
-        setCart(cart.filter((elem)=>(elem.id !== i.id)));
-        setClength(cart.length-1);
-    }
-    const calcTotal=()=>{
-      let totalNumber = 0;
-      cart.forEach((item)=>{
-          totalNumber += item.quantityInCart*priceAfterDiscount(item.discount, item.originalPrice);
-      })
-      return totalNumber.toFixed(2);
-      }
-      const calcShipping=()=>{
+    const calcTotal = () => {
         let totalNumber = 0;
-        cart.forEach((item)=>{
-            totalNumber += item.shippingFee;
-        })
-        return totalNumber;
-      }
-      const checkout=()=>{
-        let totalNumber = 0;
-        cart.forEach((item)=>{
-            totalNumber += item.shippingFee + item.quantityInCart*priceAfterDiscount(item.discount, item.originalPrice);
-        })
+        cart.forEach((item) => {
+            totalNumber +=
+                item.quantityInCart *
+                priceAfterDiscount(item.discount, item.originalPrice);
+        });
         return totalNumber.toFixed(2);
-      }
-      function changeMode(modeName){
+    };
+    const calcShipping = () => {
+        let totalNumber = 0;
+        cart.forEach((item) => {
+            totalNumber += item.shippingFee;
+        });
+        return totalNumber;
+    };
+    const checkout = () => {
+        let totalNumber = 0;
+        cart.forEach((item) => {
+            totalNumber +=
+                item.shippingFee +
+                item.quantityInCart *
+                    priceAfterDiscount(item.discount, item.originalPrice);
+        });
+        if(coupon === ""){
+            return totalNumber.toFixed(2);
+        }else{
+            return priceAfterDiscount(coupon, totalNumber).toFixed(2);
+        }
+    };
+    function changeMode(modeName) {
         setMode(modeName);
-        setAllowed(modeName === "Rectangular" ? 9 : 4);
+        setAllowed(modeName === 'Rectangular' ? 9 : 4);
+    }
+    function AdminDeleteProduct(i) {
+        Swal.fire({
+            title: 'Delete this item?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, keep it'
+          }).then((result) => {
+            if (result.isConfirmed) {
+                setProducts(productlist.filter((elem) => elem.id !== i.id));
+                localStorage.setItem('changed', JSON.stringify(true));
+                setChanged(true);
       }
-      function AdminDeleteProduct(i){
-        setProducts(productlist.filter((elem)=>(elem.id !== i.id)));
-        localStorage.setItem("changed", JSON.stringify(true));
-        setChanged(true);
-      }
-    return(
-        <ContextData.Provider value={{Aprod, setAProduct, Amodal, setAModal, Cmodal, setCModal, allow, setAllow, side, setSide, modal, setModal, windowSize, menu, setMenu, handleInputBrand, handleInputNumber, editItem, setAdd, add, product, handleInput, handleRasm, handleSend, AdminDeleteProduct, productlist, adminlog, setAdminlog, deleteFavorite, addFavorite, favorites, allowed, mode, changeMode, checkout, calcShipping, calcTotal, delteCartItem, descreaseQuantity, increseQuantity, Clength, priceAfterDiscount, addCart, cart, toggle, open}}>
+          })
+    }
+    function clearCart(){
+        setCart([]);
+        setClength(0);
+    }
+    return (
+        <ContextData.Provider
+            value={{checkVoucher,
+                voucher, setVoucher,coupon,
+                payment, 
+                setPayment,
+                allow,
+                setAllow,
+                side,
+                setSide,
+                modal,
+                setModal,
+                windowSize,
+                menu,
+                setMenu,
+                handleInputNumber,
+                editItem,
+                setAdd,
+                add,
+                product,
+                handleInput,
+                handleRasm,
+                handleSend,
+                AdminDeleteProduct,
+                productlist,
+                adminlog,
+                setAdminlog,
+                deleteFavorite,
+                addFavorite,
+                favorites,
+                allowed,
+                mode,
+                changeMode,
+                checkout,
+                calcShipping,
+                calcTotal,
+                delteCartItem,
+                descreaseQuantity,
+                increseQuantity,
+                Clength,
+                priceAfterDiscount,
+                addCart,
+                cart,
+                toggle,
+                open,
+                clearCart,
+                brandID, setBrandID
+            }}>
             {children}
         </ContextData.Provider>
-    )
+    );
 }
 export default ContextProvider;
-

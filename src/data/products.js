@@ -15,7 +15,6 @@ import CrossBag from "../assets/images/CrossBag.svg";
 import RoundGlasses from "../assets/images/RoundGlasses.jpg";
 import GreenGlasses from "../assets/images/GreenGlasses.jpeg";
 import NikeAir from "../assets/images/NikeAir.svg";
-import FeaturedShoe from "../assets/images/FeaturedShoe.svg";
 
 export const products = [
   { "id": 0, "categoryId": 1002, "category": "Sneakers", "picture": [ColorfulSneakers, BlueSneakers, RedBag, YellowSneakers], "title": "Colorful Sneakers", "originalPrice": 451.33, "discount": 24, "shippingFee": 5, "brand": "Nike", "decription": "Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lectus lorem nunc leifend laorevtr istique et congue. Vivamus adipiscin vulputate g nisl ut dolor ..." },
@@ -57,3 +56,8 @@ export const products = [
   { "id": 36, "categoryId": 1002, "category": "Sneakers", "picture": [ColorfulSneakers, ColorfulSneakers, ColorfulSneakers, ColorfulSneakers], "title": "Colorful Sneakers", "originalPrice": 126.33, "discount": 24, "shippingFee": 5, "brand": "Nike", "decription": "Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lectus lorem nunc leifend laorevtr istique et congue. Vivamus adipiscin vulputate g nisl ut dolor ..." },
   { "id": 37, "categoryId": 1002, "category": "Sneakers", "picture": [NikeAir, NikeAir, NikeAir, NikeAir], "title": "Nike Air", "originalPrice": 542.33, "discount": 24, "shippingFee": 5, "brand": "Nike", "decription": "Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lectus lorem nunc leifend laorevtr istique et congue. Vivamus adipiscin vulputate g nisl ut dolor ..." }
 ];
+export const mainProducts = [
+  { "id": 0, "categoryId": 1002, "category": "Sneakers", "picture": [ColorfulSneakers, BlueSneakers, RedBag, YellowSneakers], "title": "Colorful Sneakers", "originalPrice": 451.33, "discount": 24, "shippingFee": 5, "brand": "Nike", "decription": "Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lectus lorem nunc leifend laorevtr istique et congue. Vivamus adipiscin vulputate g nisl ut dolor ..." },
+  { "id": 17, "categoryId": 1003, "category": "Bags", "picture": [CrossBag, CrossBag, CrossBag], "title": "Cross Bag", "originalPrice": 100.33, "discount": 24, "shippingFee": 5, "brand": "Vans", "decription": "Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lectus lorem nunc leifend laorevtr istique et congue. Vivamus adipiscin vulputate g nisl ut dolor ..." },
+  { "id": 3, "categoryId": 1002, "category": "Sneakers", "picture": [BlueSneakers, BlueSneakers, BlueSneakers, BlueSneakers], "title": "Blue Sneakers", "originalPrice": 100.33, "discount": 24, "shippingFee": 5, "brand": "Nike", "decription": "Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lectus lorem nunc leifend laorevtr istique et congue. Vivamus adipiscin vulputate g nisl ut dolor ..." },
+]

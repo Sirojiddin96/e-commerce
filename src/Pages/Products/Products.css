@@ -82,15 +82,7 @@
     align-content: flex-start;
     justify-content: flex-start;
     padding-left: 5%;
-}
-.ProductsList.Rectangular9{
-    height: 1300px;
-}
-.ProductsList.Rectangular4{
-    height: 1200px;
-}
-.ProductsList.Rectangular6{
-    height: 1200px;
+    margin-bottom: 5%;
 }
 .ProductsList.Line{
     height: 1800px;
@@ -193,7 +185,6 @@
     margin-bottom: 5%;
 }
 
-
 /* Pagination Start */
 .pagination-section{
     width: 100%;
@@ -202,14 +193,17 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 15px;
+    margin-bottom: 5%;
 }
 .paging{
     width: 62.92px;
-    height: 56px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    background-color: #ebe9e9;
+    margin: 0 0.5%;
 }
 .paging:hover{
     background-color: #d4d4d4;
@@ -217,51 +211,21 @@
 .paging.Active{
     background-color: #40BFFF;
 }
+.paging>img{
+    width: 25%;
+}
 .page-number{
     font-weight: 700 !important;
     font-size: 19px !important;
 }
 .pagination{
-display: flex;
-}
-
-.ProductsPageNumbersLeft{
-    width: 20%;
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
 }
-.ProductsPageNumbersMiddle{
-    width: 35%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+.pagination-section>:first-child{
+    margin: 0 0.5% 0 0;
 }
-.ProductsPageNumbersRight{
-    width: 20%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-.ProductsPageNumbersRight>.PaginationPage>p, .ProductsPageNumbersLeft>.PaginationPage>p{
-    font-weight: 900;
-    font-size: 20px;
-}
-.PaginationPage{
-    width: 62.92px;
-    height: 56px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-.PaginationPage:hover{
-    background-color: #d4d4d4;
-}
-.PaginationPage.Active{
-    background-color: #40BFFF;
+.pagination-section>:last-child{
+    margin: 0 0 0 0.5%;
 }
 .ProductsListEmpty{
     width: 100%;
@@ -340,11 +304,13 @@ display: flex;
     align-items: flex-end;
     justify-content: flex-end;
 }
-.ButtonCloseDiv>button{
-    width: 10%;
-    background: transparent;
-    border: #22262a66 1px solid;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+.ButtonCloseDiv>figure{
+    width: 25px;
+    height: 25px;
+}
+.ButtonCloseDiv>figure>img{
+    width: 100%;
+    height: 100%;
 }
 .FilterSideBrands{
         width: 10%;
@@ -415,10 +381,26 @@ display: flex;
     .ProductsList.Line{
         height: 1300px;
     }
+    .paging{
+        width: 45px;
+        height: 40px;
+    }
+    .page-number{
+        font-weight: 700 !important;
+        font-size: 17px !important;
+    }
 }
 @media (max-width: 900px) {
     .ProductsList.Rectangular6{
         height: 1000px;
+    }
+    .paging{
+        width: 38px;
+        height: 35px;
+    }
+    .page-number{
+        font-weight: 600 !important;
+        font-size: 16px !important;
     }
 }
 @media (max-width: 800px) {
@@ -455,6 +437,14 @@ display: flex;
     }
     .FilterIconDiv{
         display: flex;
+    }
+    .paging{
+        width: 45px;
+        height: 40px;
+    }
+    .page-number{
+        font-weight: 700 !important;
+        font-size: 17px !important;
     }
 }
 @media (max-width: 720px) {
@@ -497,6 +487,14 @@ display: flex;
     .ProductsList.Rectangular6{
         height: 800px;
     }
+    .paging{
+        width: 40px;
+        height: 36px;
+    }
+    .page-number{
+        font-weight: 600 !important;
+        font-size: 16px !important;
+    }
 }
 @media (max-width: 650px) {
     .ProductsList.Rectangular6{
@@ -512,6 +510,14 @@ display: flex;
     }
     .ProductsPageNumbersMiddle{
         width: 50%;
+    }
+    .paging{
+        width: 35px;
+        height: 30px;
+    }
+    .page-number{
+        font-weight: 600 !important;
+        font-size: 15px !important;
     }
 }
 @media (max-width: 550px) {
@@ -532,6 +538,14 @@ display: flex;
     .ProductsPageNumbersRight>.PaginationPage>p, .ProductsPageNumbersLeft>.PaginationPage>p{
         font-weight: 800;
         font-size: 15px;
+    }
+    .paging{
+        width: 30px;
+        height: 28px;
+    }
+    .page-number{
+        font-weight: 600 !important;
+        font-size: 13px !important;
     }
 }
 @media (max-width: 500px) {
@@ -571,6 +585,14 @@ display: flex;
     .ProductsPageNumbersRight>.PaginationPage>p, .ProductsPageNumbersLeft>.PaginationPage>p{
         font-weight: 700;
         font-size: 13px;
+    }
+    .paging{
+        width: 25px;
+        height: 23px;
+    }
+    .page-number{
+        font-weight: 600 !important;
+        font-size: 13px !important;
     }
 }
 @media (max-width: 410px) {
@@ -615,6 +637,14 @@ display: flex;
         width: 30px;
         height: 35px;
     }
+    .paging{
+        width: 25px;
+        height: 30px;
+    }
+    .page-number{
+        font-weight: 600 !important;
+        font-size: 13px !important;
+    }
 }
 
 @media (max-width: 360px) {
@@ -627,6 +657,17 @@ display: flex;
     }
     .FilterSideContent{
         width: 90%;
+    }
+    .paging{
+        width: 20px;
+        height: 23px;
+    }
+    .page-number{
+        font-weight: 600 !important;
+        font-size: 13px !important;
+    }
+    .paging>img{
+        width: 40%;
     }
 }
 @media (max-width: 320px) {
@@ -672,11 +713,24 @@ display: flex;
         margin: 10% 0;
     }
     .PaginationPage{
-        width: 20px;
+        width: 18px;
         height: 25px;
     }
     .ProductsPageNumbersMiddle{
         width: 50%;
+    }
+    .paging>img{
+        width: 40%;
+    }
+}
+@media (max-width: 280px) {
+    .paging{
+        width: 18px;
+        height: 19px;
+    }
+    .page-number{
+        font-weight: 600 !important;
+        font-size: 13px !important;
     }
 }
 @media (max-width: 250px) {
@@ -685,6 +739,17 @@ display: flex;
         height: 30px;
         font-size: 13px;
         margin: 10% 0;
+    }
+    .paging{
+        width: 15px;
+        height: 16px;
+    }
+    .paging>img{
+        width: 40%;
+    }
+    .page-number{
+        font-weight: 600 !important;
+        font-size: 12px !important;
     }
 }
 @media (max-width: 230px) {
@@ -697,6 +762,17 @@ display: flex;
     }
     .ProductsPageNumbersRight, .ProductsPageNumbersLeft{
         width: 23%;
+    }
+    .paging{
+        width: 14px;
+        height: 15px;
+    }
+    .paging>img{
+        width: 50%;
+    }
+    .page-number{
+        font-weight: 600 !important;
+        font-size: 10px !important;
     }
 }
 @media (max-width: 200px) {
