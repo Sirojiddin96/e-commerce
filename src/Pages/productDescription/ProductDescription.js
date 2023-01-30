@@ -1,95 +1,188 @@
-import { useContext } from "react";
+import { useContext } from 'react';
 import * as React from 'react';
 import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
-import { useState } from "react";
-import { ContextData } from "../../context/Context";
-import Footer from "../../containers/Footer";
-import "./ProductDescription.css";
-import CartIconRed from "../../assets/icons/CartIconRed.svg";
-import CartIconBlue from "../../assets/icons/CartIconBlue.svg";
-import HeartIconBlue from "../../assets/icons/HeartIconBlue.svg";
-import HeartIconRed from "../../assets/icons/HeartIconRed.svg";
-import Header from "../../containers/Header";
-const ProductDescription = (props) =>{
-    const {item, inCart, inFavorites} = props;
-    const [selected, setSelected] = useState(0);
-    const {addFavorite, deleteFavorite, priceAfterDiscount, addCart} = useContext(ContextData);
-    return(
-        <div className="ProductDescriptionPage">
-            <Header/>
+import { useState} from 'react';
+import { ContextData } from '../../context/Context';
+import Footer from '../../containers/Footer';
+import './ProductDescription.css';
+import CartIconRed from '../../assets/icons/CartIconRed.svg';
+import CartIconBlue from '../../assets/icons/CartIconBlue.svg';
+import HeartIconBlue from '../../assets/icons/HeartIconBlue.svg';
+import HeartIconRed from '../../assets/icons/HeartIconRed.svg';
+import WhiteClose from "../../assets/icons/WhiteClose.svg";
+import Header from '../../containers/Header';
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
+import "swiper/css/pagination";
+
+// import required modules
+import { FreeMode, Navigation, Thumbs, Pagination } from "swiper";
+const ProductDescription = (props) => {
+    const { item, inCart, inFavorites } = props;
+    const [zoom, setZoom] = useState(false);
+    const [thumbsSwiper, setThumbsSwiper] = useState(null);
+    const { addFavorite, deleteFavorite, priceAfterDiscount, addCart } =
+        useContext(ContextData);
+    return (
+        <>
+        {zoom ?
+            <div onClick={()=>setZoom(false)} className='image-zoom-back'>
+                <div className='zoom-close'><img src={WhiteClose} alt="close" onClick={()=>setZoom(false)} /></div>
+                <div  onClick={(event) => event.stopPropagation()} className='image-zoom-content'>
+                    <Swiper
+                     style={{
+                        "--swiper-navigation-color": "#fff",
+                        "--swiper-pagination-color": "#fff",
+                      }}
+                      spaceBetween={10}
+                      thumbs={{ swiper: thumbsSwiper }}
+                      pagination={{
+                          dynamicBullets: true,
+                        }}
+                        modules={[FreeMode, Navigation, Thumbs]}
+                      className="mySwiper3"
+                    >
+                          {item.picture.map((elem, index) => (
+                                <SwiperSlide>
+                                    
+                                        <img src={elem} key={index} alt="itempicture" className='QuickPinchZoomImage' />
+                                </SwiperSlide>
+                            ))}
+                    </Swiper>
+                </div>
+            </div> :<></>
+        }
+        <div className={zoom ? "ProductDescriptionPage noscroll" : "ProductDescriptionPage"}>
+            <Header />
             <div className="ProductDescriptionContent">
                 <div className="ProductDescriptionPageLeft">
                     <div className="ProductDescriptionImageHolder">
-                        <div onClick={()=>{selected !== 0 ? setSelected(selected-1) :  setSelected(selected)}} className="ProductDescriptionImageHolderLeft"></div>
-                                {
-                                item.picture.map((elem, index)=>(
-                                    <figure style={{transform: `translateX(-${(selected)*100}%)`}} key={index}>
-                                        <img src={elem} alt="itempicture"/>
-                                    </figure>
-                                ))
-                                }
-                        <div onClick={()=>{selected !== item.picture.length-1 ? setSelected(selected+1) :  setSelected(selected)}} className="ProductDescriptionImageHolderRight"></div>
-                        </div>
-                        <div className="ProductDescriptionPictures">
-                            {
-                                item.picture.map((elem, index)=>(
-                                    <figure onClick={()=>setSelected(index)} key={index} className={selected === index ? "ProductDescriptionPicturesFigure Active" : "ProductDescriptionPicturesFigure"}>
-                                        <img src={elem} alt="elem" />
-                                    </figure>
-                                ))
-                            }
-                        </div>
+                    <Swiper
+        style={{
+          "--swiper-navigation-color": "#fff",
+          "--swiper-pagination-color": "#fff",
+        }}
+        spaceBetween={10}
+        thumbs={{ swiper: thumbsSwiper }}
+        pagination={{
+            dynamicBullets: true,
+          }}
+        modules={[FreeMode, Navigation, Thumbs, Pagination]}
+        className="mySwiper2"
+      >
+                            {item.picture.map((elem, index) => (
+                                <SwiperSlide>
+                                        <img src={elem} key={index} onClick={()=>setZoom(true)} alt="itempicture" />
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                    <Swiper
+        onSwiper={setThumbsSwiper}
+        spaceBetween={10}
+        slidesPerView={4}
+        freeMode={true}
+        watchSlidesProgress={true}
+        modules={[FreeMode, Navigation, Thumbs]}
+        className="mySwiper"
+      >
+                        {item.picture.map((elem, index) => (
+                           <SwiperSlide>
+                                <img src={elem} alt="elem" key={index} />
+                                </SwiperSlide>
+                            
+                        ))}
+                        </Swiper>
+                </div>
                 </div>
                 <div className="ProductDescriptionPageRight">
-                        <div className="ProductDescriptionTitle">
-                            <p>{item.title}</p>
-                        </div>
-                        <div className="ProductDescriptionReview">
-                        <Stack onClick={(event) => event.stopPropagation()} spacing={1}>
-                        <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
+                    <div className="ProductDescriptionTitle">
+                        <p>{item.title}</p>
+                    </div>
+                    <div className="ProductDescriptionReview">
+                        <Stack
+                            onClick={(event) => event.stopPropagation()}
+                            spacing={1}>
+                            <Rating
+                                name="half-rating"
+                                defaultValue={2.5}
+                                precision={0.5}
+                            />
                         </Stack>
-                            <p>0 reviews</p>
-                            <p>Submit a review</p>
+                        <p>0 reviews</p>
+                        <p>Submit a review</p>
+                    </div>
+                    <div className="ProductDescriptionBottom">
+                        <div className="ProductDescriptionPrice">
+                            <p>
+                                $
+                                {priceAfterDiscount(
+                                    item.discount,
+                                    item.originalPrice,
+                                ).toFixed(2)}
+                            </p>
+                            <p>
+                                <del>${item.originalPrice}</del>
+                                <span>{item.discount}% Off</span>
+                            </p>
                         </div>
-                        <div className="ProductDescriptionBottom">
-                            <div className="ProductDescriptionPrice">
-                                <p>${priceAfterDiscount(item.discount, item.originalPrice).toFixed(2)}</p>
-                                <p><del>${item.originalPrice}</del><span>{item.discount}% Off</span></p>
+                        <div className="ProductDescription">
+                            <p>{item.decription}</p>
+                        </div>
+                        <div className="Availability">
+                            <p>Availability:</p>
+                            <p>In stock</p>
+                        </div>
+                        <div className="Category">
+                            <p>Category:</p>
+                            <p>{item.category}</p>
+                        </div>
+                        <div className="Shipping">
+                            <p>Shipping: </p>
+                            <p>${item.shippingFee}</p>
+                        </div>
+                        <div className="ProductDescriptionCardsAction">
+                            <div
+                                onClick={() => addCart(item)}
+                                className="ProductDescriptionCardsCart">
+                                <figure>
+                                    <img
+                                        src={
+                                            inCart ? CartIconRed : CartIconBlue
+                                        }
+                                        alt="CartIconRed"
+                                    />
+                                </figure>
+                                <p>Add To Cart</p>
                             </div>
-                            <div className="ProductDescription">
-                                <p>{item.decription}</p>
+                            <div
+                                onClick={() =>
+                                    inFavorites
+                                        ? deleteFavorite(item)
+                                        : addFavorite(item)
+                                }
+                                className="ProductDescriptionCardsLike">
+                                <figure>
+                                    <img
+                                        src={
+                                            inFavorites
+                                                ? HeartIconRed
+                                                : HeartIconBlue
+                                        }
+                                        alt="HeartIconBlue"
+                                    />
+                                </figure>
                             </div>
-                            <div className="Availability">
-                                <p>Availability:</p>
-                                <p>In stock</p>
-                            </div>
-                            <div className="Category">
-                                <p>Category:</p>
-                                <p>{item.category}</p>
-                            </div>
-                            <div className="Shipping">
-                                <p>Shipping: </p>
-                                <p>${item.shippingFee}</p>
-                            </div>
-                            <div className="ProductDescriptionCardsAction">
-                                <div onClick={()=>addCart(item)} className="ProductDescriptionCardsCart">
-                                    <figure>
-                                        <img src={inCart ? CartIconRed : CartIconBlue} alt="CartIconRed" />
-                                    </figure>
-                                    <p>Add To Cart</p>
-                                </div>
-                                <div  onClick={()=>inFavorites ? deleteFavorite(item) : addFavorite(item)} className="ProductDescriptionCardsLike">
-                                    <figure>
-                                        <img src={inFavorites ? HeartIconRed : HeartIconBlue} alt="HeartIconBlue" />
-                                    </figure>
-                                </div>
-                                </div>
                         </div>
                     </div>
                 </div>
-            <Footer/>
+            </div>
+            <Footer />
         </div>
-    )
-}
+        </>
+    );
+};
 export default ProductDescription;

@@ -187,6 +187,7 @@ function Products() {
                                     onClick={() => {
                                         setBrandID(item.name);
                                         setPage(1);
+                                        ; window.scrollTo(280, 280)
                                     }}
                                     className={
                                         brandID === item.name
@@ -212,7 +213,7 @@ function Products() {
                                 <p>Ranger: </p>
                                 <p>${value1[0]}-${value1[1]}</p>
                             </div>
-                            <div>
+                            <div onClick={()=>window.scrollTo(280, 280)}>
                             <Slider
                                     getAriaLabel={() => 'Minimum distance'}
                                     value={value1}
@@ -245,7 +246,8 @@ function Products() {
                                     <div
                                         onClick={() => {
                                             setBrandID(item.name);
-                                            settingPage(1);
+                                            setPage(1);
+                                            ; window.scrollTo(280, 280)
                                         }}
                                         className={
                                             brandID === item.name
@@ -272,7 +274,7 @@ function Products() {
                                     <p>Ranger: </p>
                                     <p>${value1[0]}-${value1[1]}</p>
                                 </div>
-                                <div>
+                                <div onClick={()=>window.scrollTo(280, 280)}>
                                 <Slider
                                     getAriaLabel={() => 'Minimum distance'}
                                     value={value1}
@@ -459,7 +461,7 @@ function Products() {
                             <div className="pagination-section">
                                 {page !== 1 ? (
                                     <div
-                                        onClick={() => settingPage(1)}
+                                        onClick={() => {settingPage(1); window.scrollTo(280, 280)}}
                                         className="paging">
                                         <img src={PrevPage} alt="prev-page" />
                                     </div>
@@ -469,8 +471,8 @@ function Products() {
                                 <div className="pagination">
                                     {page !== 1 ? (
                                         <div
-                                            onClick={() =>
-                                                settingPage(page - 1)
+                                            onClick={() =>{
+                                                settingPage(page - 1); window.scrollTo(280, 280)}
                                             }
                                             className="paging">
                                             <img src={Prev} alt="prev" />
@@ -481,7 +483,7 @@ function Products() {
                                     {range.beginnig >= 3 ? (
                                         <>
                                             <div
-                                                onClick={() => settingPage(1)}
+                                                onClick={() => {settingPage(1); window.scrollTo(280, 280)}}
                                                 className='paging'>
                                                 <span className="page-number">
                                                     {1}
@@ -498,8 +500,8 @@ function Products() {
                                         item > range.beginnig - 2 &&
                                         item < range.ending ? (
                                             <div
-                                                onClick={() =>
-                                                    settingPage(item)
+                                                onClick={() =>{
+                                                    settingPage(item); window.scrollTo(280, 280)}
                                                 }
                                                 className={
                                                     item === page
@@ -521,8 +523,8 @@ function Products() {
                                                 <p>...</p>
                                             </div>
                                             <div
-                                                onClick={() =>
-                                                    settingPage(lastPage)
+                                                onClick={() =>{
+                                                    settingPage(lastPage); window.scrollTo(280, 280)}
                                                 }
                                                 className='paging'>
                                                 <span className="page-number">
@@ -535,8 +537,9 @@ function Products() {
                                     )}
                                     {page !== lastPage ? (
                                         <div
-                                            onClick={() =>
-                                                settingPage(page + 1)
+                                            onClick={() =>{
+                                                settingPage(page + 1); window.scrollTo(280, 280)
+                                            }
                                             }
                                             className="paging">
                                             <img src={Next} alt="next" />
@@ -547,7 +550,7 @@ function Products() {
                                 </div>
                                 {page !== lastPage ? (
                                     <div
-                                        onClick={() => settingPage(lastPage)}
+                                        onClick={() => {settingPage(lastPage); ; window.scrollTo(280, 280)}}
                                         className="paging">
                                         <img src={NextPage} alt="next-page" />
                                     </div>

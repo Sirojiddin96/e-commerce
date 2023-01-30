@@ -11,6 +11,11 @@
     overflow: auto;
     position: relative;
 }
+.CartPage.noscroll{
+    height: 100hv;
+    overflow: hidden;
+    position: fixed;
+}
 table{
     width: 100%;
     border-collapse: collapse;
