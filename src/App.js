@@ -5,9 +5,9 @@ import Adminpanel from "./admin-panel/Admin-panel";
 
 
 function App() {
-  const {payment, adminlog, menu, modal, side} = useContext(ContextData);
+  const {adminlog, menu, modal, side} = useContext(ContextData);
   return (
-    <div className={payment || menu || modal || side ? "wrapper noscroll" : "wrapper"}>
+    <div className={ menu || modal || side ? "wrapper noscroll" : "wrapper"}>
       { adminlog ? 
       <>
         <Adminpanel/>

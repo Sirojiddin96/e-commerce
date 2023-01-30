@@ -19,7 +19,7 @@ export function PromotionCardONe(props) {
         props;
     return (
         <div
-            onClick={() => navig('/products/' + product.id)}
+            onClick={() => {navig('/products/' + product.id); window.scrollTo(0, 0)}}
             className="promotionCardOne">
             <figure>
                 <img src={pic} alt="product" />
@@ -43,7 +43,7 @@ export function PromotionCardTwo(props) {
         props;
     return (
         <div
-            onClick={() => navig('/products/' + product.id)}
+            onClick={() =>{navig('/products/' + product.id); window.scrollTo(0, 0)}}
             className="promotionCardTwo">
             <figure>
                 <img src={pic} alt="product" />
@@ -67,7 +67,7 @@ export function PromotionCardThree(props) {
         props;
     return (
         <div
-            onClick={() => navig('/products/' + product.id)}
+            onClick={() => {navig('/products/' + product.id); window.scrollTo(0, 0)}}
             className="promotionCardThree">
             <figure>
                 <img src={pic} alt="product" />
@@ -100,7 +100,7 @@ export function ProductCards(props) {
     } = props;
     return (
         <div
-            onClick={() => navig('/products/' + product.id)}
+            onClick={() => {navig('/products/' + product.id); window.scrollTo(0, 0)}}
             className="ProductCards">
             <figure
                 onClick={(event) => event.stopPropagation()}
@@ -175,7 +175,7 @@ export function ProductCardsHorizontal(props) {
     } = props;
     return (
         <div
-            onClick={() => navig('/products/' + product.id)}
+            onClick={() =>{navig('/products/' + product.id); window.scrollTo(0, 0)}}
             className="ProductCardsHorizontal">
             <figure className="ProductCardsFigureHorizontal">
                 <img src={pic} alt="product" />

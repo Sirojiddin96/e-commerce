@@ -29,7 +29,7 @@ function Routers() {
                     <Route
                         key={index}
                         path={"/products/" + item.id}
-                        element={<ProductDescription
+                        element={<ProductDescription 
                             inFavorites={favorites.length ? favorites.filter((elem)=>(elem.id === item.id)).length : false}
                             item={item}
                             inCart={cart.length ? cart.filter((elem) => (elem.id === item.id)).length : false} />}

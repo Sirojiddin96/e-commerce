@@ -6,9 +6,10 @@ import Swal from 'sweetalert2';
 import 'react-toastify/dist/ReactToastify.css';
 export const ContextData = React.createContext();
 function ContextProvider({ children }) {
+   
     const [brandID, setBrandID] = useState('All');
     const [windowSize, detectW] = useState({ innerWidth: window.innerWidth });
-    const [payment, setPayment] = useState(false);
+   
     const navig = useNavigate();
     const nav = useNavigate();
     const [changed, setChanged] = useState(
@@ -108,6 +109,7 @@ function ContextProvider({ children }) {
     useEffect(() => {
         localStorage.setItem('productlist', JSON.stringify(productlist));
     }, [productlist]);
+    
     const [product, setProduct] = useState({
         id: '',
         title: '',
@@ -314,8 +316,6 @@ function ContextProvider({ children }) {
         <ContextData.Provider
             value={{checkVoucher,
                 voucher, setVoucher,coupon,
-                payment, 
-                setPayment,
                 allow,
                 setAllow,
                 side,
@@ -356,7 +356,8 @@ function ContextProvider({ children }) {
                 toggle,
                 open,
                 clearCart,
-                brandID, setBrandID
+                brandID, setBrandID,
+              
             }}>
             {children}
         </ContextData.Provider>

@@ -14,8 +14,7 @@ import SuccessIcon from "../../assets/images/SuccessIcon.svg";
 
 function Cart() {
     const {
-        payment, 
-        setPayment,
+       
         checkout,
         calcShipping,
         calcTotal,
@@ -30,9 +29,9 @@ function Cart() {
         clearCart,
         Clength
     } = useContext(ContextData);
-    const [i, setI] = useState();
     const [method, setMethod] = useState(1);
     const [stage, setStage] = useState(1);
+    const [payment, setPayment] = useState(false);
     function changeStage(num){
         setStage(num)
     }
@@ -154,7 +153,7 @@ function Cart() {
             ) : (
                 <></>
             )}
-            <div className="CartPage">
+            <div className={payment ? "CartPage noscroll" : "CartPage"}>
                 <Header />
                 <div className="CartProducts">
                     <table>
@@ -178,7 +177,6 @@ function Cart() {
                                             <button
                                                 onClick={() => {
                                                     delteCartItem(item)
-                                                    setI(item);
                                                 }}>
                                                 X
                                             </button>
